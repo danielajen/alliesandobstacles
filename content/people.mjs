@@ -1,0 +1,150 @@
+// ─────────────────────────────────────────────────────────────────────────────
+//  AUTHORS AND CONTRIBUTORS
+//  Bios below were drafted from public university pages — CONFIRM each one
+//  with the person before launch. Anyone can be given more links or updates
+//  just by adding to the arrays.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const authors = [
+  {
+    slug: 'pamela-block',
+    name: 'Pamela Block',
+    initials: 'PB',
+    accent: 'yellow',
+    role: 'Professor of Anthropology, Western University',
+    photo: null, // e.g. 'assets/img/pamela-block.jpg'
+    photoAlt: '',
+    bio: [
+      'Pamela Block is Professor of Anthropology at Western University in London, Ontario, where she moved after many years teaching disability studies at Stony Brook University in New York. Her research and teaching sit where disability studies, anthropology, and occupational science meet, with a long-standing interest in disability activism, community, and the histories of institutions.',
+      'Pam is part of the autism community, and her family is at the heart of this work: she credits her mother, Barbara Kilcup, a special education teacher and parent advocate, and her sister Hope Block as the reasons she undertook *Allies and Obstacles*.',
+      'She is co-author of *Allies and Obstacles*, co-editor of *Family and Disability Activism*, and co-editor of *Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability*.',
+    ],
+    publications: [
+      {
+        title: 'Family and Disability Activism: Beyond Allies and Obstacles',
+        detail: 'co-editor, Temple University Press, 2025',
+        url: '/books/family-and-disability-activism/',
+      },
+      {
+        title: 'Allies and Obstacles: Disability Activism and Parents of Children with Disabilities',
+        detail: 'co-author, Temple University Press, 2020',
+        url: '/books/allies-and-obstacles/',
+      },
+      {
+        title: 'Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability',
+        detail: 'co-editor with Devva Kasnitz, Akemi Nishida, and Nick Pollard, Springer, 2016',
+        url: null,
+      },
+    ],
+    links: [
+      { label: 'Western University', url: 'https://anthropology.uwo.ca/' }, // CONFIRM profile URL
+    ],
+  },
+  {
+    slug: 'allison-carey',
+    name: 'Allison C. Carey',
+    initials: 'AC',
+    accent: 'blue',
+    role: 'Professor of Sociology, Shippensburg University',
+    photo: null,
+    photoAlt: '',
+    bio: [
+      'Allison C. Carey is Professor in the Department of Sociology and Anthropology at Shippensburg University in Pennsylvania. Her work examines disability rights, social movements, and the history of how the United States has granted and withheld citizenship from people with intellectual disabilities.',
+      'She grew up engaged with the intellectual disability community through her family and the Arc, and it was her parents\u2019 work to support all of their children that first drew her to these questions.',
+      'In 2021 she received the award for an Outstanding Career in the Sociology of Disability from the American Sociological Association’s Section on Disability in Society.',
+    ],
+    publications: [
+      {
+        title: 'Family and Disability Activism: Beyond Allies and Obstacles',
+        detail: 'co-editor, Temple University Press, 2025',
+        url: '/books/family-and-disability-activism/',
+      },
+      {
+        title: 'Allies and Obstacles: Disability Activism and Parents of Children with Disabilities',
+        detail: 'co-author, Temple University Press, 2020',
+        url: '/books/allies-and-obstacles/',
+      },
+      {
+        title: 'Disability Incarcerated: Imprisonment and Disability in the United States and Canada',
+        detail: 'co-editor with Liat Ben-Moshe and Chris Chapman, Palgrave Macmillan, 2014',
+        url: null,
+      },
+      {
+        title: 'On the Margins of Citizenship: Intellectual Disability and Civil Rights in Twentieth-Century America',
+        detail: 'Temple University Press, 2009',
+        url: null,
+      },
+    ],
+    links: [
+      { label: 'Shippensburg University', url: 'https://www.ship.edu/' }, // CONFIRM profile URL
+    ],
+  },
+  {
+    slug: 'richard-scotch',
+    name: 'Richard K. Scotch',
+    initials: 'RS',
+    accent: 'red',
+    role: 'Professor Emeritus of Sociology, Public Policy and Political Economy, The University of Texas at Dallas',
+    lifespan: '1951 – 2026',
+    tribute: true,
+    photo: null,
+    photoAlt: '',
+    bio: [
+      'Richard Kivie Scotch was born in Chicago in 1951 and died in Dallas on June 2, 2026. He earned his BA from the University of Chicago and his MA and PhD in sociology from Harvard University, and spent forty-two years on the faculty of The University of Texas at Dallas before retiring in 2025.',
+      'His first book, *From Good Will to Civil Rights*, told the story of how federal disability policy was transformed by the disability rights movement, and it remains essential reading decades later. He went on to write more than seventy articles and book chapters, served as president of the Society for Disability Studies, and helped found the American Sociological Association’s Section on Disability in Society.',
+      'At UT Dallas he mentored generations of students, served on more than fifty dissertation committees, and was the driving force behind the university’s public health program. On his retirement the university created the Richard Scotch Distinguished Graduate Teaching Award in his honor.',
+      'The idea for *Allies and Obstacles* was Richard\u2019s: after Allison\u2019s first book came out, he proposed that they write about parent activism together, and Pam soon joined them. Five years later, the three reunited to edit *Family and Disability Activism*.',
+      'To us he was a co-author, a steady and generous collaborator, and a friend. These books would not exist without him.',
+    ],
+    honors: [
+      { year: 2014, name: 'Distinguished Contributions to the Sociology of Disability Award, American Sociological Association' },
+      { year: 2013, name: 'Senior Scholar Award, Society for Disability Studies' },
+      { year: '1994–95', name: 'President, Society for Disability Studies' },
+    ],
+    publications: [
+      {
+        title: 'Family and Disability Activism: Beyond Allies and Obstacles',
+        detail: 'co-editor, Temple University Press, 2025',
+        url: '/books/family-and-disability-activism/',
+      },
+      {
+        title: 'Allies and Obstacles: Disability Activism and Parents of Children with Disabilities',
+        detail: 'co-author, Temple University Press, 2020',
+        url: '/books/allies-and-obstacles/',
+      },
+      {
+        title: 'From Good Will to Civil Rights: Transforming Federal Disability Policy',
+        detail: 'Temple University Press, 1984; 2nd edition 2001',
+        url: null,
+      },
+    ],
+    links: [
+      { label: 'UT Dallas faculty profile and publications', url: 'https://profiles.utdallas.edu/richard.scotch' },
+      { label: 'UT Dallas News: remembering Richard Scotch', url: 'https://news.utdallas.edu/faculty-staff/richard-scotch-tribute-2026/' },
+      { label: 'Colleagues reminisce about Dr. Richard Scotch', url: 'https://provost.utdallas.edu/2026/07/03/colleagues-reminisce-about-a-legend-dr-richard-scotch/' },
+      { label: 'Obituary', url: 'https://www.ariacremation.com/obituaries/richard-scotch' },
+    ],
+  },
+];
+
+// ─── Chapter authors for Family and Disability Activism ──────────────────────
+// Only `name` is required. Add as the volunteer collects information:
+//   chapter:  'Chapter title'
+//   bio:      'One or two sentences, in their own words.'
+//   photo:    'assets/img/firstname-lastname.jpg'  (+ photoAlt)
+//   links:    [{ label: 'Website', url: 'https://…' }]
+//   updates:  [{ date: '2026-10-01', text: 'New article out in …', url: 'https://…' }]
+export const contributors = [
+  { name: 'Diane Compton' },
+  { name: 'Erin Compton' },
+  { name: 'Jaclyn Ellis' },
+  { name: 'Laura LeBrun Hatcher' },
+  { name: 'Elena Hung' },
+  { name: 'Bridget Liang' },
+  { name: 'Jenelle Rouse' },
+  { name: 'Cheryl Najarian Souza' },
+  { name: 'Jeneva Stone' },
+  { name: 'Roger A. Stone' },
+  { name: 'Lisette E. Torres' },
+  { name: 'Grace Tsao' },
+];

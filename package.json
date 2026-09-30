@@ -1,0 +1,13 @@
+{
+  "name": "alliesandobstacles",
+  "private": true,
+  "type": "module",
+  "description": "Website for Allies and Obstacles and Family and Disability Activism",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && node serve.mjs",
+    "check": "node build.mjs && node scripts/check-links.mjs",
+    "check:external": "node build.mjs && node scripts/check-links.mjs --external"
+  },
+  "engines": { "node": ">=18" }
+}
