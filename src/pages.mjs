@@ -1,6 +1,7 @@
 import { site, books, media, mediaTypes } from '../content/site.mjs';
 import { authors, contributors } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
+import { research as researchPages } from '../content/research.mjs';
 import { parts, keyIdeas, allianceFrames, language, research, timeline, timelineKinds, cite } from '../content/book.mjs';
 import { esc, rich, join, link, icon, cover, button, avatar, sectionHead, breadcrumbs } from './components.mjs';
 
@@ -824,6 +825,15 @@ function authorPage(a) {
         : ''
     }
 
+    ${
+      a.slug === 'pamela-block'
+        ? `<h2>Research</h2><ul class="research-links" role="list">${join(
+            researchPages,
+            (r) => `<li><a class="research-link research-link--${r.accent}" href="/authors/pamela-block/${r.slug}/"><span class="research-link__k">${esc(r.title)}</span><span class="research-link__t">${esc(r.lede.split(' — ')[0].split('. ')[0])}.</span>${icon('arrow')}</a></li>`,
+          )}</ul>`
+        : ''
+    }
+
     <h2>${tribute ? 'His books' : 'Selected publications'}</h2>
     ${pubList(a.publications)}
 
@@ -841,6 +851,99 @@ function authorPage(a) {
   </aside>
 </div>`,
     tribute ? 'tribute-page' : '',
+  );
+}
+
+
+// ─── Pam's research pages ────────────────────────────────────────────────────
+
+function researchPage(r) {
+  const other = researchPages.find((x) => x !== r);
+  const ext = (url, label) => link(url, esc(label));
+  return page(
+    `/authors/pamela-block/${r.slug}/`,
+    `${r.title} · Pamela Block`,
+    `${r.lede}`,
+    `
+<header class="page-head research-head research-head--${r.accent}">
+  <div class="wrap">
+    ${breadcrumbs([['Home', '/'], ['Authors', '/authors/'], ['Pamela Block', '/authors/pamela-block/'], [r.nav, `/authors/pamela-block/${r.slug}/`]])}
+    <p class="eyebrow">${esc(r.eyebrow)}</p>
+    <h1>${esc(r.title)}</h1>
+    <p class="page-head__lede">${rich(r.lede)}</p>
+    <nav class="research-tabs" aria-label="Research areas"><ul role="list">${join(
+      researchPages,
+      (x) => `<li><a href="/authors/pamela-block/${x.slug}/"${x === r ? ' aria-current="page"' : ''}>${esc(x.nav)}</a></li>`,
+    )}</ul></nav>
+  </div>
+</header>
+
+<div class="wrap person-body">
+  <div>
+    <section class="block prose" aria-labelledby="overview-h">
+      <h2 id="overview-h" class="block__h">Overview</h2>
+      ${join(r.intro, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
+    </section>
+
+    <section class="block" aria-labelledby="themes-h">
+      <h2 id="themes-h" class="block__h">Themes</h2>
+      <ul class="ideas" role="list">${join(
+        r.themes,
+        (t, i) => `<li class="idea idea--${ACCENTS[i % 3]} reveal"><h3>${esc(t.k)}</h3><p>${rich(t.text)}</p></li>`,
+      )}</ul>
+    </section>
+
+    <section class="block" aria-labelledby="projects-h">
+      <h2 id="projects-h" class="block__h">Projects</h2>
+      <ol class="projects" role="list">${join(
+        r.projects,
+        (p) => `<li class="project reveal">
+          <p class="project__years">${esc(p.years)}</p>
+          <div>
+            <h3 class="project__title">${esc(p.title)}</h3>
+            <p class="project__role">${esc(p.role)}</p>
+            <p>${rich(p.text)}</p>
+            ${p.url ? `<p class="project__link">${ext(p.url, p.urlLabel || 'Learn more')}</p>` : ''}
+          </div>
+        </li>`,
+      )}</ol>
+    </section>
+
+    <section class="block" aria-labelledby="pubs-h">
+      <h2 id="pubs-h" class="block__h">Selected publications</h2>
+      <ul class="pub-list" role="list">${join(
+        r.publications,
+        (p) => `<li><cite class="pub-list__title">${p.url ? ext(p.url, p.title) : esc(p.title)}</cite><span class="pub-list__detail">${esc(p.detail)}</span></li>`,
+      )}</ul>
+    </section>
+
+    ${
+      r.media?.length
+        ? `<section class="block" aria-labelledby="media-h"><h2 id="media-h" class="block__h">In the news</h2><ul class="pub-list" role="list">${join(
+            r.media,
+            (m) => `<li><span class="pub-list__title">${esc(m.split(' — ')[0])}</span><span class="pub-list__detail">${esc(m.split(' — ').slice(1).join(' — '))}</span></li>`,
+          )}</ul></section>`
+        : ''
+    }
+  </div>
+
+  <aside class="person-side" aria-label="More">
+    <div class="side-card side-card--awards">
+      <h2>${icon('award')}Recognition</h2>
+      <ul role="list" class="link-list">${join(r.recognition, (x) => `<li>${rich(x)}</li>`)}</ul>
+    </div>
+    <div class="side-card">
+      <h2>More from Pam</h2>
+      <ul class="link-list" role="list">
+        <li><a href="/authors/pamela-block/">Profile and books</a></li>
+        <li><a href="/authors/pamela-block/${other.slug}/">${esc(other.title)}</a></li>
+        <li><a href="http://pamelablock.blogspot.com/" rel="noopener">Pam’s blog${icon('external', 'icon icon--ext')}<span class="visually-hidden"> (external site)</span></a></li>
+        <li><a href="mailto:${esc(site.contactEmail)}">${esc(site.contactEmail)}</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>`,
+    `research-page research-page--${r.accent}`,
   );
 }
 
@@ -1040,6 +1143,7 @@ export function allPages() {
     audiobookPage(),
     authorsIndex(),
     ...authors.map(authorPage),
+    ...researchPages.map(researchPage),
     contributorsPage(),
     mediaPage(),
     accessibilityPage(),
