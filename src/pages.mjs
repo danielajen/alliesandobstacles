@@ -597,6 +597,7 @@ function timelinePage() {
       </fieldset>
       <p class="filters__count" aria-live="polite" data-count></p>
     </form>
+    <h2 class="visually-hidden">Events, from the 1930s to today</h2>
     ${timelineList(timeline)}
     <p class="muted small tl-source">Founding dates of parent-led organizations follow Table 5.1 of <cite>Allies and Obstacles</cite>.</p>
   </div>

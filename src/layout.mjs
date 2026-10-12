@@ -83,7 +83,7 @@ ${structuredData(path)}
 </head>
 <body class="${bodyClass}">
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="primary-rule" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="primary-rule" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="brand" href="/"${path === '/' ? ' aria-current="page"' : ''}>

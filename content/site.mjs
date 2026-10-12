@@ -33,8 +33,8 @@ export const books = [
     accent: 'red',
     // Set to e.g. 'assets/covers/allies-and-obstacles.jpg' once Pam confirms we
     // may show the cover. Until then a typographic cover is drawn instead.
-    coverImage: null, // CONFIRM
-    coverAlt: 'Cover of Allies and Obstacles',
+    coverImage: 'assets/covers/allies-and-obstacles.jpg',
+    coverAlt: 'Cover of Allies and Obstacles: a painted red heart outlined in blue over a sweep of green, splattered with red, blue, and yellow paint',
     hook: 'When parents fight for their disabled children, whose voice leads?',
     lccn: '2019042677',
     summary: [
@@ -73,8 +73,8 @@ export const books = [
     published: 'June 2025',
     pages: 188,
     accent: 'blue',
-    coverImage: null, // CONFIRM
-    coverAlt: 'Cover of Family and Disability Activism',
+    coverImage: 'assets/covers/family-and-disability-activism.jpg',
+    coverAlt: 'Cover of Family and Disability Activism: a painting of a baby with medical tubes asleep in a green bassinet, in a room with flower pictures and a giraffe growth chart',
     hook: 'BIPOC and LGBTQIA2S+ disabled activists and families, in their own words.',
     summary: [
       '*Family and Disability Activism* picks up where *Allies and Obstacles* left off. Instead of studying four disability communities from the outside, it gathers first-person, cross-disability stories from disabled people and family members who identify as BIPOC and/or LGBTQIA2S+.',
