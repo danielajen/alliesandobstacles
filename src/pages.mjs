@@ -1011,10 +1011,12 @@ function contributorCard(c, accent) {
       ${avatar(c, accent)}
       <div>
         <h3>${esc(c.name)}</h3>
+        ${c.pronouns ? `<p class="contrib-card__pronouns">${esc(c.pronouns)}</p>` : ''}
         ${c.chapter ? `<p class="contrib-card__chapter">${esc(c.chapter)}</p>` : ''}
       </div>
     </div>
-    ${c.bio ? `<p>${rich(c.bio)}</p>` : ''}
+    ${c.note ? `<p class="contrib-card__note">${esc(c.note)}</p>` : ''}
+    ${c.bio ? `<p class="contrib-card__bio">${rich(c.bio)}</p>` : ''}
     ${c.links?.length ? `<ul class="link-list" role="list">${join(c.links, (l) => `<li>${link(l.url, esc(l.label))}</li>`)}</ul>` : ''}
     ${
       c.updates?.length

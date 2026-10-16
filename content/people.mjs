@@ -134,17 +134,45 @@ export const authors = [
 //   photo:    'assets/img/firstname-lastname.jpg'  (+ photoAlt)
 //   links:    [{ label: 'Website', url: 'https://…' }]
 //   updates:  [{ date: '2026-10-01', text: 'New article out in …', url: 'https://…' }]
+//   pronouns: 'she/her'
+//   note:     'A short line to highlight, e.g. "Currently looking for employment."'
+// Bios and photo descriptions are the contributors' own words; keep them verbatim.
 export const contributors = [
   { name: 'Diane Compton' },
   { name: 'Erin Compton' },
   { name: 'Jaclyn Ellis' },
   { name: 'Laura LeBrun Hatcher' },
   { name: 'Elena Hung' },
-  { name: 'Bridget Liang' },
+  {
+    // Sent Oct 14, 2026. Pam confirmed it's fine to say Bridget is looking for work.
+    name: 'Bridget Liang',
+    pronouns: 'they/them',
+    bio: "Bridget Liang is a mixed race, queer, transfeminine, AuDHD, disabled, fat fangirl. They came into their queerness in Hamilton Ontario and co-founded RADAR Youth Group at the LGBTQ Wellness Centre (the Well), the first queer group in a high school in Hamilton, and were instrumental in the passing of an equity policy in the HWDSB. Over the years, they've worked in social services, community research, and given consultations, talks, and workshops on a variety of issues related to DEI including queer, trans, and disability inclusion. They're a PhD candidate in the Gender, Feminist, and Women's Studies Program at York University, a community researcher, workshop and group facilitator, performance artist, and fiction writer.",
+    note: 'Currently looking for employment.',
+    photo: 'assets/img/contributors/bridget-liang.jpg',
+    photoAlt: 'A pink haired mixed race person wearing turquoise cats eye glasses is staring at the camera with an orange cat under their chin. They are laying on their stomach on a couch and a purple shirt can be seen.',
+    links: [
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/bridge-liang/' },
+      { label: 'Goodreads author page', url: 'https://www.goodreads.com/author/show/17203855.Bridget_Liang' },
+      { label: 'Academia.edu (York University)', url: 'https://yorku.academia.edu/BridgetLiang' },
+    ],
+  },
   { name: 'Jenelle Rouse' },
   { name: 'Cheryl Najarian Souza' },
   { name: 'Jeneva Stone' },
   { name: 'Roger A. Stone' },
-  { name: 'Lisette E. Torres' },
+  {
+    // Sent Oct 2026. Asked to be listed as Lisette E. Torres (publishing name).
+    name: 'Lisette E. Torres',
+    pronouns: 'she/her/ella',
+    bio: 'Lisette E. Torres is a trained scientist and disabled scholar who is a Senior Researcher at TERC, a math and science education non-profit. Her research is focused on the intersection of race and disability in science and higher education. Dr. Torres is a co-founder of Sines of Disability and serves as a member of the AAAS Multidisciplinary Working Group on Disability Inclusion and Anti-Ableism in STEMM. She has a doctorate with a Certificate in Social Justice from the School of Education at Iowa State University, a M.S. in Zoology with a Certificate in Ecology from Miami University, and a B.A. in Earth and Environmental Science and Religion Studies (double-major) from Lehigh University.',
+    photo: 'assets/img/contributors/lisette-torres.jpg',
+    photoAlt: 'A tan Latina with short, curly, dark brown hair and glasses smiling and wearing a black dress shirt with yellow flowers.',
+    links: [
+      { label: 'Sines of Disability', url: 'https://sinesofdisability.com/' },
+      { label: 'LinkedIn', url: 'https://www.linkedin.com/in/lisette-torres-gerald-15721084/' },
+      { label: 'TERC profile', url: 'https://www.terc.edu/profiles/lisette-torres-gerald/' },
+    ],
+  },
   { name: 'Grace Tsao' },
 ];

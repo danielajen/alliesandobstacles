@@ -817,6 +817,11 @@ a.download:hover { border-color: var(--blue); box-shadow: var(--shadow); transfo
 .contrib-card__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
 .contrib-card__head .avatar { width: 3.5rem; height: 3.5rem; font-size: 1.1rem; }
 .contrib-card h3 { margin: 0; font-size: 1.25rem; }
+.contrib-card__pronouns { color: var(--muted); font-size: 0.9rem; font-weight: 700; margin: 0.15rem 0 0; }
+.contrib-card__note { display: inline-block; font-size: 0.88rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 999px; background: var(--yellow-soft); border: 1px solid var(--yellow-line); margin: 0 0 0.9rem; }
+.contrib-card__bio { font-size: 0.97rem; }
+.contrib-card .avatar { flex: none; }
+.contrib-card__head img.avatar { width: 5rem; height: 5rem; }
 .contrib-card__chapter { color: var(--muted); font-size: 0.92rem; margin: 0.2rem 0 0; font-style: italic; }
 .contrib-card__soon { color: var(--muted); font-size: 0.95rem; margin: 0; }
 .contrib-card__updates { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid var(--line); font-size: 0.95rem; }
