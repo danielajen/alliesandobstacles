@@ -1,3 +1,5 @@
+import { statSync } from 'node:fs';
+import { join as join_ } from 'node:path';
 import { site, books, media, mediaTypes } from '../content/site.mjs';
 import { authors, contributors } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
@@ -7,6 +9,7 @@ import { esc, rich, join, link, icon, cover, button, avatar, sectionHead, breadc
 
 // `has(file)` is injected by the build so pages know whether a download exists.
 let has = () => false;
+const ASSETS = new URL('../assets/', import.meta.url).pathname;
 export const setFileCheck = (fn) => (has = fn);
 
 const bookBySlug = Object.fromEntries(books.map((b) => [b.slug, b]));
@@ -45,19 +48,22 @@ function mediaSection(bookSlug, types, title, id) {
   </section>`;
 }
 
-function download(file, label, note = '') {
-  const ext = file.split('.').pop().toUpperCase();
-  if (has(file)) {
-    return `<a class="download" href="/assets/${esc(file)}" download>
+function download(file, label, note = '', { url = null, ext = null, size = null } = {}) {
+  const kind = (ext || (file || url).split('.').pop()).toUpperCase();
+  const href = url || (file && has(file) ? `/assets/${file}` : null);
+  const bytes = !url && file && has(file) ? statSync(join_(ASSETS, file)).size : null;
+  const sz = size || (bytes ? `${bytes >= 1e6 ? Math.round(bytes / 1e6) + ' MB' : Math.max(1, Math.round(bytes / 1e3)) + ' KB'}` : '');
+  if (href) {
+    return `<a class="download" href="${esc(href)}"${url ? '' : ' download'}>
       <span class="download__icon">${icon('download')}</span>
       <span class="download__text"><span class="download__label">${esc(label)}</span>${note ? `<span class="download__note">${esc(note)}</span>` : ''}</span>
-      <span class="download__ext">${ext}</span>
+      <span class="download__ext">${kind}${sz ? `<span class="download__size">${sz}</span>` : ''}</span>
     </a>`;
   }
   return `<div class="download download--soon">
     <span class="download__icon">${icon('download')}</span>
     <span class="download__text"><span class="download__label">${esc(label)}</span><span class="download__note">Coming soon — check back shortly.</span></span>
-    <span class="download__ext">${ext}</span>
+    <span class="download__ext">${kind}</span>
   </div>`;
 }
 
@@ -710,7 +716,7 @@ function audiobookPage() {
     <h2 id="download-h" class="step-h"><span class="step-h__n" aria-hidden="true">1</span>Download the book</h2>
     ${audiobook.narration || audiobook.runtime ? `<p class="meta-line">${[audiobook.narration, audiobook.runtime].filter(Boolean).map(esc).join(' · ')}</p>` : ''}
     <p>Not sure which to pick? Choose the <strong>ZIP</strong> — it works everywhere.</p>
-    <div class="download-list">${join(audiobook.fullDownloads, (d) => download(d.file, d.label, d.note))}</div>
+    <div class="download-list">${join(audiobook.fullDownloads, (d) => download(d.file, d.label, d.note, d))}</div>
 
     <h3 id="chapters-h" class="sub-h">Chapters</h3>
     ${

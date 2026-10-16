@@ -8,28 +8,40 @@
 
 export const audiobook = {
   book: 'family-and-disability-activism',
-  narration: null, // e.g. 'Read by the contributors'  // CONFIRM
-  runtime: null, // e.g. '6 hr 40 min'
+  narration: null, // e.g. 'Read by …'  // CONFIRM with Pam who read each chapter
+  runtime: '7 hr 49 min',
 
-  // The whole book in one download — the easiest option for most listeners.
+  // The whole book in one download. These are too large for GitHub Pages, so
+  // they live on the repository's GitHub Release and are linked by URL.
   fullDownloads: [
     {
       label: 'Whole book, chapter by chapter (MP3, zipped)',
-      file: 'downloads/audiobook/family-and-disability-activism-mp3.zip',
-      note: 'Works with every player. Unzip it, or open it straight in BookPlayer / Smart AudioBook Player.',
+      url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism-mp3.zip',
+      ext: 'ZIP',
+      size: '386 MB',
+      note: 'Works with every player. Unzip it, or open it straight in BookPlayer / Smart AudioBook Player. Includes the references and image descriptions.',
     },
     {
       label: 'Whole book as a single audiobook file (M4B)',
-      file: 'downloads/audiobook/family-and-disability-activism.m4b',
+      url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism.m4b',
+      ext: 'M4B',
+      size: '233 MB',
       note: 'Keeps your place and shows chapters in Apple Books, BookPlayer and most audiobook apps.',
     },
   ],
 
-  // One entry per track. File names are suggestions — match whatever is recorded.
+  // One entry per chapter, in book order (titles from the Temple University Press contents).
   tracks: [
-    { title: 'Opening credits and dedication', file: 'downloads/audiobook/00-opening.mp3' },
-    { title: 'Introduction', file: 'downloads/audiobook/01-introduction.mp3' },
-    // { title: 'Chapter 1 — …', file: 'downloads/audiobook/02-chapter-1.mp3' },
+    { title: 'Introduction', file: 'downloads/audiobook/00-introduction.mp3' },
+    { title: 'Chapter 1: Familial Relationships in Asian American Disability Advocacy and Activism', file: 'downloads/audiobook/01-chapter-1.mp3' },
+    { title: 'Chapter 2: Learnings from My Mother’s Couch Corner: Becoming a Latina Disability Activist', file: 'downloads/audiobook/02-chapter-2.mp3' },
+    { title: 'Chapter 3: Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs', file: 'downloads/audiobook/03-chapter-3.mp3' },
+    { title: 'Chapter 4: Empathy Deficits among Neurotypicals', file: 'downloads/audiobook/04-chapter-4.mp3' },
+    { title: 'Chapter 5: Black Deaf Ordinary Who Deliberately Signs', file: 'downloads/audiobook/05-chapter-5.mp3' },
+    { title: 'Chapter 6: Intersections of Deafness, Blindness, Deafblindness, and Gender', file: 'downloads/audiobook/06-chapter-6.mp3' },
+    { title: 'Chapter 7: Aging Out of Children’s Hospitals', file: 'downloads/audiobook/07-chapter-7.mp3' },
+    { title: 'Chapter 8: Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice', file: 'downloads/audiobook/08-chapter-8.mp3' },
+    { title: 'Chapter 9: How to Do Limitless Lifelong Self-Determination', file: 'downloads/audiobook/09-chapter-9.mp3' },
   ],
 };
 
@@ -37,7 +49,7 @@ export const accessibleResources = [
   {
     title: 'References and image descriptions',
     description:
-      'Every reference cited in Family and Disability Activism, together with full text descriptions of the book’s figures and tables. Made to be read alongside the audiobook or with a screen reader.',
+      'Every reference cited in Family and Disability Activism, chapter by chapter, together with full text descriptions of the cover and of the book’s figures and tables. Prepared by Dina Dwairi. Made to be read alongside the audiobook or with a screen reader.',
     files: [
       { label: 'Word document (.docx)', file: 'downloads/family-and-disability-activism-references-and-image-descriptions.docx' },
       { label: 'PDF', file: 'downloads/family-and-disability-activism-references-and-image-descriptions.pdf' },

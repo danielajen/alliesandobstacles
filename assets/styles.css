@@ -932,3 +932,5 @@ html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='
 .fda-toc__a { margin: 0.2rem 0 0; color: var(--muted); font-style: italic; font-size: 0.95rem; }
 .fda-toc__a a { color: inherit; }
 .fda-toc__p { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+
+.download__size { display: block; font-size: 0.72rem; font-weight: 600; opacity: 0.75; margin-top: 0.1rem; }
