@@ -2,7 +2,7 @@ import { site, books, media, mediaTypes } from '../content/site.mjs';
 import { authors, contributors } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
 import { research as researchPages } from '../content/research.mjs';
-import { parts, keyIdeas, allianceFrames, language, research, timeline, timelineKinds, cite } from '../content/book.mjs';
+import { parts, keyIdeas, allianceFrames, language, research, timeline, timelineKinds, cite, fdaContents } from '../content/book.mjs';
 import { esc, rich, join, link, icon, cover, button, avatar, sectionHead, breadcrumbs } from './components.mjs';
 
 // `has(file)` is injected by the build so pages know whether a download exists.
@@ -536,6 +536,19 @@ ${bookHead(b)}
       )}</div>
     </section>
 
+    <section class="block" aria-labelledby="toc-h">
+      <h2 id="toc-h" class="block__h">Contents</h2>
+      <ol class="fda-toc" role="list">${join(fdaContents, (c) => {
+        const who = c.authors.map((a) => {
+          const author = authors.find((x) => x.name === a);
+          const href = author ? `/authors/${author.slug}/` : contributors.some((x) => x.name === a) ? `/contributors/#${slugify(a)}` : null;
+          return href ? `<a href="${href}">${esc(a)}</a>` : esc(a);
+        });
+        const names = who.length > 2 ? `${who.slice(0, -1).join(', ')}, and ${who.at(-1)}` : who.join(' and ');
+        return `<li><span class="fda-toc__n">${c.n ? `${c.n}` : ''}</span><div><p class="fda-toc__t">${esc(c.title)}</p><p class="fda-toc__a">${names}</p></div><span class="fda-toc__p"><span class="visually-hidden">page </span>${c.page}</span></li>`;
+      })}</ol>
+    </section>
+
     <section class="block" aria-labelledby="contrib-h">
       <h2 id="contrib-h" class="block__h">Contributors</h2>
       <ul class="name-cloud name-cloud--in" role="list">${join(contributors, (c, i) => `<li><a href="/contributors/#${slugify(c.name)}">${avatar(c, ACCENTS[i % 3])}<span>${esc(c.name)}</span></a></li>`)}</ul>
@@ -954,7 +967,7 @@ function contributorsPage() {
   const updates = contributors
     .flatMap((c) => (c.updates || []).map((u) => ({ ...u, who: c })))
     .sort((x, y) => String(y.date).localeCompare(String(x.date)));
-  const hasProfile = (c) => c.bio || c.links?.length || c.updates?.length || c.chapter;
+  const hasProfile = (c) => c.bio || c.links?.length || c.updates?.length;
   const profiled = contributors.filter(hasProfile);
   const pending = contributors.filter((c) => !hasProfile(c));
   const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -996,7 +1009,7 @@ ${
         ? `<div class="contrib-more">
       <h2 id="more-h">Also in this volume</h2>
       <p>Profiles are added as contributors send them in.</p>
-      <ul class="contrib-names" role="list" aria-labelledby="more-h">${join(pending, (c) => `<li id="${slugify(c.name)}">${esc(c.name)}</li>`)}</ul>
+      <ul class="contrib-names" role="list" aria-labelledby="more-h">${join(pending, (c) => `<li id="${slugify(c.name)}"><strong>${esc(c.name)}</strong>${c.chapter ? chapterLine(c.chapter) : ''}</li>`)}</ul>
     </div>`
         : ''
     }
@@ -1015,6 +1028,12 @@ ${
   );
 }
 
+// "4. Title" → "Chapter 4" label plus the title in italics, as the press prints it
+function chapterLine(ch) {
+  const m = ch.match(/^(\d+)\.\s*(.*)$/);
+  return `<p class="contrib-card__chapter">${m ? `<span>Chapter ${m[1]}</span> ` : ''}<cite>${esc(m ? m[2] : ch)}</cite></p>`;
+}
+
 function contributorCard(c, accent) {
   const id = slugify(c.name);
   return `<li class="contrib-card reveal" id="${id}">
@@ -1022,7 +1041,7 @@ function contributorCard(c, accent) {
     <div class="contrib-card__body">
       <h3>${esc(c.name)}</h3>
       ${c.pronouns ? `<p class="contrib-card__pronouns">${esc(c.pronouns)}</p>` : ''}
-      ${c.chapter ? `<p class="contrib-card__chapter">${esc(c.chapter)}</p>` : ''}
+      ${c.chapter ? chapterLine(c.chapter) : ''}
     ${c.note ? `<p class="contrib-card__note">${esc(c.note)}</p>` : ''}
     ${c.bio ? `<p class="contrib-card__bio">${rich(c.bio)}</p>` : ''}
     ${c.links?.length ? `<ul class="contrib-card__links" role="list" aria-label="${esc(c.name)} online">${join(c.links, (l) => `<li>${link(l.url, esc(l.label))}</li>`)}</ul>` : ''}

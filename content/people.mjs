@@ -129,7 +129,7 @@ export const authors = [
 
 // ─── Chapter authors for Family and Disability Activism ──────────────────────
 // Only `name` is required. Add as the volunteer collects information:
-//   chapter:  'Chapter title'
+//   chapter:  'N. Chapter title' (from the Temple University Press table of contents)
 //   bio:      'One or two sentences, in their own words.'
 //   photo:    'assets/img/firstname-lastname.jpg'  (+ photoAlt)
 //   links:    [{ label: 'Website', url: 'https://…' }]
@@ -138,14 +138,15 @@ export const authors = [
 //   note:     'A short line to highlight, e.g. "Currently looking for employment."'
 // Bios and photo descriptions are the contributors' own words; keep them verbatim.
 export const contributors = [
-  { name: 'Diane Compton' },
-  { name: 'Erin Compton' },
-  { name: 'Jaclyn Ellis' },
-  { name: 'Laura LeBrun Hatcher' },
-  { name: 'Elena Hung' },
+  { name: 'Diane Compton', chapter: '9. How to Do Limitless Lifelong Self-Determination' },
+  { name: 'Erin Compton', chapter: '9. How to Do Limitless Lifelong Self-Determination' },
+  { name: 'Jaclyn Ellis', chapter: '3. Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs' },
+  { name: 'Laura LeBrun Hatcher', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
+  { name: 'Elena Hung', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   {
     // Sent Oct 14, 2026. Pam confirmed it's fine to say Bridget is looking for work.
     name: 'Bridget Liang',
+    chapter: '4. Empathy Deficits among Neurotypicals',
     pronouns: 'they/them',
     bio: "Bridget Liang is a mixed race, queer, transfeminine, AuDHD, disabled, fat fangirl. They came into their queerness in Hamilton Ontario and co-founded RADAR Youth Group at the LGBTQ Wellness Centre (the Well), the first queer group in a high school in Hamilton, and were instrumental in the passing of an equity policy in the HWDSB. Over the years, they've worked in social services, community research, and given consultations, talks, and workshops on a variety of issues related to DEI including queer, trans, and disability inclusion. They're a PhD candidate in the Gender, Feminist, and Women's Studies Program at York University, a community researcher, workshop and group facilitator, performance artist, and fiction writer.",
     note: 'Currently looking for employment.',
@@ -157,13 +158,14 @@ export const contributors = [
       { label: 'Academia.edu (York University)', url: 'https://yorku.academia.edu/BridgetLiang' },
     ],
   },
-  { name: 'Jenelle Rouse' },
-  { name: 'Cheryl Najarian Souza' },
-  { name: 'Jeneva Stone' },
-  { name: 'Roger A. Stone' },
+  { name: 'Jenelle Rouse', chapter: '5. Black Deaf Ordinary Who Deliberately Signs' },
+  { name: 'Cheryl Najarian Souza', chapter: '6. Intersections of Deafness, Blindness, Deafblindness, and Gender: The Deaf Community, Blindness, and Deafblind Activism in Families' },
+  { name: 'Jeneva Stone', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
+  { name: 'Roger A. Stone', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   {
     // Sent Oct 2026. Asked to be listed as Lisette E. Torres (publishing name).
     name: 'Lisette E. Torres',
+    chapter: '2. Learnings from My Mother’s Couch Corner: Becoming a Latina Disability Activist',
     pronouns: 'she/her/ella',
     bio: 'Lisette E. Torres is a trained scientist and disabled scholar who is a Senior Researcher at TERC, a math and science education non-profit. Her research is focused on the intersection of race and disability in science and higher education. Dr. Torres is a co-founder of Sines of Disability and serves as a member of the AAAS Multidisciplinary Working Group on Disability Inclusion and Anti-Ableism in STEMM. She has a doctorate with a Certificate in Social Justice from the School of Education at Iowa State University, a M.S. in Zoology with a Certificate in Ecology from Miami University, and a B.A. in Earth and Environmental Science and Religion Studies (double-major) from Lehigh University.',
     photo: 'assets/img/contributors/lisette-torres.jpg',
@@ -174,5 +176,5 @@ export const contributors = [
       { label: 'TERC profile', url: 'https://www.terc.edu/profiles/lisette-torres-gerald/' },
     ],
   },
-  { name: 'Grace Tsao' },
+  { name: 'Grace Tsao', chapter: '1. Familial Relationships in Asian American Disability Advocacy and Activism' },
 ];

@@ -817,7 +817,9 @@ a.download:hover { border-color: var(--blue); box-shadow: var(--shadow); transfo
 .contrib-card__photo .avatar { width: 9rem; height: 9rem; font-size: 2rem; border-radius: 50%; object-fit: cover; }
 .contrib-card h3 { margin: 0; font-size: clamp(1.35rem, 2.4vw, 1.6rem); }
 .contrib-card__pronouns { color: var(--muted); font-size: 0.92rem; font-weight: 700; margin: 0.2rem 0 0; }
-.contrib-card__chapter { color: var(--muted); font-size: 0.95rem; margin: 0.3rem 0 0; font-style: italic; }
+.contrib-card__chapter { color: var(--muted); font-size: 0.95rem; line-height: 1.45; margin: 0.35rem 0 0; }
+.contrib-card__chapter span { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.contrib-names .contrib-card__chapter { font-size: 0.88rem; font-weight: 400; margin-top: 0.3rem; }
 .contrib-card__note { display: inline-block; font-size: 0.9rem; font-weight: 700; padding: 0.3rem 0.8rem; border-radius: 999px; background: var(--yellow-soft); border: 1px solid var(--yellow-line); margin: 0.85rem 0 0; }
 .contrib-card__bio { font-size: 1rem; line-height: 1.7; margin: 1rem 0 0; max-width: 68ch; }
 .contrib-card__links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.1rem 0 0; padding: 0; list-style: none; }
@@ -830,7 +832,7 @@ a.download:hover { border-color: var(--blue); box-shadow: var(--shadow); transfo
 .contrib-more { max-width: 62rem; margin: clamp(2.5rem, 6vw, 4rem) auto 0; }
 .contrib-more h2 { font-size: 1.4rem; margin: 0 0 0.35rem; }
 .contrib-more > p { color: var(--muted); margin: 0 0 1rem; }
-.contrib-names { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); gap: 0.6rem; padding: 0; list-style: none; }
+.contrib-names { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: 0.6rem; padding: 0; list-style: none; }
 .contrib-names li { padding: 0.75rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-sm, 10px); font-weight: 700; scroll-margin-top: 6rem; }
 .contrib-names li:target { outline: 3px solid var(--yellow); outline-offset: 2px; }
 .contrib-card__updates { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid var(--line); font-size: 0.95rem; }
@@ -921,3 +923,12 @@ html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='
   .download__ext { grid-column: 2; justify-self: start; }
   .stat dd { font-size: 1.5rem; }
 }
+
+/* ---------------------------------------------------------- FDA contents */
+.fda-toc { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.fda-toc li { display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: 0.25rem 0.9rem; align-items: baseline; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+.fda-toc__n { font-family: var(--serif, Georgia, serif); font-weight: 700; color: var(--muted); }
+.fda-toc__t { margin: 0; font-weight: 700; line-height: 1.4; }
+.fda-toc__a { margin: 0.2rem 0 0; color: var(--muted); font-style: italic; font-size: 0.95rem; }
+.fda-toc__a a { color: inherit; }
+.fda-toc__p { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92rem; }
