@@ -954,6 +954,9 @@ function contributorsPage() {
   const updates = contributors
     .flatMap((c) => (c.updates || []).map((u) => ({ ...u, who: c })))
     .sort((x, y) => String(y.date).localeCompare(String(x.date)));
+  const hasProfile = (c) => c.bio || c.links?.length || c.updates?.length || c.chapter;
+  const profiled = contributors.filter(hasProfile);
+  const pending = contributors.filter((c) => !hasProfile(c));
   const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
   return page(
@@ -986,8 +989,17 @@ ${
 
 <section class="section section--flush-top" aria-labelledby="all-h">
   <div class="wrap">
-    <h2 id="all-h" class="visually-hidden">All contributors</h2>
-    <ul class="contrib-grid" role="list">${join(contributors, (c, i) => contributorCard(c, ACCENTS[i % 3]))}</ul>
+    <h2 id="all-h" class="visually-hidden">Contributor profiles</h2>
+    <ul class="contrib-list" role="list">${join(profiled, (c, i) => contributorCard(c, ACCENTS[i % 3]))}</ul>
+    ${
+      pending.length
+        ? `<div class="contrib-more">
+      <h2 id="more-h">Also in this volume</h2>
+      <p>Profiles are added as contributors send them in.</p>
+      <ul class="contrib-names" role="list" aria-labelledby="more-h">${join(pending, (c) => `<li id="${slugify(c.name)}">${esc(c.name)}</li>`)}</ul>
+    </div>`
+        : ''
+    }
   </div>
 </section>
 
@@ -1005,19 +1017,15 @@ ${
 
 function contributorCard(c, accent) {
   const id = slugify(c.name);
-  const empty = !c.bio && !c.links?.length && !c.updates?.length && !c.chapter;
   return `<li class="contrib-card reveal" id="${id}">
-    <div class="contrib-card__head">
-      ${avatar(c, accent)}
-      <div>
-        <h3>${esc(c.name)}</h3>
-        ${c.pronouns ? `<p class="contrib-card__pronouns">${esc(c.pronouns)}</p>` : ''}
-        ${c.chapter ? `<p class="contrib-card__chapter">${esc(c.chapter)}</p>` : ''}
-      </div>
-    </div>
+    <div class="contrib-card__photo">${avatar(c, accent)}</div>
+    <div class="contrib-card__body">
+      <h3>${esc(c.name)}</h3>
+      ${c.pronouns ? `<p class="contrib-card__pronouns">${esc(c.pronouns)}</p>` : ''}
+      ${c.chapter ? `<p class="contrib-card__chapter">${esc(c.chapter)}</p>` : ''}
     ${c.note ? `<p class="contrib-card__note">${esc(c.note)}</p>` : ''}
     ${c.bio ? `<p class="contrib-card__bio">${rich(c.bio)}</p>` : ''}
-    ${c.links?.length ? `<ul class="link-list" role="list">${join(c.links, (l) => `<li>${link(l.url, esc(l.label))}</li>`)}</ul>` : ''}
+    ${c.links?.length ? `<ul class="contrib-card__links" role="list" aria-label="${esc(c.name)} online">${join(c.links, (l) => `<li>${link(l.url, esc(l.label))}</li>`)}</ul>` : ''}
     ${
       c.updates?.length
         ? `<div class="contrib-card__updates"><p class="mini-h">Updates</p><ul role="list">${join(
@@ -1026,7 +1034,7 @@ function contributorCard(c, accent) {
           )}</ul></div>`
         : ''
     }
-    ${empty ? `<p class="contrib-card__soon">Contributor to <cite>${esc(FDA.short)}</cite>. Profile and links coming soon.</p>` : ''}
+    </div>
   </li>`;
 }
 
