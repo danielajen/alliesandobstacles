@@ -176,5 +176,18 @@ export const contributors = [
       { label: 'TERC profile', url: 'https://www.terc.edu/profiles/lisette-torres-gerald/' },
     ],
   },
-  { name: 'Grace Tsao', chapter: '1. Familial Relationships in Asian American Disability Advocacy and Activism' },
+  {
+    // Sent Oct 2026. Will send news/updates later.
+    name: 'Grace Tsao',
+    chapter: '1. Familial Relationships in Asian American Disability Advocacy and Activism',
+    pronouns: 'she/her',
+    bio: 'Grace Tsao spent her career in higher education, non-profit, and state government working in different roles including teaching, research, and grant writing. She has served on numerous boards and councils. She has a B.S. in News-Editorial Journalism from the University of Illinois at Urbana-Champaign, an M.S. in Cultural Foundations of Education with a concentration in Multicultural Education from the University of Wisconsin at Milwaukee, and an M.A. in Sociology from Loyola University Chicago focusing on race, gender, and disability. Grace has muscular dystrophy and uses a power wheelchair.',
+    photo: 'assets/img/contributors/grace-tsao.jpg',
+    photoAlt: 'An East Asian American woman with dark hair, hoop earrings, and a pink top.',
+    links: [
+      { label: 'Struggling in the Dark', url: 'https://wesurvivetogetherchicago.org/testimonials-of-disabled-people-in-chicago-illinois/struggling-in-the-dark/' },
+      { label: 'Growing up Asian American with a Disability', url: 'https://disabilityvisibilityproject.com/2016/02/21/guest-blog-post-growing-up-asian-american-with-a-disability-by-grace-tsao/' },
+      { label: 'Linktree', url: 'https://linktr.ee/gracetsao' },
+    ],
+  },
 ];

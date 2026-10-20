@@ -725,7 +725,7 @@ function audiobookPage() {
     <ol class="tracks">${join(
       tracksReady,
       (t) => `<li class="track">
-        <span class="track__title">${esc(t.title)}</span>
+        <span class="track__title">${esc(t.title)}${t.reader ? `<span class="track__reader">Read by ${esc(t.reader)}</span>` : ''}</span>
         <audio controls preload="none" src="/assets/${esc(t.file)}" aria-label="Play: ${esc(t.title)}"></audio>
         <a class="track__dl" href="/assets/${esc(t.file)}" download>${icon('download')}<span>Download<span class="visually-hidden"> ${esc(t.title)}</span></span></a>
       </li>`,
@@ -734,6 +734,17 @@ function audiobookPage() {
     }
   </div>
 </section>
+
+${
+  audiobook.credits?.length
+    ? `<section class="section section--flush-top" aria-labelledby="credits-h">
+  <div class="wrap narrow">
+    <h3 id="credits-h" class="sub-h">Audiobook credits</h3>
+    <dl class="credits">${join(audiobook.credits, (c) => `<div><dt>${esc(c.role)}</dt><dd>${esc(c.names.join(', '))}</dd></div>`)}</dl>
+  </div>
+</section>`
+    : ''
+}
 
 <section class="section section--tint" aria-labelledby="devices-h">
   <div class="wrap narrow">
