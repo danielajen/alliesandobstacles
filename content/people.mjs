@@ -122,7 +122,6 @@ export const authors = [
       { label: 'UT Dallas faculty profile and publications', url: 'https://profiles.utdallas.edu/richard.scotch' },
       { label: 'UT Dallas News: remembering Richard Scotch', url: 'https://news.utdallas.edu/faculty-staff/richard-scotch-tribute-2026/' },
       { label: 'Colleagues reminisce about Dr. Richard Scotch', url: 'https://provost.utdallas.edu/2026/07/03/colleagues-reminisce-about-a-legend-dr-richard-scotch/' },
-      { label: 'Obituary', url: 'https://www.ariacremation.com/obituaries/richard-scotch' },
     ],
   },
 ];
