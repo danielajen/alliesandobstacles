@@ -11,7 +11,7 @@ export const site = {
   tagline: 'Two books on disability, family, and the long work of activism.',
   description:
     'The home of Allies and Obstacles and Family and Disability Activism, by Pamela Block, Allison C. Carey, and Richard K. Scotch. Where to buy, reviews, podcasts, study guides, a free audiobook, and news from our contributors.',
-  // Shown in the footer and on the tribute page ("share a memory").
+  // Shown in the footer.
   contactEmail: 'pblock@uwo.ca', // CONFIRM: which address Pam wants public
   publisher: {
     name: 'Temple University Press',

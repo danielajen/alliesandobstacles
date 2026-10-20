@@ -482,15 +482,10 @@ img.cover::after { content: none; }
 
 .memorial-card {
   display: grid; grid-template-columns: auto 1fr; gap: 1.5rem 2.25rem; align-items: start;
-  background: var(--band); color: var(--band-ink); border-radius: var(--radius); padding: clamp(1.9rem, 4vw, 3rem);
-  position: relative; overflow: hidden;
+  background: var(--card); color: var(--ink); border: 1px solid var(--line); border-left: 5px solid var(--yellow); border-radius: var(--radius); padding: clamp(1.9rem, 4vw, 3rem);
 }
-.memorial-card::after { content: ''; position: absolute; right: -4rem; bottom: -4rem; width: 16rem; height: 16rem; border-radius: 50%; background: radial-gradient(closest-side, rgb(244 191 29 / 18%), transparent); }
-.memorial-card h2 { color: #fff; }
-.memorial-card p { max-width: 46rem; color: var(--band-muted); }
-.memorial-card .eyebrow { color: var(--band-muted); }
-.memorial-card a { color: var(--yellow); }
-.memorial-card__candle { width: 4rem; height: 4rem; border-radius: 50%; border: 2px solid var(--yellow); color: var(--yellow); display: grid; place-items: center; }
+.memorial-card p { max-width: 46rem; }
+.memorial-card__candle { width: 4rem; height: 4rem; border-radius: 50%; border: 2px solid var(--yellow-line); background: var(--yellow-soft); color: var(--ink); display: grid; place-items: center; }
 .memorial-card__candle .icon { width: 2rem; height: 2rem; }
 @media (max-width: 36rem) { .memorial-card { grid-template-columns: minmax(0, 1fr); } }
 
@@ -781,11 +776,7 @@ a.download:hover { border-color: var(--blue); box-shadow: var(--shadow); transfo
 .person-head .avatar { width: 8rem; height: 8rem; font-size: 2.6rem; }
 .person-head__life { font-family: var(--serif); font-size: 1.45rem; margin: -0.25rem 0 0.75rem; }
 @media (max-width: 36rem) { .person-head { flex-direction: column-reverse; align-items: flex-start; } .person-head .avatar { width: 5rem; height: 5rem; font-size: 1.6rem; } }
-.page-head--tribute { background: var(--band); color: var(--band-ink); }
-.page-head--tribute h1 { color: #fff; }
-.page-head--tribute .page-head__lede, .page-head--tribute .eyebrow, .page-head--tribute .crumbs a { color: var(--band-muted); }
-.page-head--tribute .crumbs a[aria-current] { color: #fff; }
-.page-head--tribute .avatar { box-shadow: 0 0 0 5px var(--band), 0 0 0 7px var(--yellow); }
+.page-head--tribute .avatar { box-shadow: 0 0 0 5px var(--paper), 0 0 0 7px var(--yellow); }
 .tribute-close { font-family: var(--serif); font-size: 1.35rem; font-style: italic; border-left: 4px solid var(--red-fill); padding-left: 1.25rem; margin-top: 1.75rem; }
 
 .person-body { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; gap: clamp(2rem, 5vw, 4.5rem); padding-block: clamp(2.75rem, 5vw, 4rem); align-items: start; }

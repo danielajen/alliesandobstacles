@@ -166,7 +166,7 @@ function home() {
     <div class="hero__text">
       <p class="eyebrow eyebrow--rule">Pamela Block · Allison C. Carey · Richard K. Scotch</p>
       <h1 class="hero__title">Parents, disabled activists, and the <em>uneasy alliances</em> between them.</h1>
-      <p class="hero__lede">Two award-winning books on seventy years of disability activism — from the parents who built the first national movements in the 1950s to BIPOC and LGBTQIA2S+ families organizing today.</p>
+      <p class="hero__lede">Two books on seventy years of disability activism, including the award-winning <cite>Allies and Obstacles</cite> — from the parents who built the first national movements in the 1950s to BIPOC and LGBTQIA2S+ families organizing today.</p>
       <div class="btn-row">
         ${button('/books/', 'Explore the books', { ic: 'book' })}
         ${button('/audiobook/', 'Free audiobook', { variant: 'ghost', ic: 'headphones' })}
@@ -801,18 +801,24 @@ function authorsIndex() {
   <div class="wrap">
     <ul class="author-grid" role="list">${join(
       authors,
-      (a) => `<li class="author-card author-card--${a.accent}${a.tribute ? ' author-card--tribute' : ''} reveal">
+      (a) => `<li class="author-card author-card--${a.accent} reveal">
         ${avatar(a)}
         ${a.tribute ? `<p class="eyebrow">In memory · ${esc(a.lifespan)}</p>` : ''}
         <h2><a href="/authors/${a.slug}/">${esc(a.name)}</a></h2>
         <p class="author-card__role">${esc(a.role)}</p>
-        <p>${rich(a.bio[a.tribute ? 1 : 0].split('. ')[0].replace(/\.?$/, '.'))}</p>
+        <p>${rich(firstSentence(a.bio[a.tribute ? 1 : 0]))}</p>
         <span class="more-link" aria-hidden="true">${a.tribute ? 'Read the tribute' : 'Full profile'} ${icon('arrow')}</span>
       </li>`,
     )}</ul>
   </div>
 </section>`,
   );
+}
+
+// First sentence of a bio, without stopping at initials such as "Allison C. Carey"
+function firstSentence(text) {
+  const m = text.match(/^.*?[a-z0-9)”’][.!?](?=\s+[A-Z“‘*]|$)/s);
+  return (m ? m[0] : text).trim();
 }
 
 function pubList(pubs) {
@@ -847,14 +853,6 @@ function authorPage(a) {
     <h2 class="visually-hidden">${tribute ? 'His life and work' : 'Biography'}</h2>
     ${join(a.bio, (p, i) => `<p${tribute && i === a.bio.length - 1 ? ' class="tribute-close"' : i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
 
-    ${
-      tribute
-        ? `<div class="callout callout--quiet">
-      <h3>Celebrating his legacy</h3>
-      <p>The University of Texas at Dallas is holding a celebration of Richard’s life and work on October 23, 2026. If you would like to share a memory of Richard with his co-authors, please <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('A memory of Richard Scotch')}">write to us</a>.</p>
-    </div>`
-        : ''
-    }
 
     ${
       a.slug === 'pamela-block'

@@ -33,7 +33,7 @@ export const authors = [
       {
         title: 'Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability',
         detail: 'co-editor with Devva Kasnitz, Akemi Nishida, and Nick Pollard, Springer, 2016',
-        url: null,
+        url: 'https://link.springer.com/book/10.1007/978-94-017-9984-3',
       },
     ],
     links: [
@@ -45,11 +45,11 @@ export const authors = [
     name: 'Allison C. Carey',
     initials: 'AC',
     accent: 'blue',
-    role: 'Professor of Sociology, Shippensburg University',
+    role: 'Professor, Department of Political and Social Inquiry, Shippensburg University',
     photo: null,
     photoAlt: '',
     bio: [
-      'Allison C. Carey is Professor in the Department of Sociology and Anthropology at Shippensburg University in Pennsylvania. Her work examines disability rights, social movements, and the history of how the United States has granted and withheld citizenship from people with intellectual disabilities.',
+      'Allison C. Carey is Professor in the Department of Political and Social Inquiry at Shippensburg University in Pennsylvania. Her work examines disability rights, social movements, and the history of how the United States has granted and withheld citizenship from people with intellectual disabilities.',
       'She grew up engaged with the intellectual disability community through her family and the Arc, and it was her parents\u2019 work to support all of their children that first drew her to these questions.',
       'In 2021 she received the award for an Outstanding Career in the Sociology of Disability from the American Sociological Association’s Section on Disability in Society.',
     ],
