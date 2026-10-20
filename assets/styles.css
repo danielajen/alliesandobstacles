@@ -932,3 +932,16 @@ html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='
 .credits dt { font-weight: 700; }
 .credits dd { margin: 0; }
 @media (max-width: 40rem) { .credits > div { grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------- Occupying Disability contents */
+.od { margin-top: 2.5rem; }
+.od__part { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--card); margin: 0.75rem 0; }
+.od__part > summary { cursor: pointer; padding: 0.9rem 1.1rem; font-weight: 700; list-style-position: inside; }
+.od__part > summary:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.od__part[open] > summary { border-bottom: 1px solid var(--line); }
+.od__part .fda-toc { border-top: 0; padding: 0 1.1rem; }
+.od__part .fda-toc li:last-child { border-bottom: 0; }
+.od__k { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 0.35rem; }
+.od__count { font-weight: 400; color: var(--muted); font-size: 0.9rem; margin-left: 0.35rem; }
+.fda-toc__t a { color: inherit; }
+.fda-toc__a strong { color: var(--ink); font-style: normal; }

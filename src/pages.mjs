@@ -4,6 +4,7 @@ import { site, books, media, mediaTypes } from '../content/site.mjs';
 import { authors, contributors } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
 import { research as researchPages } from '../content/research.mjs';
+import { occupyingDisability as OD } from '../content/occupying.mjs';
 import { parts, keyIdeas, allianceFrames, language, research, timeline, timelineKinds, cite, fdaContents } from '../content/book.mjs';
 import { esc, rich, join, link, icon, cover, button, avatar, sectionHead, breadcrumbs } from './components.mjs';
 
@@ -821,6 +822,29 @@ function firstSentence(text) {
   return (m ? m[0] : text).trim();
 }
 
+// Occupying Disability contents, set out like the Family and Disability Activism contents
+function odContents() {
+  const names = (list) => {
+    const who = list.map((n) => (n === 'Pamela Block' ? `<strong>${esc(n)}</strong>` : esc(n)));
+    return who.length > 2 ? `${who.slice(0, -1).join(', ')}, and ${who.at(-1)}` : who.join(' and ');
+  };
+  let n = 0;
+  return `<section class="od" aria-labelledby="od-h">
+    <h2 id="od-h">Inside <cite>Occupying Disability</cite></h2>
+    <p>${esc(OD.publisher)}, edited by ${esc(OD.editors)}. Every chapter and its authors, grouped by the book’s three parts. Chapter titles link to the chapter on ${link(OD.url, 'Springer')}.</p>
+    ${join(
+      OD.parts,
+      (p, i) => `<details class="od__part"${i === 0 ? ' open' : ''}>
+      <summary><span class="od__k">Part ${i + 1}</span> ${esc(p.title)} <span class="od__count">${p.chapters.length} chapters</span></summary>
+      <ol class="fda-toc" role="list">${join(p.chapters, (c) => {
+        n += 1;
+        return `<li><span class="fda-toc__n">${n}</span><div><p class="fda-toc__t">${link(c.url, esc(c.title))}</p><p class="fda-toc__a">${names(c.authors)}</p></div><span class="fda-toc__p"><span class="visually-hidden">pages </span>${esc(c.pages)}</span></li>`;
+      })}</ol>
+    </details>`,
+    )}
+  </section>`;
+}
+
 function pubList(pubs) {
   return `<ul class="pub-list" role="list">${join(
     pubs,
@@ -865,6 +889,8 @@ function authorPage(a) {
 
     <h2>${tribute ? 'His books' : 'Selected publications'}</h2>
     ${pubList(a.publications)}
+
+    ${a.slug === 'pamela-block' ? odContents() : ''}
 
     ${a.honors ? `<h2>Honors</h2><ul class="pub-list" role="list">${join(a.honors, (h) => `<li><span class="pub-list__title">${esc(h.name)}</span><span class="pub-list__detail">${h.year}</span></li>`)}</ul>` : ''}
   </div>
