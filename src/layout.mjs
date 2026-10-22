@@ -146,6 +146,7 @@ ${body}
         <li><a href="/authors/">Authors &amp; editors</a></li>
         <li><a href="/authors/richard-scotch/">Remembering Richard Scotch</a></li>
         <li><a href="/contributors/">Chapter contributors</a></li>
+        <li><a href="/team/">Project team</a></li>
         <li><a href="/media/">Media &amp; resources</a></li>
       </ul>
     </nav>

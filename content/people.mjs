@@ -190,3 +190,15 @@ export const contributors = [
     ],
   },
 ];
+
+// ─── Student project team (Pam, Oct 2026: "all of you on the student team … can have bios and links") ──
+// Only name and role are needed. Add bio / photo / photoAlt / links when each person sends them,
+// in their own words, the same way as contributors.
+export const team = [
+  { name: 'Daniel Ajenifuja', role: 'Website' },
+  { name: 'Luke Vrantsidis', role: 'Audiobook editing' },
+  { name: 'Dina Dwairi', role: 'References and image descriptions' },
+  { name: 'Tiara Hettigama', role: 'Audiobook reader: Introduction and Chapters 4, 6, and 7' },
+  { name: 'Rainy Lu', role: 'Audiobook reader: Chapters 1, 2, 3, and 5' },
+  { name: 'Shanshan Ma-Zhang', role: 'Audiobook reader: Chapters 8 and 9' },
+];

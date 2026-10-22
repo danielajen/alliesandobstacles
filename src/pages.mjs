@@ -1,7 +1,7 @@
 import { statSync } from 'node:fs';
 import { join as join_ } from 'node:path';
 import { site, books, media, mediaTypes } from '../content/site.mjs';
-import { authors, contributors } from '../content/people.mjs';
+import { authors, contributors, team } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
 import { research as researchPages } from '../content/research.mjs';
 import { occupyingDisability as OD } from '../content/occupying.mjs';
@@ -742,6 +742,7 @@ ${
   <div class="wrap narrow">
     <h3 id="credits-h" class="sub-h">Audiobook credits</h3>
     <dl class="credits">${join(audiobook.credits, (c) => `<div><dt>${esc(c.role)}</dt><dd>${esc(c.names.join(', '))}</dd></div>`)}</dl>
+    <p><a class="more-link" href="/team/">Meet the project team ${icon('arrow')}</a></p>
   </div>
 </section>`
     : ''
@@ -1151,6 +1152,41 @@ function mediaPage() {
 
 // ─── Accessibility statement & 404 ───────────────────────────────────────────
 
+function teamPage() {
+  return page(
+    '/team/',
+    'Project Team',
+    'The student team at Western University who built this website and produced the free audiobook.',
+    `
+<header class="page-head">
+  <div class="wrap">
+    ${breadcrumbs([['Home', '/'], ['Project team', '/team/']])}
+    <p class="eyebrow">Western University</p>
+    <h1>Project team</h1>
+    <p class="page-head__lede">The students working with Dr. Pamela Block who built this website and produced the free audiobook of <cite>${esc(FDA.title)}</cite>.</p>
+  </div>
+</header>
+<section class="section section--flush-top" aria-labelledby="team-h">
+  <div class="wrap">
+    <h2 id="team-h" class="visually-hidden">Team members</h2>
+    <ul class="contrib-list" role="list">${join(
+      team,
+      (m, i) => `<li class="contrib-card${m.bio ? '' : ' contrib-card--compact'}" id="${slugify(m.name)}">
+      <div class="contrib-card__photo">${avatar(m, ACCENTS[i % 3])}</div>
+      <div class="contrib-card__body">
+        <h3>${esc(m.name)}</h3>
+        ${m.pronouns ? `<p class="contrib-card__pronouns">${esc(m.pronouns)}</p>` : ''}
+        <p class="contrib-card__chapter">${esc(m.role)}</p>
+        ${m.bio ? `<p class="contrib-card__bio">${rich(m.bio)}</p>` : ''}
+        ${m.links?.length ? `<ul class="contrib-card__links" role="list" aria-label="${esc(m.name)} online">${join(m.links, (l) => `<li>${link(l.url, esc(l.label))}</li>`)}</ul>` : ''}
+      </div>
+    </li>`,
+    )}</ul>
+  </div>
+</section>`,
+  );
+}
+
 function accessibilityPage() {
   return page(
     '/accessibility/',
@@ -1216,6 +1252,7 @@ export function allPages() {
     ...authors.map(authorPage),
     ...researchPages.map(researchPage),
     contributorsPage(),
+    teamPage(),
     mediaPage(),
     accessibilityPage(),
     notFound(),

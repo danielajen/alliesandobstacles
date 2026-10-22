@@ -945,3 +945,8 @@ html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='
 .od__count { font-weight: 400; color: var(--muted); font-size: 0.9rem; margin-left: 0.35rem; }
 .fda-toc__t a { color: inherit; }
 .fda-toc__a strong { color: var(--ink); font-style: normal; }
+
+.contrib-card--compact { grid-template-columns: 4.5rem minmax(0, 1fr); align-items: center; padding: 1rem 1.25rem; }
+.contrib-card--compact .contrib-card__photo .avatar { width: 4.5rem; height: 4.5rem; font-size: 1.15rem; }
+.contrib-list:has(.contrib-card--compact) { gap: 0.75rem; }
+@media (max-width: 40rem) { .contrib-card--compact { grid-template-columns: 4.5rem minmax(0, 1fr); } }
