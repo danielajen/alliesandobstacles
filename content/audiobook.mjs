@@ -9,7 +9,7 @@
 export const audiobook = {
   book: 'family-and-disability-activism',
   narration: 'Read by Tiara Hettigama, Rainy Lu, and Shanshan Ma-Zhang',
-  runtime: '7 hr 49 min',
+  runtime: '7 hr 23 min',
 
   // The whole book in one download. These are too large for GitHub Pages, so
   // they live on the repository's GitHub Release and are linked by URL.
@@ -18,14 +18,14 @@ export const audiobook = {
       label: 'Whole book, chapter by chapter (MP3, zipped)',
       url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism-mp3.zip',
       ext: 'ZIP',
-      size: '386 MB',
+      size: '333 MB',
       note: 'Works with every player. Unzip it, or open it straight in BookPlayer / Smart AudioBook Player. Includes the references and image descriptions.',
     },
     {
       label: 'Whole book as a single audiobook file (M4B)',
       url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism.m4b',
       ext: 'M4B',
-      size: '233 MB',
+      size: '220 MB',
       note: 'Keeps your place and shows chapters in Apple Books, BookPlayer and most audiobook apps.',
     },
   ],
