@@ -1171,7 +1171,7 @@ function teamPage() {
     <h2 id="team-h" class="visually-hidden">Team members</h2>
     <ul class="contrib-list" role="list">${join(
       team,
-      (m, i) => `<li class="contrib-card${m.bio ? '' : ' contrib-card--compact'}" id="${slugify(m.name)}">
+      (m, i) => `<li class="contrib-card${m.bio || m.photo ? '' : ' contrib-card--compact'}" id="${slugify(m.name)}">
       <div class="contrib-card__photo">${avatar(m, ACCENTS[i % 3])}</div>
       <div class="contrib-card__body">
         <h3>${esc(m.name)}</h3>

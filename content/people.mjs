@@ -197,8 +197,33 @@ export const contributors = [
 export const team = [
   { name: 'Daniel Ajenifuja', role: 'Website' },
   { name: 'Luke Vrantsidis', role: 'Audiobook editing' },
-  { name: 'Dina Dwairi', role: 'References and image descriptions' },
-  { name: 'Tiara Hettigama', role: 'Audiobook reader: Introduction and Chapters 4, 6, and 7' },
-  { name: 'Rainy Lu', role: 'Audiobook reader: Chapters 1, 2, 3, and 5' },
-  { name: 'Shanshan Ma-Zhang', role: 'Audiobook reader: Chapters 8 and 9' },
+  {
+    name: 'Dina Dwairi',
+    role: 'References and image descriptions',
+    photo: 'assets/img/contributors/dina-dwairi.jpg',
+    photoAlt: 'Photo of Dina Dwairi.', // ask Dina for her own description
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/dina-dwairi-b554881b2' }],
+  },
+  {
+    name: 'Tiara Hettigama',
+    role: 'Audiobook reader: Introduction and Chapters 4, 6, and 7',
+    // Her bio said "Allies and Obstacles"; she read Family and Disability Activism. Asked her to confirm the fix.
+    bio: 'Tiara Hettigama is a student at Western University pursuing an Honours Specialization in Health Sciences. With a passion for education, accessibility, and community engagement, she is dedicated to creating inclusive environments and meaningful connections through her leadership and volunteer experiences. She is proud to have contributed her voice to *Family and Disability Activism*, helping bring the book to life for a wider audience.',
+    photo: 'assets/img/contributors/tiara-hettigama.jpg',
+    photoAlt: 'Photo of Tiara Hettigama.', // ask Tiara for her own description
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/tiara-hettigama' }],
+  },
+  {
+    name: 'Rainy Lu',
+    role: 'Audiobook reader: Chapters 1, 2, 3, and 5',
+    pronouns: 'she/her',
+    bio: "I'm Rainy. I am doing a Bachelor of Medical Science Degree at Western, and I am so grateful to be on this audiobook team. Hope you will enjoy the audiobook!",
+  },
+  {
+    name: 'Shanshan Ma-Zhang',
+    role: 'Audiobook reader: Chapters 8 and 9',
+    pronouns: 'she/her',
+    bio: 'Shanshan is a graduate of Western University, where she studied biology. She is passionate about supporting and amplifying marginalized communities through research and advocacy.',
+    // photo to come
+  },
 ];
