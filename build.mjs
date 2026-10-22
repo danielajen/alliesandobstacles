@@ -12,7 +12,8 @@ import { site } from './content/site.mjs';
 
 const OUT = 'dist';
 const BASE = ('/' + (process.env.BASE_PATH || '/').replace(/^\/+|\/+$/g, '') + '/').replace('//', '/');
-if (process.env.SITE_URL) site.url = process.env.SITE_URL.replace(/\/+$/, '');
+// GitHub Pages can report http:// for a custom domain even with HTTPS enforced; public URLs are always https.
+if (process.env.SITE_URL) site.url = process.env.SITE_URL.replace(/\/+$/, '').replace(/^http:\/\/(?!localhost|127\.)/, 'https://');
 
 const { layout } = await import('./src/layout.mjs');
 const { allPages, setFileCheck } = await import('./src/pages.mjs');
