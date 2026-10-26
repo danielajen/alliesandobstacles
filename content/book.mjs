@@ -1,300 +1,405 @@
 // ─────────────────────────────────────────────────────────────────────────────
 //  INSIDE ALLIES AND OBSTACLES
-//  Chapter guide, key ideas, research and timeline — summarized in our own
-//  words from the published book (Temple University Press, 2020).
+//  Chapter summaries and discussion questions are quoted word for word from the
+//  publisher's study guide (Temple University Press, 2025):
+//  https://tupress.temple.edu/study-guides/allies-and-obstacles
+//  Each summary is the guide's opening overview; the full guide (with timelines and
+//  resource tables) is linked from the page. Section titles are the book's own headings.
 //  Page numbers refer to the print edition.
 // ─────────────────────────────────────────────────────────────────────────────
 
+export const studyGuidePdf = {
+  'allies-and-obstacles':
+    'https://tupress.temple.edu/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTQ1ODcsInB1ciI6ImJsb2JfaWQifX0=--3fba57024839d1f1e0449663142b68e62195c99f/Allies%20and%20Obstacles%20Curriculum%20Guide.pdf',
+  'family-and-disability-activism':
+    'https://tupress.temple.edu/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MTQ1ODgsInB1ciI6ImJsb2JfaWQifX0=--c8e4006428d1dcfcf04f2dd8ada63f84f903800b/Family%20and%20Disability%20Activism.pdf',
+};
+
+// summary: array of paragraphs (strings) and lists (["list", [items]]), from the study guide.
 export const parts = [
   {
-    id: 'front',
-    label: null,
-    chapters: [
+    "id": "front",
+    "label": null,
+    "chapters": [
       {
-        id: 'introduction',
-        n: null,
-        title: 'Introduction',
-        page: 1,
-        opens: 'Opens with Sophia Grant, who in the 1930s was told by doctors to give her son Peter, born with Down syndrome, “a glass of milk and a cookie” and leave him alone — and who refused.',
-        summary:
-          'Sets out the book’s central puzzle. Parents have won some of the most important victories in disability policy, yet disabled activists often experience parent advocacy as speaking over them. The introduction traces how medicalization, “mother-blame,” and a neoliberal retreat from public support shape the pressures on families, and argues that parents are best understood not as simply allies or obstacles, but as “sometimes” allies.',
-        sections: ['Situating parent activism in scholarship', 'Families in need: insufficient progress and new hurdles', 'Parent activism and parent movements', 'Building a relational model for support', 'Imagined futures', 'A note on language'],
-        questions: [
-          'The authors describe parents as “sometimes allies.” What pushes a parent organization toward alliance with disabled activists, and what pulls it away?',
-          'How does the story of Elizabeth Boggs complicate the idea of a parent “hero” of the disability movement?',
+        "id": "introduction",
+        "n": null,
+        "title": "Introduction",
+        "page": 1,
+        "sections": [
+          "Situating parent activism in scholarship",
+          "Families in need: insufficient progress and new hurdles",
+          "Parent activism and parent movements",
+          "Building a relational model for support",
+          "Imagined futures",
+          "A note on language"
         ],
-      },
-    ],
+        "summary": [
+          "The introduction starts with the story of Peter Grant, a baby with Down syndrome born in the 1930s, and his mom Sophia. Doctors told Sophia that her son couldn’t learn and that she should give him a cookie and keep him happy. Sophia rejected this advice and, instead, began rigorous home schooling, implemented untested, leading-edge therapies, and wrote a book about her results. She is an example of the struggles parents face and their determination to create positive lives for their children.",
+          "Parent advocates have made many improvements in community services and education, and these improvements benefit people today. Parents today continue to fight. They still struggle to enforce existing laws, and they endure watching their children marginalized within educational, medical, and care systems. For families who are in lower socio-economic classes, the struggle is even greater, as they may not have the resources to hire attorneys or leave work to attend meetings. Parents also feel societal pressure to raise the best children possible by using therapies and medical interventions. When children struggle, mothers especially face “mother blame,” with accusations that they caused disability through their own genetic or economic deficiencies or through being over-protective.",
+          "While parents fight for the best interest of their children, there is debate about what these best interests are. For example, Elizabeth Boggs co-founded The Arc and fought to ensure children with disabilities receive an education, medical care, and services. However, she also institutionalized her son David at age 7 and supported the use of institutions, a political stance that now would be viewed negatively by most. Many parents today fight strenuously for their children to have inclusive education, but other parents value the option to have their children in schools that specialize in special education. Thus, the understanding of disability rights among parents is complicated and sometimes contradictory. Moreover, their perspectives do not always align with the political agenda of disability rights groups led by disabled activists. For example, in 2016, Jerika Bolen, a teenager who had spinal muscular atrophy, and her mother advocated for her right to die due to her pain and suffering, but Diane Coleman, a disabled leader of Not Dead Yet, vocally criticized this approach and advocated for Jerika to be given suicide prevention counseling.",
+          "Disabled activists have created a disability rights agenda focused on individual rights, access, empowerment, and pride. Parent advocates also fight for disability rights, but they are more likely to position parents (rather than people with disabilities) as the experts, to advocate for the right of parents to make choices for their offspring, and to position their offspring as part of a family unit (rather than as individual right-bearers). Parents’ approach can be incredibly valuable for protecting families and ensuring the family collectively receives support. However, parents vary and parental authority may include advocacy for things deemed harmful by disabled activists (and by many other parents), such as electro-convulsion therapy and institutionalization.",
+          "Individualistic parenting, identified by sociologist Jennifer Reich, encourages parents to advocate for what their individual child needs, regardless of the communal impact or equity concerns. When parents organize, they often do so around diagnosis-specific groups, leading to a fragmented parent movement. And parents’ assertion of their own expertise and authority may undercut the work of disabled activists."
+        ],
+        "questions": [
+          "After reading the introduction, list three topics and themes you think will be covered in the book.",
+          "A facilitator for a self-advocacy group stated, “The expectations that other people have of what people’s future capabilities and opportunities and possibilities are never [of] the same breadth and scope and beauty as the people have for themselves.” Explain why this concept causes conflict between disabled and family advocates.",
+          "The chapter states, “When parents center their own needs and interests under the umbrella of disability rights with little regard for the potential conflicts of interest, people with disabilities are displaced and disempowered.” Discuss examples of when and why this could happen? Brainstorm ways of bringing awareness to this situation.",
+          "Do you think children without disabilities experience similar conflicts with their parents as people/children with disabilities do? How might the relationship between parents and children with disabilities be different from the relationship between parents and children without disabilities?",
+          "Much responsibility is placed on parents and families as shown by the movement for people with disabilities to gain employment, often relying on parents to create job opportunities for their offspring. This means that in addition to managing medical care and educational support, parents are expected to become job coaches and business owners. Is this a fair expectation for parents? What are ways that some of these responsibilities can be reduced or shared with society?",
+          "A fictional parent advocacy group and disabled activist group have decided to hold a summit to improve relations between the two groups. What would the agenda look like? What would some of the sessions be called?"
+        ]
+      }
+    ]
   },
   {
-    id: 'part-1',
-    label: 'Part I',
-    title: 'Disability Activist Communities',
-    blurb: 'Four historical case studies, each tracing how parents and disabled people organized, where they found common cause, and where they collided.',
-    chapters: [
+    "id": "part-1",
+    "label": "Part I",
+    "title": "Disability Activist Communities",
+    "chapters": [
       {
-        id: 'chapter-1',
-        n: 1,
-        title: 'Intellectual Disability and Parent Activism',
-        page: 29,
-        opens: 'Opens with Emina, who built a parents’ group and then a national disability services department in Eastern Europe for her son Marsel before moving her family to the United States.',
-        summary:
-          'Parents of people with intellectual disabilities were the first to organize on a national scale, founding the Arc in 1950. Over time they moved toward a social model of disability and a civil-rights frame, and many came to support self-advocacy. Yet the Arc’s role as a service provider, its claims to parental authority, and a sense among self-advocates that parents tried to control or co-opt their movement have kept the alliance uneasy.',
-        sections: ['Considering intellectual disability', 'The emergence of parent activism', 'Early barriers to activism', 'Factors promoting the rise of parent activism', 'Grassroots activism and meeting families’ needs', 'Unifying the agenda and the civil rights frame', 'The rise of self-advocacy', 'Points of agreement', 'The legacies of parent activism'],
-        questions: [
-          'Why might an organization that runs services find it harder to follow the lead of self-advocates than one that only lobbies?',
-          'What did parents gain by adopting the language of civil rights — and what did it commit them to?',
+        "id": "chapter-1",
+        "n": 1,
+        "title": "Intellectual Disability and Parent Activism",
+        "page": 29,
+        "sections": [
+          "Considering intellectual disability",
+          "The emergence of parent activism",
+          "Early barriers to activism",
+          "Factors promoting the rise of parent activism",
+          "Grassroots activism and meeting families’ needs",
+          "Unifying the agenda and the civil rights frame",
+          "The rise of self-advocacy",
+          "Points of agreement",
+          "The legacies of parent activism"
         ],
+        "summary": [
+          "This chapter looks at the history, diversity, and controversy of parent advocacy related to intellectual disability, including current conflicts between parent advocacy groups and disabled activist groups. Intellectual disability is a label associated with three components: (1) an IQ typically below 70-75, (2) significant limits in adaptive behavior that reduces one’s ability to meet the cultural and social expectations for one’s age, and (3) onset of these characteristics before the age of 18.",
+          "In the early years of the United States, there was not much disability activism. Injury and illness made disabilities prevalent, and they were seen as commonplace. By the mid-1800s, disability came under the growing power of medical authorities, who ushered in the era of institutions and eugenics. Shame, isolation, and medicalization impeded disability activism, even when the conditions of institutionalization were intolerable. Residents were uneducated and lived in unsanitary conditions, resulting in high rates of disease and death. Despite false promises of treatment and education, institutions created and exacerbated disability. Eventually, though, these living conditions caused families to begin engaging in social action. The first parent advocacy groups were associated with specific institutions. In 1932, the Council for Retarded Children in Cayuga County, Ohio became the first parent advocacy group that was not institution specific, with parents working to include students in their local schools. By 1950, parent advocacy groups had become far more common; the national organization The Arc and at least 88 local parent groups in 19 states, with a total of 19,300 members, were engaged in fostering better lives for people with intellectual disabilities. The Arc grew quickly, with 62,000 members in 1960. It was also during this time that a division began between pro-institution parents and pro-community parents. The Arc itself was torn between these stances, both campaigning for disability rights and inclusion while operating special schools and sheltered workshops.",
+          "By the late 1960s, The Arc took the fight to disability rights to the courts. Inspired by the African American civil rights movement, parents and disabled activists sought to argue that people with disabilities (like African Americans) have rights that must be upheld. In the case PARC v Commonwealth of Pennsylvania (1971), parents won access to public education for disabled children. This success was followed by the passage of the Individuals with Disabilities Education Act (IDEA) in 1975, granting children throughout the United States a Free and Appropriate Public Education. By 1984, less than 10 years later, more than 90% of disabled children were receiving an education in integrated schools. Even so, parents whose family members were in institutions opposed this effort, concerned it would lead to the closing of institutions. In response, legislators strengthened the power of guardianship, ensuring those parents that expanded public education would not lead to the defunding of institutions. While most parents believed in institutional reform, they disagreed on whether to close institutions or ensure to improve their quality. As The Arc increasingly fought to close institutions, another group - Voice of the Retarded (VOR) - emerged to defend the use of institutions.",
+          "The disability rights movement, led by people with disabilities, also grew. In 1990, a national activist group led by people with intellectual disabilities - Self-Advocates Becoming Empowered (SABE) - was founded. They created an agenda that demanded community supports, rights, and freedom from institutionalization."
+        ],
+        "questions": [
+          "List topics that parent organizations and disabled activist organizations disagree on. Why do they disagree? What strategies can be used to help these groups work together?",
+          "Compare and contrast how parent organizations and disabled activist organizations define rights. Explain the ways these differences have influenced the disability movement.",
+          "Medicalization has affected society’s views of disabilities from encouraging institutionalization to the medical tests used by today’s society to screen and abort unborn babies with disabilities. Yet for many disabled people, medical care is crucial for maintaining health. Due to the structure of the American public health care system, to maintain eligibility for health insurance, many disabled people must keep earnings and assets at or below poverty level. While society medicalizes disability, it also limits disabled people’s access to the medical system they need. Discuss how this contradiction in thinking about medicalization affects the lives of people with disabilities.",
+          "Down syndrome is a very visible disability that has resulted in a long history of bias. The following quote from the chapter discusses medical prejudice in the past, “For example, doctors told the parents of Nigel Hunt after his birth in 1947 that, regardless of how much effort they exerted, he would always be an “idiot.” Nigel’s parents did not listen to the doctor’s advice, yet parents in 2024 are still being given versions of that same advice from medical and educational experts. Why do you think medical professionals often have negative biases regarding people with disabilities? How do we break this cycle of bias, when people with Down syndrome have proven over and over that with appropriate teaching methods and medical care, they can thrive?",
+          "How was the disability movement and parent activism influenced by the African American civil rights movement?",
+          "List ways that the world for people with disabilities would be different if institutions were never created. Would the current situation be better or worse for people with disabilities?"
+        ]
       },
       {
-        id: 'chapter-2',
-        n: 2,
-        title: 'Psychiatric Diagnosis, Disability, and Parent Activism',
-        page: 60,
-        opens: 'Opens with journalist Pete Earley’s struggle to get treatment for his adult son Mike, whose bipolar disorder brought the family into collision with hospitals, police, and the courts.',
-        summary:
-          'People with psychiatric diagnoses faced institutionalization and exclusion much like people with intellectual disabilities, but family organizing came later, with the National Alliance on Mental Illness founded in 1979. The chapter sets family groups focused on treatment, recovery, and sometimes involuntary care against a psychiatric survivor movement that criticizes the psychiatric profession itself.',
-        sections: ['Considering psychiatric diagnosis', 'Psychiatric patient movements', 'Parent and family advocacy', 'Parent and family organizations', 'Tensions between organizations led by parents and organizations led by activists with disabilities'],
-        questions: [
-          'When an adult child refuses treatment, whose rights are at stake? How do family groups and psychiatric survivors answer differently?',
-          'Why might mental-health family advocacy have emerged decades after the Arc?',
+        "id": "chapter-2",
+        "n": 2,
+        "title": "Psychiatric Diagnosis, Disability, and Parent Activism",
+        "page": 60,
+        "sections": [
+          "Considering psychiatric diagnosis",
+          "Psychiatric patient movements",
+          "Parent and family advocacy",
+          "Parent and family organizations",
+          "Tensions between organizations led by parents and organizations led by activists with disabilities"
         ],
+        "summary": [
+          "Although both people with psychiatric diagnoses and people with intellectual disabilities experienced the harsh segregation of institutionalization, advocacy for each group started very differently. With intellectual disability, diagnosis was often made at birth or during early childhood, allowing parents to gain advocacy skills at a time when they had a great deal of influence on their children’s lives. Parents of children with intellectual disabilities were among the first to organize. In contrast, psychiatric diagnosis often happens in early adulthood, a time of decreased parental involvement. The result was that advocacy for psychiatric diagnoses was first initiated by disabled activists or “survivors” of mental institutions and not parents. Psychiatric diagnoses were often blamed on poor parenting skills, which meant the parent was often not considered to be part of the care team. The intersectionality between the prison system and disability often damaged the family bonds that are instrumental in driving family advocacy."
+        ],
+        "questions": [
+          "The original members of Recovery International were 37 former patients of University of Illinois at Chicago’s Psychiatric Institute, who were subjected to insulin shocking. Do an internet search to learn more about insulin shocking and write a brief paragraph about its history.",
+          "One of the biggest conflicts between parent advocates and disabled activists is the issue of forced medication and hospitalization. Parents argue both are needed to keep their loved ones safe. Activists argue that the treatments are unbearable and that hospitalization does not help. Write a paragraph exploring each side and potential ways to reconcile this divide.",
+          "Compare and contrast parent advocacy for families with members who have intellectual disabilities and families with members who have psychiatric diagnoses. What was the impact of having parents speak out first in the intellectual disability movement versus having disabled activists take the lead with psychiatric diagnoses?",
+          "Parents, particularly mothers, were often blamed when a child received a psychiatric diagnosis. What effect did this have on the family dynamic?",
+          "Discuss the intersectionality between psychiatric diagnoses and incarceration. List ways this cycle can be broken.",
+          "Medicalization of psychiatric diagnoses first began treating the brain physically with Electroconvulsive Therapy (ECT), ice baths, insulin shocking, and so forth. Some treatments today continue to be controversial. What treatments today are controversial? Why do you think doctors tried and continue to try controversial approaches?"
+        ]
       },
       {
-        id: 'chapter-3',
-        n: 3,
-        title: 'Autistic Identity and Parent Activism',
-        page: 84,
-        opens: 'Opens with Lisa and her son Jeremy, diagnosed before age two, and the years of therapies, school changes, and family sacrifices that led to Jeremy communicating with an AAC device.',
-        summary:
-          'Autism was long folded into intellectual disability, and distinct parent advocacy only emerged once distinct treatments did. The chapter moves from the “refrigerator mother” era through the widening of autism into a spectrum, to the twenty-first-century “autism crisis” and the industry around it. Groups such as Autism Speaks pursued a highly medicalized politics of cure, in sharp contrast to autistic self-advocates who claim neurodiversity as identity — the so-called Autism Wars.',
-        sections: ['Considering autism', 'Paradigms of autism', 'Refrigerator mothers and psychoanalysis', 'The invention of developmental disability', 'From syndrome to spectrum', 'Twenty-first century: the autism crisis and the autism industry', 'Autistic activists respond'],
-        questions: [
-          'How did blaming mothers in the mid-twentieth century shape the kind of advocacy parents later embraced?',
-          'What would it take for an autism organization to be trusted by both parents seeking services and autistic self-advocates?',
+        "id": "chapter-3",
+        "n": 3,
+        "title": "Autistic Identity and Parent Activism",
+        "page": 84,
+        "sections": [
+          "Considering autism",
+          "Paradigms of autism",
+          "Refrigerator mothers and psychoanalysis",
+          "The invention of developmental disability",
+          "From syndrome to spectrum",
+          "Twenty-first century: the autism crisis and the autism industry",
+          "Autistic activists respond"
         ],
+        "summary": [
+          "Because Autism is a relatively new diagnosis, much of the early advocacy story is shared with the intellectual disability and the psychiatric diagnosis movements. The term “autism” was created in"
+        ],
+        "questions": [
+          "As with psychiatric diagnoses, people with autism were subjected to treatments like water-dousing, electric shock, and restraints. Why do you think doctors at the time almost seemed to be trying to torture the autism out of the person?",
+          "Autistic activists didn’t have a significant activist presence until the 1990’s. List reasons why you think they started organizing later than some other disabled activists?",
+          "Applied Behavior Analysis (ABA) therapy is extremely controversial. Research ABA therapy and discuss your thoughts on the pros and cons of this therapy.",
+          "Why do you think early researchers thought autism was caused by cold and detached mothers? How was this damaging to autistics and to their families?",
+          "Google the DSM definition of autism. Rewrite the definition so that it is more positive.",
+          "Here is a link for the 2007 commercial created by New York University (NYU). https://www.youtube.com/watch?v=9UgLnWJFGHQ The Autistic Self Advocacy Network advocated that this Public Service Announcement should be discontinued and won, as this letter from their website shows: https://autisticadvocacy.org/2007/12/victory-the-end-of-the-ransom-notes-campaign/. Discuss reasons that this video is a good example of the saying, “Nothing about us without us.” Rewrite the script to show the autistic point of view."
+        ]
       },
       {
-        id: 'chapter-4',
-        n: 4,
-        title: 'Physical Disabilities and Parent Activism',
-        page: 108,
-        opens: 'Opens with Zona Roberts, whose son Ed contracted polio at fourteen. Her persistence helped him graduate, reach UC Berkeley, and become a founder of the independent living movement.',
-        summary:
-          'Organizations such as United Cerebral Palsy, the Muscular Dystrophy Association, and the Easter Seal Society grew up around the same time as the Arc. This chapter follows their turn toward professional staff and large-scale fundraising, and the fierce protests disabled activists mounted against telethons that raised money by selling pity.',
-        sections: ['The historical context for parent activism', 'Parents and experts', 'Muscular Dystrophy Association', 'The Easter Seal Society', 'Tensions with disabled activists: the telethons', 'Parent organizations in the twenty-first century'],
-        questions: [
-          'Zona Roberts never led an organization. Is supporting a child’s own activism a form of parent activism?',
-          'What is lost when fundraising becomes the main way the public meets a disability?',
+        "id": "chapter-4",
+        "n": 4,
+        "title": "Physical Disabilities and Parent Activism",
+        "page": 108,
+        "sections": [
+          "The historical context for parent activism",
+          "Parents and experts",
+          "Muscular Dystrophy Association",
+          "The Easter Seal Society",
+          "Tensions with disabled activists: the telethons",
+          "Parent organizations in the twenty-first century"
         ],
-      },
-    ],
+        "summary": [
+          "The chapter begins with the stories of Ed Roberts, Judy Heumann and their families, showing the power of family advocacy to help launch activist careers. People with physical disabilities became some of the early founders of the Disability Rights Movement, establishing powerful activist groups.",
+          "Post World War II was transformative for the United States. The GI Bill helped many returning soldiers and their families purchase homes, creating new suburban communities of young military families. Mothers were encouraged to leave their wartime jobs and celebrate their roles of raising the next generation of Americans, including children with disabilities. Families increasingly sought second opinions when doctors encouraged them to institutionalize their children. Many soldiers returned from war with physical and emotional disabilities, which brought awareness. Even President Franklin D. Roosevelt had a disability, though he worked to hide it from the public, many of his policies in getting returning soldiers the services they needed showed his support of disability issues. These trends created a social and political environment open to re-thinking disability and supporting people with disabilities.",
+          "Despite the positives, the racial divide also grew larger, as people of color were often excluded from the social services that segregated suburbia. Unfortunately, this segregation and intersectionality meant that people of color with disabilities did not receive the same educational and medical improvements and advantages.",
+          "Family advocates and disabled activist groups seemed to form simultaneously in the physical disability community. Ed Roberts launched the independent living movement and founded the Rolling Quads disability activist group. Judy Heumann co-founded Disabled in Action (New York), in addition to holding several national and international leadership positions. Parent organizations focused on the needs of children and physical disabilities that commonly emerged in childhood."
+        ],
+        "questions": [
+          "Zona Roberts and Ilse Heumann were mothers credited with empowering their children, Ed Roberts and Judy Heumann respectively. Do an Internet search on one of these two mothers. After learning about them, what advice would you give to mothers who are raising disabled children today?",
+          "Doctors originally advised that children with cerebral palsy should be institutionalized, disabling them through lack of parenting, proper socialization, and education. Discuss the dangers the assumption of incompetence produced for children with CP.",
+          "You have been hired to start a new parent group for a newly diagnosed physical disability. Write three goals you will have for this new group. Explain steps you can take to collaborate with disabled activists.",
+          "Franklin D. Roosevelt had a physical disability, but worked hard to conceal it from the public. List the advantages of having disabled representation in government. Discuss ways to make representation possible.",
+          "Minorities with disabilities did not experience the same opportunities for advocacy as white families did in the 1950’s and 1960’s. Discuss the effects that has on families of color today.",
+          "The Americans with Disabilities Act (ADA) was signed July 26, 1990. On September, 2, 1990, Jerry Lewis published an article for Parade Magazine, a national publication, imagining what his life would be like if he was “cursed” with muscular dystrophy. Read the article. Write an essay that gives examples of how the “half of a man” theory that Lewis writes about is the opposite of what the ADA was accomplishing. https://cripcommentary.com/parade.html"
+        ]
+      }
+    ]
   },
   {
-    id: 'part-2',
-    label: 'Part II',
-    title: 'Cross-Disability Analysis',
-    blurb: 'Stepping back from single communities to ask what explains the timing, frames, strategies, and language of parent activism across all of them.',
-    chapters: [
+    "id": "part-2",
+    "label": "Part II",
+    "title": "Cross-Disability Analysis",
+    "chapters": [
       {
-        id: 'chapter-5',
-        n: 5,
-        title: 'Timing: Factors Affecting the Emergence of Parent-Led Organizations',
-        page: 131,
-        opens: null,
-        summary:
-          'Why did national parent organizations appear around 1950 for intellectual disability and cerebral palsy, but not until 1979 for mental illness or 2005 for autism? Oppression and diagnosis are necessary but not sufficient. What mattered was a diagnosis understood as a childhood condition, a sense of relative deprivation, new resources, and political opportunity — and, later, the successes of earlier parent groups, which newer groups built on or organized against.',
-        sections: ['The founding of national parent organizations', 'Required, but insufficient, factors: oppression and diagnosis', 'Resource mobilization', 'Relative deprivation', 'Political opportunity structure and collective identity', 'Age and historical timing of diagnosis', 'Later parent activism: expanding the field', 'Oppositional growth'],
-        questions: [
-          'Why did blindness and deafness never produce a large, independent, parent-led national movement?',
-          'Pick a disability community today. Which of the chapter’s factors would predict new parent organizing?',
+        "id": "chapter-5",
+        "n": 5,
+        "title": "Timing: Factors Affecting the Emergence of Parent-Led Organizations",
+        "page": 131,
+        "sections": [
+          "The founding of national parent organizations",
+          "Required, but insufficient, factors: oppression and diagnosis",
+          "Resource mobilization",
+          "Relative deprivation",
+          "Political opportunity structure and collective identity",
+          "Age and historical timing of diagnosis",
+          "Later parent activism: expanding the field",
+          "Oppositional growth"
         ],
+        "summary": [
+          "This chapter moves from case studies to general topics that apply to multiple disability classifications and examines the timing of parent advocacy movements—in other words, why did parents organize when they did?",
+          "The authors propose that the timing of parent activism was determined by four factors:",
+          [
+            "list",
+            [
+              "Historical construction and patterns of childhood diagnosis.",
+              "Perception of relative deprivation.",
+              "Emergence of resources.",
+              "Availability of relevant political opportunity structures including a. Interest in disability politics by prominent politicians. b. Political activism by people with disabilities. The chapter summarizes the creation of organizations led by parents, and contends that oppression and diagnosis are not enough to motivate parent activism. Families had to have economic and social capital and a belief that they can use that capital to bring change."
+            ]
+          ],
+          "The following motivations encourage activism:",
+          [
+            "list",
+            [
+              "Resource Mobilization. Resource mobilization argues that activism requires a variety of resources to be effective. As the United States used more and more public money to build and maintain institutions, parents realized how much was spent and that they could demand better outcomes for that money. Community services became seen as a way to redirect large amounts of money to achieve better outcomes.",
+              "Relative Deprivation. Relative deprivation is the idea that people’s activism is in relation to what they can reasonably expect. If no one has services, there is little reason to expect one could attain services, and thus little motivation for activism. It wasn’t until institutions promised therapies, treatments, education, and employment,and didn’t deliver, that parents’ frustration rose. Because they had been promised outcomes, parents increasingly expected outcomes and set out to achieve these outcomes.",
+              "Political Opportunity Structure and Collective Identity. The supportiveness of the political climate also affects the motivation of parent activism. The prosperity of WWII, focus on the family, economic incentives for returning veterans, and FDR’s disability-friendly policies created a climate of change. All of this converged into the creation of disability organizations well as a disability infrastructure. Delayed parent activism, especially for mental illness, blindness, deafness, and autism, was affected by the following:",
+              "Age and Historical Timing of Diagnosis: Parent activism is not as prevalent when diagnoses are made after childhood, as it is with mental illness, blindness, deafness and autism.",
+              "Activism among People with Disabilities: the presence of activism by adults with disabilities also reduces the activism of parents."
+            ]
+          ]
+        ],
+        "questions": [
+          "One of the criteria for successful advocacy is a supportive government. What, if any, effect will the current political situation have on family advocacy?",
+          "The authors state that oppression and diagnosis are not enough to drive parents to advocate. Explain their reasoning for that.",
+          "Disability has always been a part of our society, but activism really took off after WWII, through the 1960s and 1970s. Why?",
+          "One of the criteria that slows the creation of parent advocacy groups is if a disabled activist group exists. Why?",
+          "What factors make it more or less likely for a new disability activist group to start today?",
+          "What current unmet needs or populations might prompt the development of new disability organizations? 6 Do an internet search on social capital. Discuss social capital and how it relates to parent advocacy."
+        ]
       },
       {
-        id: 'chapter-6',
-        n: 6,
-        title: 'Frames and Positions within the Field of Disability Activism',
-        page: 151,
-        opens: null,
-        summary:
-          'Maps parent-led organizations by how closely their “frames” match those of disabled activists: a social versus medical model of disability, integration versus disability-specific settings, and who holds power and voice. The closer the match, the more likely the alliance. An earlier version appeared as “Sometimes Allies” in Disability Studies Quarterly (2019).',
-        sections: ['Examining frame alignment and alliance', 'Models of disability: social model and medical model', 'Medicalization toward cure and prevention', 'Integration versus disability-specific sites and services', 'Least restrictive environment and negotiated access', 'Power and voice', 'Positionality and alliance'],
-        questions: [
-          'Where would you place an organization you know on the chapter’s three dimensions? What would it take to move it?',
-          'Can an organization support the social model while still funding cure research?',
+        "id": "chapter-6",
+        "n": 6,
+        "title": "Frames and Positions within the Field of Disability Activism",
+        "page": 151,
+        "sections": [
+          "Examining frame alignment and alliance",
+          "Models of disability: social model and medical model",
+          "Medicalization toward cure and prevention",
+          "Integration versus disability-specific sites and services",
+          "Least restrictive environment and negotiated access",
+          "Power and voice",
+          "Positionality and alliance"
         ],
+        "summary": [
+          "Disability Activism covers many topics and themes, ranging from childhood to adulthood, political to informational, disabled activist to cure-focused, and all the complexities in between. This chapter classifies organizations by the frames or positions they hold on the following three key tenets:",
+          [
+            "list",
+            [
+              "Prioritization of the social model over the medical model.",
+              "Goals of integration and inclusion to the community’s social institutions (for example, work, worship, education) rather than exclusion, segregation, and disability-specific settings and programs.",
+              "The empowerment of people with disabilities rather than paternalism."
+            ]
+          ],
+          "Frames are particularly important in determining if organizations can form alliances, especially with disabled activist-led organizations. To summarize this chapter, a checklist is on the next page that can be used to evaluate disability activist organizations, thus offering insight especially when considering joining or supporting an organization.",
+          "Lessons from this chapter:",
+          [
+            "list",
+            [
+              "Disabled Activists must own and lead their own movement. Parents may undermine that leadership, especially when they present different frames and priorities.",
+              "Parents rarely understand or recognize the tension their privilege causes, especially since parents often feel disenfranchised themselves.",
+              "Parent organizations can be good allies by promoting the social model, embracing integration and equality, striving to support and empower disabled activists, and building alliances with organizations led by disabled activists.",
+              "Organizations and alliances are complex, especially those that have evolved from the beginning. While some organizations call for integration, they also support sheltered workshops. Some fight against stigma, but do so from the vantage point of the medical model.",
+              "Strong alliances can be built when disabled activists reach out and include parents, and those parents recognize the value in empowering disabled activists."
+            ]
+          ]
+        ],
+        "questions": [
+          "Why are frames important to understanding disability organizations? List ways frames for disability advocate groups may be similar to or different than other types of activist groups.",
+          "Rather than drawing solely on the social model OR medical model, organizations may blend their approach to disability. Select a disability. If you were creating an advocacy organization, in what ways would or wouldn’t you advance the social and/or medical model?",
+          "Many parents seek educational inclusion and others believe that their children should be segregated into self-contained classrooms. What factors do you think lead to this division? Can we easily just leave it to parent preference?",
+          "When done well, inclusion benefits the whole community. Why do you think many parents and schools don’t want to include students with disabilities? What are ways that can be changed?",
+          "List ways to empower any person. Would you use the same techniques for people with disabilities? Can people with disabilities empower those without disabilities?",
+          "Create a public relations campaign that encourages people to develop the social model of disability. List ways to ensure leadership to people with disabilities in the campaign. What would the advantages and disadvantages be in partnering with parent organizations to help share the message?"
+        ]
       },
       {
-        id: 'chapter-7',
-        n: 7,
-        title: 'Social Movement Strategies and Public Policy',
-        page: 183,
-        opens: null,
-        summary:
-          'Parent organizations raise awareness, build and run services, lobby, and mobilize members. What divides them from disabled activists is usually the goal, not the tactic — with one exception. Parents rarely turn to protest and civil disobedience, which leaves disabled activists carrying most of the risk of direct action.',
-        sections: ['From individual efforts to collective political action', 'Public awareness and media campaigns', 'Creating and delivering services', 'Lobbying and policy advocacy', 'Direct action protest', 'Mobilizing membership'],
-        questions: [
-          'Why do parents have “more to lose” through protest? Is that a reason, or an excuse?',
-          'Two organizations run awareness campaigns with opposite messages. Which one is the ally?',
+        "id": "chapter-7",
+        "n": 7,
+        "title": "Social Movement Strategies and Public Policy",
+        "page": 183,
+        "sections": [
+          "From individual efforts to collective political action",
+          "Public awareness and media campaigns",
+          "Creating and delivering services",
+          "Lobbying and policy advocacy",
+          "Direct action protest",
+          "Mobilizing membership"
         ],
+        "summary": [
+          "Parents use various strategies that bring social change to benefit their family and others. As Chapter 6 discussed, conflict between parent and disabled activist groups develops more from the frames and goals than the strategies itself. Parents experience several barriers to collective political action including the following:",
+          [
+            "list",
+            [
+              "Disability Stigma. Parents may hide their child’s disability instead of reaching out to others.",
+              "Disability and Social Class Intersectionality. Disability crosses all the classes—social, racial, geographical, political, ages, gender identities, and so forth. Parents might not cross these social classes to interact.",
+              "Medical and Educational Gatekeepers. In many cases, parents are given very negative views of disability at prenatal ultrasound appointments. Schools may also give negative views in their effort to segregate students, which they believe is easier. Organizations and social media can help bring people together, and from there collective action may develop."
+            ]
+          ]
+        ],
+        "questions": [
+          "The chapter notes that disabled activists and parents disagree more about goals and frames than strategies. Why would that be?",
+          "Explain the reasons people with disabilities use different strategies than parent advocates do.",
+          "Explain the ways that Brown vs. the Board of Education influenced parents of children with disabilities.",
+          "What are the advantages and disadvantages of having parents develop services for people with disabilities?",
+          "List ways that social media has changed networking and advocacy for both parent and disabled activists.",
+          "Do an internet search on “April 28, 1977 Disability Sit-ins,” and review videos and articles. What are your thoughts about this direct action?"
+        ]
       },
       {
-        id: 'chapter-8',
-        n: 8,
-        title: 'Narratives of Rights',
-        page: 199,
-        opens: null,
-        summary:
-          'Shifts from organizations to parents’ own words. Parents describe rights as tools for access and equity, as respect, and as a path to services — and they claim rights for their families, rights of parents, and rights to family life. But they also describe rights failing: as a demand for productivity, as cover for cutting services, as a threat to safety, and as a competition for scarce resources. Need, more than rights, is what unites parents.',
-        sections: ['The power of rights', 'Rights as a broad vision of respect and value', 'Rights as a path to implementation', 'Rights for family, of family, and to family', 'The perceived failures of rights', 'Rights as a mask for neoliberalism', 'Safety and rights', 'Competition for resources'],
-        questions: [
-          'Whose “rights” are in tension when a parent seeks guardianship of an adult child?',
-          'How can the language of rights be used to justify cutting services?',
+        "id": "chapter-8",
+        "n": 8,
+        "title": "Narratives of Rights",
+        "page": 199,
+        "sections": [
+          "The power of rights",
+          "Rights as a broad vision of respect and value",
+          "Rights as a path to implementation",
+          "Rights for family, of family, and to family",
+          "The perceived failures of rights",
+          "Rights as a mask for neoliberalism",
+          "Safety and rights",
+          "Competition for resources"
         ],
+        "summary": [
+          "The rights frame calls attention to the disadvantages created by an unequal and prejudiced society that creates an inferior class of citizens. Chapter 8 examines how the idea of disability rights is used by parents in advocacy, including what parents classify as disability rights.",
+          "The advantages of the rights framework by parents include the following:",
+          [
+            "list",
+            [
+              "Focuses attention on issues of equity.",
+              "Recognizes that people with disabilities are valued members of society.",
+              "Provides legal mechanisms for creating and implementing change. However, parents sometimes use the framework of rights to advocate for disability-specific settings, protections, and family control and choice. These contradict the framework of rights used by disabled activists."
+            ]
+          ],
+          "Intellectual, developmental, and mental illness often carry a greater stigma than physical disabilities. Parents have found power in reframing the narrative from one of shame and tragedy to discrimination, stigma, and structures of exclusion. This shift in focus positively supports the social model of disability, instead of the medical model."
+        ],
+        "questions": [
+          "Perform an Internet search on Neoliberalism. List ways that this philosophy can affect the disability community. What are the implications of defining freedom as freedom from the state?",
+          "Discuss the difference between the rights of those with disabilities and those of parents.",
+          "People with mental illness have high rates of homelessness and may not understand their own illness. Most laws only allow for involuntary hospitalization if there is a significant threat to oneself or to others, and most disabled activists agree that involuntary hospitalization should be used in only rare instances. Many parents though argue that homelessness, poor financial decisions, unstable behavior, inability to engage in self-care, and so forth, should all be sufficient bases to involuntarily hospitalize someone - that the “right” to care and safety are more important than the right to medical self- determination. What are your thoughts on this topic?",
+          "Why is asserting competence and developing self-advocacy voices so important? What are ways parents can do that?",
+          "What are the dangers of considering parent rights as the rights of people with disabilities?",
+          "Is it possible for parents who believe in parent rights over those of the individual to work effectively with parents and disabled activists who work to honor the rights of the individual first? What are strategies you would use to start this process? Would it help to begin this conversation when a child is born with a disability?"
+        ]
       },
       {
-        id: 'chapter-9',
-        n: 9,
-        title: 'Parents, Children, and Advocacy across Life Transitions',
-        page: 227,
-        opens: null,
-        summary:
-          'Needs and advocacy change across a lifetime: from the first diagnosis, through battles over treatment and school, to sexuality and adult roles, and finally to aging parents and interdependence. Lives are fluid, but service systems assume they stand still — nowhere more sharply than at the “disability cliff,” when school-based services end at twenty-one.',
-        sections: ['Initial reactions', 'Treatment advocacy', 'Education and communication access', 'Sexuality and adult roles', 'Aging, independence, and interdependency'],
-        questions: [
-          'At which life stage do parents and disabled activists seem most likely to agree? Least?',
-          'What would a service system designed for change, rather than stability, look like?',
+        "id": "chapter-9",
+        "n": 9,
+        "title": "Parents, Children, and Advocacy across Life Transitions",
+        "page": 227,
+        "sections": [
+          "Initial reactions",
+          "Treatment advocacy",
+          "Education and communication access",
+          "Sexuality and adult roles",
+          "Aging, independence, and interdependency"
         ],
-      },
-    ],
+        "summary": [
+          "Life is fluid, not static, with many changes happening throughout the lives of all in the family. While life is ever changing, unfortunately systems of support for people with disabilities tend to be very static. One of the results is the view of the person with a disability as childlike, perpetually described as functioning at a single- digit age and never allowed to have adult-ideas or experiences. The final chapter covers parent advocacy through life’s transitions, from birth, diagnosis and treatment, transition to and from school, and aging. Two transition topics that affect all the other types of transition are communication and sexuality."
+        ],
+        "questions": [
+          "Sharon Barnartt provides a useful framework of fluidity to consider the idea of disability itself. People’s lives change whether they have disabilities or not. Is there a bias against disabled lives changing? For example, people with disabilities can’t move to another state without losing much of their benefits or they may not be allowed to have an adult relationship.",
+          "When diagnosing a disability, many doctors focus on the negative aspects of disability. List the ways that medical teams can influences parents’ attitudes both positively and negatively.",
+          "School transition programs that allow students to remain in school for an additional four years should be very valuable training to transition from high school to students’ futures. However, schools often create a program that is one-size-fits-all and provides more of a daycare setting than actual training. Compare and contrast how intersectionality and privilege affect a disabled students’ education experience.",
+          "Mitchell Robins is a man with autism who uses spelling to communicate. Visit Mitchell’s Life with Autism website at https://mitchellslifewithautism.com/ Read some of Mitchell’s blog posts. Why is there so much controversy about using facilitated communication like spelling?",
+          "Developmental age is often used to describe a persons’ functioning level. For example, someone may have a chronological age of 25, but be described as having a developmental age of 6 years old. Do you think developmental age gives an accurate representation of a person? What is the problem with assigning someone a much lower developmental age than chronological age?",
+          "Intentional Communities are housing complexes that are designed to provide the necessities on a campus for residents. Although this may sound like an ideal situation, these types of arrangements have historically been problematic. List the pros and cons of this type of housing."
+        ]
+      }
+    ]
   },
   {
-    id: 'back',
-    label: null,
-    chapters: [
+    "id": "back",
+    "label": null,
+    "chapters": [
       {
-        id: 'conclusion',
-        n: null,
-        title: 'Conclusion',
-        page: 245,
-        opens: 'Closes with two examples of what alliance can look like: Pamela’s mother, Barbara Kilcup, and her sister Hope, and the independent living pioneer Gini Laurie.',
-        summary:
-          'Must parents be either allies or obstacles? The authors argue against the binary. Parents tend to share three habits: they speak from their relationship to their child, they insist society take responsibility, and they claim authority over their child’s best interests. Alliance grows when parents share disabled activists’ commitment to the social model, integration, and empowerment — and when they are willing to cede power. The book ends by weighing rights against disability justice and calling for coalitions that lift up those most marginalized.',
-        sections: ['Allies, obstacles, or something in between?', 'Organizational frames', 'The timing of parent activism', 'Strategies for social change', 'The state', 'The narrative of rights and ideas of disability justice', 'Temporal and spatial shifts', 'Disabled parents', 'Building alliances'],
-        questions: [
-          'The authors ask who counts as “us” in “Nothing about us without us.” How would you answer?',
-          'What would it look like for a parent organization to truly cede power?',
+        "id": "conclusion",
+        "n": null,
+        "title": "Conclusion",
+        "page": 245,
+        "sections": [
+          "Allies, obstacles, or something in between?",
+          "Organizational frames",
+          "The timing of parent activism",
+          "Strategies for social change",
+          "The state",
+          "The narrative of rights and ideas of disability justice",
+          "Temporal and spatial shifts",
+          "Disabled parents",
+          "Building alliances"
         ],
+        "summary": [
+          "This chapter summarizes the key arguments of the book and provides additional resources that can be used to develop group discussions."
+        ],
+        "questions": []
       },
       {
-        id: 'appendix',
-        n: null,
-        title: 'Appendix: A Note on Methods',
-        page: 259,
-        opens: null,
-        summary:
-          'Explains how the research was done: organizational and archival documents, news reports, blogs and online forums, and twenty-seven interviews with parents, self-advocates, family members, and professionals.',
-        sections: [],
-        questions: [],
-      },
-    ],
-  },
+        "id": "appendix",
+        "n": null,
+        "title": "Appendix: A Note on Methods",
+        "page": 259,
+        "sections": [],
+        "summary": [],
+        "questions": []
+      }
+    ]
+  }
 ];
-
-// Frames that predict alliance (Chapter 6 and the Conclusion)
-export const allianceFrames = [
-  { k: 'Social model', over: 'over the medical model', text: 'Seeing disability as shaped by barriers in society, not only as a condition to be cured.' },
-  { k: 'Integration', over: 'over segregation', text: 'Working for access to ordinary schools, jobs, and communities rather than separate settings.' },
-  { k: 'Empowerment', over: 'over parental control', text: 'Letting disabled people lead, speak, and decide for themselves.' },
-];
-
-export const keyIdeas = [
-  {
-    term: 'Sometimes allies',
-    text: 'From disabled activists’ point of view, parents are neither simply allies nor obstacles. At times they organize side by side, at times in opposition, and at times they are simply not paying attention.',
-    where: 'Introduction; Chapter 6',
-  },
-  {
-    term: 'A relational model',
-    text: 'For most parent activists, disability is not an individual experience. It affects whole families and communities, so society must share responsibility — and parents claim rights too.',
-    where: 'Introduction',
-  },
-  {
-    term: 'Parental authority',
-    text: 'Parents demand support from the state while insisting on their own expertise over their children’s lives. That claim to authority is the deepest source of tension with disabled activists.',
-    where: 'Introduction; Conclusion',
-  },
-  {
-    term: 'The disability cliff',
-    text: 'The point, usually at twenty-one, when school-based services end and families face waiting lists and bureaucracy just as young adults are meant to be launching their lives.',
-    where: 'Introduction; Chapter 9',
-  },
-  {
-    term: 'Imagined futures',
-    text: 'Drawing on Alison Kafer, the book asks whose imagined futures shape policy. Self-advocates often envision jobs, homes, and marriages that parents struggle to picture — while some parents say “imagination” hides unmet need.',
-    where: 'Introduction',
-  },
-  {
-    term: 'Rights and justice',
-    text: 'Rights have opened doors, but they favor those with the resources to claim them. Disability justice asks for broader change that centers the people most marginalized.',
-    where: 'Chapter 8; Conclusion',
-  },
-];
-
-export const language = [
-  { term: 'Person-first language', text: 'For example, “person with a disability.” Common among professionals and parents, and preferred by Self-Advocates Becoming Empowered.' },
-  { term: 'Identity-first language', text: 'For example, “autistic person” or “disabled people.” Common among autistic self-advocates and activists with physical disabilities, it affirms disability as a shared, valued experience.' },
-  { term: 'Psychiatric survivor, mad', text: 'Terms chosen by some people who experienced psychiatric treatment. “Survivor” names harms done by the system, and “mad” is reclaimed with pride.' },
-  { term: 'Crip', text: 'Reclaimed by some people with physical disabilities as a powerful, proud term.' },
-];
-
-// Appendix, Table A.1 — twenty-seven interviewees (names are pseudonyms)
-export const research = {
-  interviews: 27,
-  byRole: [
-    { label: 'Parents', n: 12 },
-    { label: 'Parents who are also self-advocates', n: 2 },
-    { label: 'Self-advocates', n: 7 },
-    { label: 'Siblings and adult children', n: 2 },
-    { label: 'Professionals in activist organizations', n: 4 },
-  ],
-  ages: '21 to 89',
-  sources: ['Interviews', 'Organizational documents', 'Archival records', 'News reports', 'Blogs and online forums'],
-};
-
-// ─── Timeline ────────────────────────────────────────────────────────────────
-// kind: 'parent' (parent-led organizing) | 'disabled' (disabled-led activism)
-//       | 'law' (law and policy) | 'books' (the books)
-export const timeline = [
-  { year: '1930s–40s', kind: 'parent', title: 'Parent activism takes root', text: 'Parents begin joining together to create nursery schools, recreation, and education for children shut out of public schools.' },
-  { year: '1940', kind: 'disabled', title: 'American Federation of the Physically Handicapped', text: 'Paul Strachan founds an early national, cross-disability organization fighting for disability rights.' },
-  { year: '1949', kind: 'parent', title: 'United Cerebral Palsy', text: 'Founded by parents to provide services and advocate for people with cerebral palsy and other developmental disabilities.' },
-  { year: '1950', kind: 'parent', title: 'The Arc', text: 'Parents of people with intellectual disabilities found what becomes the largest parent-led disability organization. The Muscular Dystrophy Association emerges around the same time.' },
-  { year: '1950s', kind: 'disabled', title: 'Gini Laurie’s polio networks', text: 'Sibling activist Gini Laurie begins building what becomes Post-Polio Health International and the International Ventilator Users Network.' },
-  { year: '1962', kind: 'law', title: 'President Kennedy’s Panel on Mental Retardation', text: 'Parent leader Elizabeth Boggs serves on the panel, bringing family advocacy into federal policy.' },
-  { year: '1962', kind: 'disabled', title: 'Ed Roberts enters UC Berkeley', text: 'With his mother Zona’s help, Roberts becomes the first student using an iron lung to attend Berkeley, and later a founder of the independent living movement.' },
-  { year: '1967', kind: 'parent', title: 'American Society for Deaf Children', text: 'Parents advocate for language-rich environments for deaf children, including American Sign Language.' },
-  { year: '1973', kind: 'law', title: 'Section 504 of the Rehabilitation Act', text: 'The first federal civil-rights protection for disabled people — the subject of Richard Scotch’s From Good Will to Civil Rights.' },
-  { year: '1975', kind: 'law', title: 'Right to a public education', text: 'The Education for All Handicapped Children Act (now IDEA), won with heavy parent advocacy, guarantees a free appropriate public education.' },
-  { year: '1979', kind: 'parent', title: 'NAMI and the National Down Syndrome Society', text: 'Family members found the National Alliance on Mental Illness. The National Down Syndrome Society is founded the same year.' },
-  { year: '1983', kind: 'parent', title: 'VOR and the National Organization of Parents of Blind Children', text: 'VOR (formerly Voice of the Retarded) forms to oppose deinstitutionalization. The NOPBC forms as a division of the National Federation of the Blind.' },
-  { year: '1988', kind: 'disabled', title: 'Deaf President Now', text: 'Students at Gallaudet University win their demand for the university’s first Deaf president.' },
-  { year: '1989', kind: 'parent', title: 'National Federation of Families for Children’s Mental Health', text: 'Families organize around children and youth with mental health needs.' },
-  { year: '1990', kind: 'law', title: 'Americans with Disabilities Act', text: 'Sweeping civil-rights protections, won by a broad coalition of disabled activists, parents, and allies.' },
-  { year: '1997', kind: 'parent', title: 'Hands & Voices', text: 'A parent-driven group supporting all families of deaf and hard-of-hearing children, whatever their communication choice.' },
-  { year: '1999', kind: 'law', title: 'Cedar Rapids v. Garret F.', text: 'Charlene Frey’s case wins her son Garret, who uses a ventilator, the nursing services he needs to attend school.' },
-  { year: '2005', kind: 'parent', title: 'Autism Speaks', text: 'Founded with a focus on research and awareness. Its framing of autism as an epidemic draws sharp opposition from autistic self-advocates.' },
-  { year: '2016', kind: 'disabled', title: 'Not Dead Yet and Jerika Bolen', text: 'Disabled activists contest a family’s support for a teenager’s decision to end life support, a flashpoint the book explores.' },
-  { year: '2020', kind: 'books', title: 'Allies and Obstacles is published', text: 'Temple University Press publishes the book. It goes on to win two national awards.' },
-  { year: '2025', kind: 'books', title: 'Family and Disability Activism is published', text: 'The follow-up volume centers BIPOC and LGBTQIA2S+ disabled activists and families.' },
-];
-
-export const timelineKinds = {
-  parent: { label: 'Parent-led organizing', short: 'Parent-led' },
-  disabled: { label: 'Disabled-led activism', short: 'Disabled-led' },
-  law: { label: 'Law and policy', short: 'Law & policy' },
-  books: { label: 'The books', short: 'The books' },
-};
 
 export const cite = {
   'allies-and-obstacles': {

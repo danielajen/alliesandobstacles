@@ -8,9 +8,8 @@
 export const site = {
   name: 'Allies & Obstacles',
   url: 'https://alliesandobstacles.com',
-  tagline: 'Two books on disability, family, and the long work of activism.',
   description:
-    'The home of Allies and Obstacles and Family and Disability Activism, by Pamela Block, Allison C. Carey, and Richard K. Scotch. Where to buy, reviews, podcasts, study guides, a free audiobook, and news from our contributors.',
+    'Allies and Obstacles and Family and Disability Activism, by Allison C. Carey, Pamela Block, and Richard K. Scotch (Temple University Press): where to buy, reviews, study guides, the free audiobook, and contributors.',
   // Shown in the footer.
   contactEmail: 'pblock@uwo.ca', // CONFIRM: which address Pam wants public
   publisher: {
@@ -34,12 +33,15 @@ export const books = [
     // Set to e.g. 'assets/covers/allies-and-obstacles.jpg' once Pam confirms we
     // may show the cover. Until then a typographic cover is drawn instead.
     coverImage: 'assets/covers/allies-and-obstacles.jpg',
-    coverAlt: 'Cover of Allies and Obstacles: a painted red heart outlined in blue over a sweep of green, splattered with red, blue, and yellow paint',
-    hook: 'When parents fight for their disabled children, whose voice leads?',
+    // Cover description from the study guide
+    coverAlt: 'Cover of Allies and Obstacles: a red heart, with a blue outline on half of the heart and white outline on the other side. A green paint smear runs behind the heart. Paint splatters in red, blue, green, and yellow surround the heart.',
+    hook: null,
     lccn: '2019042677',
+    // Publisher's description, word for word (tupress.temple.edu/books/allies-and-obstacles)
     summary: [
-      'Parents of children with disabilities have been among the most powerful forces in American disability policy — winning the right to a public education, pushing people out of institutions and into communities, and taking their fight to courts and legislatures. Yet many disabled activists have experienced parent advocacy as something that speaks over them rather than with them.',
-      '*Allies and Obstacles* traces that relationship across the twentieth and twenty-first centuries. Using a social-movement lens and four case studies — intellectual disability, psychiatric disability, autism, and physical disabilities such as cerebral palsy and muscular dystrophy — the authors show when parents and disabled activists have worked together, when they have clashed, and what each movement has gained and lost along the way.',
+      'Parents of children with disabilities often situate their activism as a means of improving the world for their child. However, some disabled activists perceive parental activism as working against the independence and dignity of people with disabilities. This thorny relationship is at the heart of the groundbreaking *Allies and Obstacles*.',
+      'The authors chronicle parents’ path-breaking advocacy in arenas such as the right to education and to liberty via deinstitutionalization as well as how they engaged in legal and political advocacy. *Allies and Obstacles* provides a macro analysis of parent activism using a social movement perspective to reveal and analyze the complex—and often tense—relationship of parents to disability rights organizations and activism.',
+      'The authors look at organizational and individual narratives using four case studies that focus on intellectual disability, psychiatric diagnoses, autism, and a broad range of physical disabilities including cerebral palsy and muscular dystrophy. These cases explore the specific ways in which activism developed among parents and people with disabilities, as well as the points of alliance and the key points of contestation. Ultimately, *Allies and Obstacles* develops new insights into disability activism, policy, and the family.',
     ],
     formats: [
       { format: 'Paperback', isbn: '9781439916339', price: '$34.95' },
@@ -60,7 +62,11 @@ export const books = [
         from: 'North Central Sociological Association',
       },
     ],
-    praise: [],
+    praise: [
+      { quote: 'Through an insightful historical account, Carey, Block, and Scotch trace the goals, issue frames, tactics, strategies, and organizational forms associated with disability-based parental activism…. This book provides a careful and much-needed analysis of the interplay between parent activists and the disability rights movement…. Allies and Obstacles is a must-read not only for disability scholars in sociology and in disability studies but for scholars of social movements and political sociology.', who: 'American Journal of Sociology' },
+      { quote: '(H)ighly informative…. Allies and Obstacles is an essential read that challenges facile categorizations, easy binaries, and any quick reliance on rights talk.', who: 'H-Disability' },
+      { quote: '(A) thought-provoking book filled with new information about a phenomenon that has received little scholarly attention and raises questions about social movement fluidity, messiness, and complexity which should be of general interest to social movement scholars.', who: 'Mobilization' },
+    ],
   },
   {
     slug: 'family-and-disability-activism',
@@ -74,11 +80,14 @@ export const books = [
     pages: 188,
     accent: 'blue',
     coverImage: 'assets/covers/family-and-disability-activism.jpg',
-    coverAlt: 'Cover of Family and Disability Activism: a painting of a baby with medical tubes asleep in a green bassinet, in a room with flower pictures and a giraffe growth chart',
-    hook: 'BIPOC and LGBTQIA2S+ disabled activists and families, in their own words.',
+    // Cover alt text from the references and image descriptions document (Dina Dwairi)
+    coverAlt: 'Cover of Family and Disability Activism: portrait of a cyborg infant in a green bassinet that also features curious birds, a growth chart, flower pictures and a dream catcher.',
+    hook: 'Giving voice to a range of intersectional disability and parent experiences within social movement activism',
+    // Publisher's description, word for word (tupress.temple.edu/books/family-and-disability-activism)
     summary: [
-      '*Family and Disability Activism* picks up where *Allies and Obstacles* left off. Instead of studying four disability communities from the outside, it gathers first-person, cross-disability stories from disabled people and family members who identify as BIPOC and/or LGBTQIA2S+.',
-      'The contributors show how race, ethnicity, gender, and sexuality shape the way families meet segregation, institutionalization, and the special-education system — and how activists who live at those intersections are moving the conversation from rights toward justice.',
+      'In 2020, Pamela Block, Allison C. Carey, and Richard K. Scotch published *Allies and Obstacles*, which examined the tensions and connections between disability activism and parents of children with disabilities. In *Family and Disability Activism*, they continue to examine these issues with a focus on the path-breaking advocacy by marginalized activists with intersectional lived experiences.',
+      '*Family and Disability Activism* reveals how families and disabled people who identify as BIPOC and/or LGBTQIA2S+ understand issues of rights versus justice. Contributions by Deaf and disabled activists emphasize the frequent need for either care or independence. Other chapters show how members of the disabled community and their families must navigate systemic issues of segregation, institutionalization, and access to special education services differently depending on their ethnic and racial identities.',
+      'Expanding the conversation about disability, kinship, biological and chosen families, and activism, this volume amplifies important voices in the fight for disability rights.',
     ],
     formats: [
       { format: 'Paperback', isbn: '9781439923894', price: '$19.95' },
@@ -90,10 +99,9 @@ export const books = [
     studyGuideUrl: 'https://tupress.temple.edu/study-guides/family-and-disability-activism',
     awards: [],
     praise: [
-      {
-        quote: 'The best short anthology I’ve read on disability justice activism in years.',
-        who: 'Kerima Çevik',
-      },
+      { quote: 'Family and Disability Activism is a book that proposes dialogue in this moment of division. An excellent expansion of Allies and Obstacles, it is the best short anthology I’ve read on disability justice activism in years. The cross-disability inclusion is on point and needed.', who: 'Kerima Çevik, Disabled Parent Activist, Creator of #AutisticWhileBlack' },
+      { quote: 'Authors, families, and strategies are as diverse as disability itself; Family and Disability Activism is an exciting foray into disability activism’s history, present, and future.', who: 'Faye Ginsburg and Rayna Rapp, authors of Disability Worlds' },
+      { quote: 'Concisely and compellingly, Family and Disability Activism demonstrates how culture and racial and ethnic identity affect disability activism.', who: 'History: Reviews of New Books' },
     ],
   },
 ];

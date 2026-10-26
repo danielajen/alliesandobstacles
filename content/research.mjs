@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 //  PAMELA BLOCK — RESEARCH PAGES
-//  Drawn from Pam's CV (May 2026). One entry per page; add projects or
-//  publications by copying an existing line.
+//  Descriptions are Pam's own (sent Oct 2026). Project, publication and
+//  recognition lists are from her CV (May 2026). No AI-written text.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const research = [
@@ -11,24 +11,14 @@ export const research = [
     title: 'Research in Brazil',
     eyebrow: 'Pamela Block · Pesquisa no Brasil',
     accent: 'yellow',
-    lede:
-      'For more than three decades Pam has worked with disabled people, families, activists, and scholars in Brazil — on the history of eugenics and institutions, autism and self-advocacy, disability arts, and the growth of Brazilian disability studies.',
-    intro: [
-      'Pam is fluent in Portuguese and began working in Brazil as a doctoral student. Her Duke University dissertation, *Biology, Culture and Cognitive Disability: Twentieth Century Professional Discourse in Brazil and the United States* (1997), compared how professionals in both countries understood intellectual disability.',
-      'Since then her Brazilian work has moved from archival history to participatory and arts-based research led alongside disabled Brazilians, including Black, quilombola, and Indigenous communities.',
-    ],
-    themes: [
-      { k: 'Eugenics and institutions', text: 'How twentieth-century Brazil built institutions, sterilization practices, and sexual control around intellectual disability, and the ideas it shared with the United States and Europe.' },
-      { k: 'Autism and self-advocacy', text: 'Professional treatment, family advocacy, and autistic pride in Brazil from the 1940s to today, compared with autism policy in the United States.' },
-      { k: 'Disability arts and anti-eugenics', text: 'Portraits, film, and co-created media in which disabled Brazilians represent themselves, as a practice against eugenic ways of seeing.' },
-      { k: 'Brazilian disability studies', text: 'The emergence of disability studies in Brazil and the Global South, and ableism (capacitismo) in education and public policy.' },
-    ],
+    // Pam's own project descriptions (2024), word for word. She notes they need updating.
+    descriptions: [{"title": "Disability Portraits from Brazil", "paras": ["People with chronic conditions and disability have long been used to the realities of being shut in, accessing the world through virtual means for their own safety, engaging in “bedspace activism” due to inaccessible social policies and environmental structures. The unexpected realities of lockdown were new to everyone else, but disability activists and scholars were long used using technology to engage with each other and work remotely. With the pandemic lockdown I worked with the Wenner Gren Foundation to create virtual mechanisms for emerging scholars of disability in Brazil to network and collaborate with each other in everything from reading and writing groups to organizing virtual conference strands. This group “The Realities of Disability in Brazil” also served as a springboard for Brazilian Anthropologist Nadia Meinerz and myself and we began working with a community partner Ateliê Ambrosina -- an urban lesbian multiracial and anti-ableist artist collective based in Maceio Brazil -- to create a participatory digital research creation project allowing disabled Brazilians to work virtually with each other and with scholars, artists, and activists to create Disability Portraits from Brazil. This project served to document the struggles and joys of disabled Brazilians under the Bolsonaro administration and during the Covid-19 pandemic. In the end 44 research participants working in 22 co-creative duos in which at least one member was disabled created 11 podcasts and 11 works of visual art. A second stage of the project was enabled by an SSHRC Connections grant which allowed us (now also including co-applicant psychologist and disability studies scholar Marivete Gesser) to organize four virtual symposia engaging in themes emerging from the earlier cocreations. These included Disability and Indigeneity in the Anthropocene; Gender Sexuality and Disability; Disability Aesthetics; and Disability Access. These symposia allowed us to innovate using evolving technologies for disability access and language translation to create a methodology for disabled scholars with communication and language differences to interact with each other synchronously in meaningful ways. Some of this experience is documented in the 2023 special issue that Nadia Meinerz and I organized. A third phase of this project is working with Ateliê Ambrosina on a larger scale community-based co-creative documentary film project in the Quilombo Filus. Quilombos are remote rural communities founded by formerly enslaved and indigenous people. The community we worked with included an unusually large number of people with albinism and the short film depicts their lives including their experiences of barriers to mobility, information, and education. Accompanying research documented struggles to obtain technologies of healing and assistive technologies for disabled people. Future plans include a feature length film and interventions related to technologies for health and disability at Filus and neighboring Quilombos."], "links": [{"label": "Watch the film, Filus (YouTube)", "url": "https://www.youtube.com/watch?v=rIcdnkv-e2k"}, {"label": "Watch the introduction to the film (YouTube)", "url": "https://www.youtube.com/watch?v=aCiB5G6DDDQ"}, {"label": "Retratos Defiças website", "url": "https://www.retratosdeficas.com/"}]},
+      {"title": "Autism, Disability, Communication, Family, and Self Advocacy in the US and Brazil", "paras": ["Working in collaboration with autistic and disabled scholars and activists, I am deeply interested in documenting the experiences of autistic and intellectually disabled people. I have co-authored a book called Allies and Obstacles: Parents of Children with Disabilities and Disability Rights (2020) with sociologists Allison Carey and Richard Scotch that addresses the activism of autistic and disabled people and their parents. A follow-up edited volume expanding upon activist understandings of family and disability activism is currently under contract and review, also at Temple University Press. I also have project funded by an SSHRC Partnership Grant and matched by the Azrieli Foundation looking at care relationships between adult siblings where at least one has an intellectual disability or autism. Since the 1990s as a doctoral student, I have been interested in the historical formation of autism and intellectual disability as a social and diagnostic identities, self advocacy, and neurodivergence in Brazil and the United States with a particular interest in technology-mediated modes of communication. I have a co-authored articles and chapters in these emerging areas of autistic and disability studies in the US, Canada, and Brazil. The 25 years of research I have completed in the areas of autism and intellectual disability has influenced theory, activism and policy initiatives in the United States, Brazil, and Indonesia."]}],
     projects: [
       {
         title: 'Defiça Portraits: Disability, Art and Communication',
         years: '2022–2025',
         role: 'Principal Investigator, with Nádia Meinerz',
-        text: 'Disabled Brazilians create portraits and stories of their own lives. Funded by a SSHRC Connections Grant, with support from the Wenner-Gren Foundation.',
         url: 'https://www.retratosdeficas.com/',
         urlLabel: 'Retratos Defiças website',
       },
@@ -36,19 +26,16 @@ export const research = [
         title: 'Filús',
         years: '2024',
         role: 'Co-creator',
-        text: 'A documentary made with members of a quilombo community through social mobilization and participatory filmmaking. Screened at Kyoto University and presented as anti-eugenics practice at the University of São Paulo (2025).',
       },
       {
         title: 'Barriers to Supports and Services for Disabled Brazilians in Urban Quilombos and Urban Indigenous Communities',
         years: '2026–2027',
         role: 'Principal Investigator',
-        text: 'A new study of the barriers disabled Brazilians face in reaching supports and services in urban quilombola and Indigenous communities.',
       },
       {
         title: 'Brazil–Canada Disability Research Speaker Series',
         years: '2020–2023',
         role: 'Principal Investigator',
-        text: 'Mentor-matched talks pairing Brazilian and Canadian disability researchers, alongside the “Realidades de Deficiência no Brasil” webinar series and a collective-access curriculum project in anthropology.',
       },
     ],
     recognition: [
@@ -78,24 +65,15 @@ export const research = [
     title: 'Research in North America',
     eyebrow: 'Pamela Block · Canada and the United States',
     accent: 'blue',
-    lede:
-      'In Canada and the United States, Pam’s research follows disabled people and their families across a lifetime — from parent activism and sibling care to health promotion, complex medical needs, and the policies that shape everyday support.',
-    intro: [
-      'Before joining Western University in 2019, Pam spent nearly two decades at Stony Brook University, where she directed the disability studies program in the Health and Rehabilitation Sciences PhD, and earlier worked at Brown University and the University of Illinois at Chicago.',
-      'Much of her North American work is participatory: it is built with disabled people, families, and community organizations rather than only about them.',
-    ],
-    themes: [
-      { k: 'Family and disability activism', text: 'How parents, siblings, and disabled activists organize — the subject of *Allies and Obstacles* and *Family and Disability Activism*.' },
-      { k: 'Sibling care', text: 'What happens as disabled people increasingly outlive their parents, and siblings take on care within a strained support system.' },
-      { k: 'Complex medical needs', text: 'Young people who rely on ventilators and 24-hour care as they age out of children’s hospitals and pediatric services.' },
-      { k: 'Race, poverty, and disability', text: 'How racism and poverty compound disability oppression, and what capacity building looks like in minority communities.' },
-    ],
+    // Pam's own project descriptions (2024), word for word. She notes they need updating.
+    descriptions: [{"title": "Aging Out of Children’s Hospitals and VENTure Think Tank", "paras": ["This strand of scholarship focuses on the historical and current experiences of children with medical conditions that require 24-hour skilled nursing and complex technologies for survival (Lorandi and Block 2023). Currently these children survive much longer than ever before, due to technological innovation, but risk losing crucial supports once they become adults – sometimes moving directly from paediatric hospitals to geriatric nursing homes due to lack of alternatives. A series of publications, some under review, includes a comparison of experiences with assistive technologies of elderly adults with post-polio syndrome and diabetics with recent amputations (Almukhtar et al 2022) and a historical study of people with complex medical conditions (Block under review). Collectively young disabled polio-survivors shared information and strategized to create new technological and policy pathways to access education, personal care, transportation, and other resources and in the chapter for our edited volume Family and Disability Activism, “Aging Out of Children’s Hospitals: 20th and 21st century experiences of children with complex medical conditions and their parents” (under review), I compare the historical experiences of polio-survivors to the transformative justice struggles of contemporary young people with complex medical conditions, including those who use mechanical ventilation. While at Stony Brook University I co-founded the VENTure Think Tank (Block et al. 2017) with Brooke Ellison and Nick Dupree to consider technology and policy as well as disaster preparedness. Following Super Storm Sandy I worked with the US Federal Emergency Management Agency (FEMA) to form a local Core Advisory Group which included local emergency responders, disability activists and service provides to create accessible mechanisms for communication, technology distribution and mobility plans during times of crisis. This group continued after I left Stony Brook and was instrumental to supporting the safety and wellbeing of local and regional disabled residents during the Covid-2019 epidemic, which was particularly dangerous in this region of Long Island New York, one of the early epicenters of the epidemic."]},
+      {"title": "Universal Design for Learning and Collective Access in the Classroom", "paras": ["An aspect of educational research that has interested me for many years is how to ensure the classroom experience is accessible for students on many levels including disability, language, and economic access. I have been experimenting with blended and online learning for disability and communication access for over twenty years and in recent years a vocabulary to describe my interest in accessible design has been formulated by emerging scholars such as Aimi Hamraie, Cassandra Hartblay, Arseli Dokumaci and from disability justice activists such as Mia Mingus, Alice Wong, and Sandra Ho. I am currently collaborating with colleagues to study the experiences of disabled students with access practices at Western University (with Kim Clark) and the experiences black disabled Brazilian women in higher academia (with Marivete Gesser and Valeria Aydos)."]},
+      {"title": "Disability Studies, Anthropology and the Global Health", "paras": ["In 2016, I co-edited a 26-chapter book with Devva Kasnitz, Nick Pollard, and Akemi Nishida on Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability that focuses on politically engaged critical approaches to disability that intersect the fields of anthropology. occupational studies and disability studies. International movements claim disability as a collective cultural identity rather than a medical category and recognize the political and economic dimensions of disability inequality as it intersects with other forms of inequality. Moving well beyond traditional clinical formulations of disability, the book engages social scientists, activists, clinicians, and artists in dialogues about disability as a theoretical construct and lived experience. The concept/definition of “occupation” in this context is intentionally a moving target. Some authors discuss occupying spaces as a form of protest or, alternatively, protesting territorial occupations. Others discuss occupations as engagement in meaningful activities, which are framed or problematized within the fields of anthropology, occupational therapy, and occupational science. Contributors are drawn from the US, Asia, South America, Europe, and Australia. Emerging scholars such as M. Remi Yergeau and Akemi Nishida developed chapters that grew into book projects. This project grew out of over a decade of discussions I facilitated among anthropologists, disability studies scholars, and occupational scientists in a series of meetings, hosted through the Society for Applied Anthropology and the Society for Disability Studies. My tenure as president of the Society of Disability Studies and as a Fellow of the Society for Applied Anthropology afforded me the opportunity to launch these collaborations, which were partially funded via NIH grants. Over the years, I organized independent symposia, conference strands, and topical interest groups. I chaired sessions, facilitated discussion and did what I could to ensure full access and participation of disabled activists and scholars. My leadership in this area has influenced a new generation of emerging translational disability studies researchers and practitioners who collaborate effectively between the social sciences and health fields."], "links": [{"label": "Contents and chapter authors of Occupying Disability", "url": "/authors/pamela-block/#od-h"}]}],
     projects: [
       {
         title: 'Care Relationships of Adult Disabled and Nondisabled Siblings',
         years: '2022–2025',
         role: 'Principal Investigator',
-        text: 'A SSHRC Partnership Engage project with the Azrieli Foundation Centre for Caregiving Excellence. Its findings appear in *Medical Anthropology Quarterly* (2025) and in op-eds in the Toronto Star and Montreal Gazette (2026).',
         url: 'https://doi.org/10.1111/maq.70048',
         urlLabel: 'Read the article',
       },
@@ -103,13 +81,11 @@ export const research = [
         title: 'Planning and Facilitation',
         years: '2025–2026',
         role: 'Principal Investigator, with Partners for Planning',
-        text: 'Expanding the capacity of person-centred planning and facilitation supports for disabled people and families across Canada.',
       },
       {
         title: 'Beyond Allies and Obstacles',
         years: '2021–2023',
         role: 'Co-Director, Ford Foundation',
-        text: 'The project behind *Family and Disability Activism*, centering BIPOC and LGBTQIA2S+ disabled activists and families.',
         url: '/books/family-and-disability-activism/',
         urlLabel: 'About the book',
       },
@@ -117,7 +93,6 @@ export const research = [
         title: 'Shake It Up!',
         years: '2002–2005',
         role: 'Principal Investigator',
-        text: 'Health promotion and capacity building with people with spinal cord injuries and related neuromuscular disabilities, funded by the National Institute on Disability and Rehabilitation Research.',
         url: 'https://shakeitup.uwo.ca/',
         urlLabel: 'Project archive',
       },
@@ -125,7 +100,6 @@ export const research = [
         title: 'Pediatric Multiple Sclerosis community building',
         years: '2006–2010',
         role: 'Principal Investigator and Rehabilitation Liaison',
-        text: 'Retreats, research, and community for teens with MS, with the National Multiple Sclerosis Society’s Pediatric MS Center of Excellence.',
         url: 'https://youtu.be/gKfUxxnEU4Y',
         urlLabel: 'Watch “Growing Up with MS”',
       },

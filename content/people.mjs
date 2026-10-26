@@ -1,8 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 //  AUTHORS AND CONTRIBUTORS
-//  Bios below were drafted from public university pages — CONFIRM each one
-//  with the person before launch. Anyone can be given more links or updates
-//  just by adding to the arrays.
+//  Author bios use the Temple University Press author notes (no AI-written text).
+//  Contributor and team bios are each person's own words.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const authors = [
@@ -14,10 +13,9 @@ export const authors = [
     role: 'Professor of Anthropology, Western University',
     photo: null, // e.g. 'assets/img/pamela-block.jpg'
     photoAlt: '',
+    // Temple University Press author note, word for word. Pam's own research descriptions are on her research pages.
     bio: [
-      'Pamela Block is Professor of Anthropology at Western University in London, Ontario, where she moved after many years teaching disability studies at Stony Brook University in New York. Her research and teaching sit where disability studies, anthropology, and occupational science meet, with a long-standing interest in disability activism, community, and the histories of institutions.',
-      'Pam is part of the autism community, and her family is at the heart of this work: she credits her mother, Barbara Kilcup, a special education teacher and parent advocate, and her sister Hope Block as the reasons she undertook *Allies and Obstacles*.',
-      'She is co-author of *Allies and Obstacles*, co-editor of *Family and Disability Activism*, and co-editor of *Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability*.',
+      'Pamela Block is a Professor of Anthropology at Western University. She is coeditor of *Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability*.',
     ],
     publications: [
       {
@@ -48,10 +46,10 @@ export const authors = [
     role: 'Professor, Department of Political and Social Inquiry, Shippensburg University',
     photo: null,
     photoAlt: '',
+    // Temple University Press author note, with her current department (from Allison, Oct 2026).
     bio: [
-      'Allison C. Carey is Professor in the Department of Political and Social Inquiry at Shippensburg University in Pennsylvania. Her work examines disability rights, social movements, and the history of how the United States has granted and withheld citizenship from people with intellectual disabilities.',
-      'She grew up engaged with the intellectual disability community through her family and the Arc, and it was her parents\u2019 work to support all of their children that first drew her to these questions.',
-      'In 2021 she received the award for an Outstanding Career in the Sociology of Disability from the American Sociological Association’s Section on Disability in Society.',
+      'Allison C. Carey is a Professor in the Department of Political and Social Inquiry at Shippensburg University. She is the author of *On the Margins of Citizenship: Intellectual Disability and Civil Rights in Twentieth-Century America* (Temple) and coeditor of *Disability Incarcerated: Disability and Imprisonment in the United States and Canada* and *Disability and Community*.',
+      'She received the 2021 Outstanding Career in the Sociology of Disability award from the Disability and Society section of the American Sociological Association.',
     ],
     publications: [
       {
@@ -89,12 +87,11 @@ export const authors = [
     tribute: true,
     photo: null,
     photoAlt: '',
+    // Main content to be Allison's co-authored in-memoriam essay (requested from Pam).
+    // Until then: the Temple University Press author note and the dates from UT Dallas.
     bio: [
-      'Richard Kivie Scotch was born in Chicago in 1951 and died in Dallas on June 2, 2026. He earned his BA from the University of Chicago and his MA and PhD in sociology from Harvard University, and spent forty-two years on the faculty of The University of Texas at Dallas before retiring in 2025.',
-      'His first book, *From Good Will to Civil Rights*, told the story of how federal disability policy was transformed by the disability rights movement, and it remains essential reading decades later. He went on to write more than seventy articles and book chapters, served as president of the Society for Disability Studies, and helped found the American Sociological Association’s Section on Disability in Society.',
-      'At UT Dallas he mentored generations of students, served on more than fifty dissertation committees, and was the driving force behind the university’s public health program. On his retirement the university created the Richard Scotch Distinguished Graduate Teaching Award in his honor.',
-      'The idea for *Allies and Obstacles* was Richard\u2019s: after Allison\u2019s first book came out, he proposed that they write about parent activism together, and Pam soon joined them. Five years later, the three reunited to edit *Family and Disability Activism*.',
-      'To us he was a co-author, a steady and generous collaborator, and a friend. These books would not exist without him.',
+      'Richard K. Scotch was Professor of Sociology and Public Policy at the University of Texas at Dallas. He is the author of *From Good Will to Civil Rights: Transforming Federal Disability Policy* (Temple), coauthor of *Disability Protests: Contentious Politics, 1970–1999*, and coeditor of *Disability and Community*.',
+      'He died in Dallas on June 2, 2026.',
     ],
     honors: [
       { year: 2014, name: 'Distinguished Contributions to the Sociology of Disability Award, American Sociological Association' },

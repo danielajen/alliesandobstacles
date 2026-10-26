@@ -4,7 +4,6 @@ import { esc, icon, join } from './components.mjs';
 
 const NAV = [
   ['The Books', '/books/'],
-  ['Timeline', '/timeline/'],
   ['Free Audiobook', '/audiobook/'],
   ['Authors', '/authors/'],
   ['Contributors', '/contributors/'],
@@ -45,7 +44,7 @@ function seg(name, legend, options) {
 }
 
 export function layout({ path, title, description, body, bodyClass = '' }) {
-  const fullTitle = path === '/' ? `${site.name} — Parents, disabled activists, and the alliances between them` : `${title} · ${site.name}`;
+  const fullTitle = path === '/' ? `${site.name} — Allies and Obstacles and Family and Disability Activism` : `${title} · ${site.name}`;
   const desc = description || site.description;
   const active = (url) => path.startsWith(url);
   const canonical = `${site.url}${path.replace(/404\.html$/, '')}`;
@@ -130,13 +129,12 @@ ${body}
         <span class="brand__mark" aria-hidden="true"><span></span><span></span><span></span></span>
         <span class="brand__name">Allies <span class="amp">&amp;</span> Obstacles</span>
       </a>
-      <p>${esc(site.tagline)} By Pamela Block, Allison C. Carey, and Richard K. Scotch, published by ${esc(site.publisher.name)}.</p>
+      <p>Books by Allison C. Carey, Pamela Block, and Richard K. Scotch, published by ${esc(site.publisher.name)}.</p>
     </div>
     <nav aria-label="Books">
       <p class="footer-heading">Books</p>
       <ul>${join(books, (b) => `<li><a href="/books/${b.slug}/">${esc(b.short)}</a></li>`)}
         <li><a href="/books/allies-and-obstacles/#inside">Chapter guide</a></li>
-        <li><a href="/timeline/">Timeline</a></li>
         <li><a href="/audiobook/">Free audiobook</a></li>
       </ul>
     </nav>
@@ -161,7 +159,7 @@ ${body}
   </div>
   <div class="wrap site-footer__base">
     <p>© ${new Date().getFullYear()} Pamela Block, Allison C. Carey, and Richard K. Scotch.</p>
-    <p>Chapter summaries are written for this site. Please buy or borrow the books to read them in full.</p>
+    <p>Book descriptions, chapter summaries, and discussion questions are from Temple University Press and its study guides.</p>
   </div>
 </footer>
 </body>

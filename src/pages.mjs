@@ -5,7 +5,7 @@ import { authors, contributors, team } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
 import { research as researchPages } from '../content/research.mjs';
 import { occupyingDisability as OD } from '../content/occupying.mjs';
-import { parts, keyIdeas, allianceFrames, language, research, timeline, timelineKinds, cite, fdaContents } from '../content/book.mjs';
+import { parts, cite, fdaContents, studyGuidePdf } from '../content/book.mjs';
 import { esc, rich, join, link, icon, cover, button, avatar, sectionHead, breadcrumbs } from './components.mjs';
 
 // `has(file)` is injected by the build so pages know whether a download exists.
@@ -80,7 +80,7 @@ function bookCard(b, { headingLevel = 3, big = false } = {}) {
       <p class="eyebrow">${b.role === 'Editors' ? 'Edited volume' : 'Monograph'} · ${b.year}</p>
       <${h} class="book-card__title"><a href="/books/${b.slug}/">${esc(b.title)}</a></${h}>
       <p class="book-card__subtitle">${esc(b.subtitle)}</p>
-      <p class="book-card__hook">${esc(b.hook)}</p>
+      ${b.hook ? `<p class="book-card__hook">${esc(b.hook)}</p>` : ''}
       <p class="badges">${badges.join('')}</p>
       <div class="btn-row">
         ${button(`/books/${b.slug}/`, `Explore the book<span class="visually-hidden">: ${esc(b.short)}</span>`, { variant: 'primary', ic: 'arrow', iconEnd: true })}
@@ -126,37 +126,10 @@ function stat(n, label) {
   return `<div class="stat reveal"><dt>${label}</dt><dd>${n}</dd></div>`;
 }
 
-function timelineList(items, { compact = false } = {}) {
-  return `<ol class="timeline${compact ? ' timeline--compact' : ''}" role="list" data-timeline>${join(
-    items,
-    (e) => `<li class="tl tl--${e.kind} reveal" data-kind="${e.kind}">
-      <p class="tl__year">${esc(e.year)}</p>
-      <div class="tl__card">
-        <p class="tl__kind"><span class="dot dot--${e.kind}" aria-hidden="true"></span>${timelineKinds[e.kind].short}</p>
-        <h3 class="tl__title">${rich(e.title)}</h3>
-        ${compact ? '' : `<p class="tl__text">${rich(e.text)}</p>`}
-      </div>
-    </li>`,
-  )}</ol>`;
-}
-
-function framesList(light = false) {
-  return `<ol class="frames${light ? ' frames--light' : ''}" role="list">${join(
-    allianceFrames,
-    (f, i) => `<li class="frame frame--${ACCENTS[i]} reveal">
-      <span class="frame__n" aria-hidden="true">${i + 1}</span>
-      <p class="frame__k">${esc(f.k)} <span>${esc(f.over)}</span></p>
-      <p class="frame__t">${esc(f.text)}</p>
-    </li>`,
-  )}</ol>`;
-}
-
 // ─── Home ────────────────────────────────────────────────────────────────────
 
 function home() {
   const latest = media.filter((m) => ['review', 'podcast', 'article'].includes(m.type)).slice(0, 6);
-  const picks = ['1949', '1950', '1975', '1979', '1990', '2005', '2020', '2025'];
-  const tlPicks = timeline.filter((e) => picks.includes(e.year));
   return page(
     '/',
     'Home',
@@ -166,8 +139,8 @@ function home() {
   <div class="wrap hero__grid">
     <div class="hero__text">
       <p class="eyebrow eyebrow--rule">Pamela Block · Allison C. Carey · Richard K. Scotch</p>
-      <h1 class="hero__title">Parents, disabled activists, and the <em>uneasy alliances</em> between them.</h1>
-      <p class="hero__lede">Two books on seventy years of disability activism, including the award-winning <cite>Allies and Obstacles</cite> — from the parents who built the first national movements in the 1950s to BIPOC and LGBTQIA2S+ families organizing today.</p>
+      <h1 class="hero__title"><cite>Allies and Obstacles</cite> and <cite>Family and Disability Activism</cite></h1>
+      <p class="hero__lede">Books by Allison C. Carey, Pamela Block, and Richard K. Scotch, published by ${esc(site.publisher.name)}.</p>
       <div class="btn-row">
         ${button('/books/', 'Explore the books', { ic: 'book' })}
         ${button('/audiobook/', 'Free audiobook', { variant: 'ghost', ic: 'headphones' })}
@@ -179,52 +152,12 @@ function home() {
       <a href="/books/${FDA.slug}/" class="hero__cover hero__cover--front" tabindex="-1">${cover(FDA)}</a>
     </div>
   </div>
-  <div class="wrap">
-    <dl class="stats">
-      ${stat('2', 'Books')}
-      ${stat('1949<span aria-hidden="true">–</span><span class="visually-hidden"> to </span>2025', 'Years of activism')}
-      ${stat(research.interviews, 'Activists interviewed')}
-      ${stat(contributors.length, 'Chapter contributors')}
-      ${stat('2', 'National book awards')}
-    </dl>
-  </div>
 </section>
 
 <section class="section" aria-labelledby="books-h">
   <div class="wrap">
-    ${sectionHead('The books', { eyebrow: 'Temple University Press', id: 'books-h', lede: 'A history and its sequel. The first maps how parent activism shaped disability policy; the second centers the voices the first could not fully hold.' })}
+    ${sectionHead('The books', { eyebrow: 'Temple University Press', id: 'books-h' })}
     <div class="book-grid">${join(books, (b) => bookCard(b))}</div>
-  </div>
-</section>
-
-<section class="section section--ink" aria-labelledby="q-h">
-  <div class="wrap question">
-    <div class="question__text reveal">
-      <p class="eyebrow">The question at the heart of the books</p>
-      <h2 id="q-h" class="question__title">Allies, obstacles, <em>or something in between?</em></h2>
-      <p>Parents won the right to public education, helped empty the institutions, and built a nationwide system of services. Yet many disabled activists experience parent advocacy as speaking <em>for</em> them rather than <em>with</em> them. The authors argue that parents are best understood as “sometimes allies” — and that three shared commitments predict when an alliance will hold.</p>
-      <a class="more-link more-link--light" href="/books/${AO.slug}/#ideas">Read the key ideas ${icon('arrow')}</a>
-    </div>
-    ${framesList()}
-  </div>
-</section>
-
-<section class="section" aria-labelledby="tl-h">
-  <div class="wrap">
-    ${sectionHead('Seventy years of organizing', { eyebrow: 'Timeline', id: 'tl-h', lede: 'When parent-led organizations appeared — and why some disability communities organized decades before others.', action: `<a class="more-link" href="/timeline/">Full timeline ${icon('arrow')}</a>` })}
-  </div>
-  <div class="rail-wrap">
-    <ol class="rail" role="list" tabindex="0" aria-label="Key moments. Scroll sideways for more.">
-      ${join(
-        tlPicks,
-        (e) => `<li class="rail__item rail__item--${e.kind}">
-        <p class="rail__year">${esc(e.year)}</p>
-        <p class="rail__title">${rich(e.title)}</p>
-        <p class="rail__kind"><span class="dot dot--${e.kind}" aria-hidden="true"></span>${timelineKinds[e.kind].short}</p>
-      </li>`,
-      )}
-      <li class="rail__item rail__item--more"><a href="/timeline/">See all ${timeline.length} moments ${icon('arrow')}</a></li>
-    </ol>
   </div>
 </section>
 
@@ -263,7 +196,7 @@ function home() {
 
 <section class="section section--tint" aria-labelledby="authors-h">
   <div class="wrap">
-    ${sectionHead('The authors', { eyebrow: 'Authors & editors', id: 'authors-h', lede: 'An anthropologist and two sociologists, in Canada and the United States.', action: `<a class="more-link" href="/authors/">Meet the authors ${icon('arrow')}</a>` })}
+    ${sectionHead('The authors', { eyebrow: 'Authors & editors', id: 'authors-h', action: `<a class="more-link" href="/authors/">Meet the authors ${icon('arrow')}</a>` })}
     <ul class="people-grid" role="list">${join(authors, (a) => personCard(a))}</ul>
   </div>
 </section>
@@ -275,8 +208,7 @@ function home() {
       <div>
         <p class="eyebrow">In memory</p>
         <h2 id="memory-h">Richard K. Scotch, ${richard.lifespan}</h2>
-        <p>Our co-author, colleague, and friend died in June 2026. A pioneer of disability policy scholarship, Richard first proposed the collaboration that became <cite>Allies and Obstacles</cite>.</p>
-        <a class="more-link" href="/authors/richard-scotch/">Read our tribute to Richard ${icon('arrow')}</a>
+        <a class="more-link" href="/authors/richard-scotch/">Remembering Richard ${icon('arrow')}</a>
       </div>
     </div>
   </div>
@@ -294,7 +226,7 @@ function home() {
     <div class="reveal">
       <p class="eyebrow"><cite>${esc(FDA.title)}</cite></p>
       <h2 id="contrib-h">Meet the chapter contributors</h2>
-      <p>Activists, parents, scholars, and self-advocates who wrote the chapters of <cite>${esc(FDA.title)}</cite>, with links to their work and their latest news.</p>
+      <p>The chapter authors of <cite>${esc(FDA.title)}</cite>, in their own words.</p>
       <a class="more-link" href="/contributors/">See all ${contributors.length} contributors ${icon('arrow')}</a>
     </div>
     <ul class="name-cloud" role="list">${join(contributors, (c, i) => `<li><a href="/contributors/#${slugify(c.name)}">${avatar(c, ACCENTS[i % 3])}<span>${esc(c.name)}</span></a></li>`)}</ul>
@@ -317,7 +249,7 @@ function booksIndex() {
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['The Books', '/books/']])}
     <h1>The books</h1>
-    <p class="page-head__lede">Two companion volumes on parents, disabled activists, and the movements they have built — sometimes together, sometimes at odds.</p>
+    <p class="page-head__lede">Published by ${esc(site.publisher.name)}.</p>
   </div>
 </header>
 <section class="section section--flush-top">
@@ -401,11 +333,10 @@ function chapterItem(c) {
         <span class="ch__chev" aria-hidden="true">${icon('chevron')}</span>
       </summary>
       <div class="ch__body">
-        <p class="ch__summary">${rich(c.summary)}</p>
-        ${c.opens ? `<div class="ch__opens"><p class="mini-h">${c.id === 'conclusion' ? 'How it closes' : 'How it opens'}</p><p>${rich(c.opens)}</p></div>` : ''}
+        ${c.summary.length ? `<div class="ch__summary">${join(c.summary, (blk) => (Array.isArray(blk) ? `<ul>${join(blk[1], (li) => `<li>${esc(li)}</li>`)}</ul>` : `<p>${esc(blk)}</p>`))}<p class="ch__source">From the <a href="${studyGuidePdf['allies-and-obstacles']}">Temple University Press study guide</a>, which has the full summary, timelines, and resources.</p></div>` : ''}
         <div class="ch__cols">
           ${c.sections.length ? `<div><p class="mini-h">In this chapter</p><ul class="ch__sections">${join(c.sections, (s) => `<li>${esc(s)}</li>`)}</ul></div>` : ''}
-          ${c.questions.length ? `<div><p class="mini-h">Questions for discussion</p><ol class="ch__qs">${join(c.questions, (q) => `<li>${rich(q)}</li>`)}</ol></div>` : ''}
+          ${c.questions.length ? `<div><p class="mini-h">Discussion questions (from the study guide)</p><ol class="ch__qs">${join(c.questions, (q) => `<li>${esc(q)}</li>`)}</ol></div>` : ''}
         </div>
       </div>
     </details>
@@ -413,20 +344,16 @@ function chapterItem(c) {
 }
 
 function aoPage(b) {
-  const maxRole = Math.max(...research.byRole.map((r) => r.n));
   const toc = [
     ['overview', 'Overview'],
     ['inside', 'Inside the book'],
-    ['ideas', 'Key ideas'],
-    ['research', 'The research'],
-    ['why', 'Why we wrote it'],
     ['reviews-h', 'Reviews'],
     ['pods-h', 'Podcasts & talks'],
   ];
   return page(
     `/books/${b.slug}/`,
     b.title,
-    `${b.title}: ${b.subtitle}. ${b.byline}. Chapter guide, key ideas, reviews, podcasts, and where to buy.`,
+    `${b.title}: ${b.subtitle}. ${b.byline}. Chapter summaries, reviews, podcasts, and where to buy.`,
     `
 ${bookHead(b)}
 
@@ -441,59 +368,28 @@ ${bookHead(b)}
       ${join(b.summary, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
     </section>
 
+    ${
+      b.praise.length
+        ? `<section class="block" aria-labelledby="praise-ao-h">
+      <h2 id="praise-ao-h" class="block__h">Praise</h2>
+      <div class="quote-grid">${join(b.praise, (q, i) => `<figure class="pullquote pullquote--inline${i % 2 ? ' pullquote--alt' : ''} reveal"><blockquote><p>${esc(q.quote)}</p></blockquote><figcaption><cite>${esc(q.who)}</cite></figcaption></figure>`)}</div>
+    </section>`
+        : ''
+    }
+
     <section class="block" id="inside" aria-labelledby="inside-h">
       <div class="block__top">
         <h2 id="inside-h" class="block__h">Inside the book</h2>
         <button type="button" class="text-btn" data-expand-all hidden aria-controls="chapter-guide">Expand all</button>
       </div>
-      <p class="muted">An introduction, nine chapters in two parts, and a conclusion. Open any chapter for a summary, the story it opens with, its sections, and questions for classes and reading groups.</p>
+      <p class="muted">An introduction, nine chapters in two parts, and a conclusion. Chapter summaries and discussion questions are from the <a href="${b.studyGuideUrl}">Temple University Press study guide</a>.</p>
       <div id="chapter-guide">
       ${join(
         parts,
-        (p) => `${p.label ? `<div class="part"><p class="part__label">${p.label}</p><h3 class="part__title">${esc(p.title)}</h3><p class="part__blurb">${esc(p.blurb)}</p></div>` : ''}
+        (p) => `${p.label ? `<div class="part"><p class="part__label">${p.label}</p><h3 class="part__title">${esc(p.title)}</h3></div>` : ''}
         <ol class="chapters" role="list">${join(p.chapters, chapterItem)}</ol>`,
       )}
       </div>
-    </section>
-
-    <section class="block" id="ideas" aria-labelledby="ideas-h">
-      <h2 id="ideas-h" class="block__h">Key ideas</h2>
-      <ul class="ideas" role="list">${join(
-        keyIdeas,
-        (k, i) => `<li class="idea idea--${ACCENTS[i % 3]} reveal"><h3>${esc(k.term)}</h3><p>${rich(k.text)}</p><p class="idea__where">${esc(k.where)}</p></li>`,
-      )}</ul>
-      <div class="alliance reveal">
-        <h3>What makes an alliance?</h3>
-        <p>Parent organizations are most likely to ally with groups led by disabled activists when they share three commitments:</p>
-        ${framesList(true)}
-      </div>
-      <details class="lang">
-        <summary><span>${icon('type')}A note on language</span>${icon('chevron')}</summary>
-        <div class="lang__body">
-          <p>Disability language is contested, and different communities prefer different terms. The authors use each community’s preferred language when writing about it, moving between person-first and identity-first language as a sign of respect.</p>
-          <dl>${join(language, (l) => `<div><dt>${esc(l.term)}</dt><dd>${esc(l.text)}</dd></div>`)}</dl>
-        </div>
-      </details>
-    </section>
-
-    <section class="block" id="research" aria-labelledby="research-h">
-      <h2 id="research-h" class="block__h">The research</h2>
-      <p>The book draws on organizational and archival documents, news coverage, blogs, and online forums, plus <strong>${research.interviews} interviews</strong> with activists aged ${research.ages}. The interviews focused on people whose voices are least visible online, including older activists and self-advocates with intellectual disabilities.</p>
-      <figure class="bars reveal">
-        <figcaption class="bars__cap">Who was interviewed <span>${research.interviews} people</span></figcaption>
-        <ul role="list">${join(
-          research.byRole,
-          (r, i) => `<li><span class="bars__label">${esc(r.label)}</span><span class="bars__track" aria-hidden="true"><span class="bars__bar bars__bar--${ACCENTS[i % 3]}" style="--w:${((r.n / maxRole) * 100).toFixed(1)}%"></span></span><span class="bars__n">${r.n}</span></li>`,
-        )}</ul>
-      </figure>
-      <p class="muted small">Source: the book’s methods appendix. Interviewees are identified by pseudonyms.</p>
-    </section>
-
-    <section class="block prose" id="why" aria-labelledby="why-h">
-      <h2 id="why-h" class="block__h">Why we wrote it</h2>
-      <p>This is a deeply personal project. Pamela’s mother, Barbara Kilcup, was a special education teacher and, when her children were young, a strident parent advocate. Over time, Barbara and Pamela’s sister Hope worked together and came to align closely with disabled activists. For Pamela, they showed how powerful a parent ally can be.</p>
-      <p>Allison grew up engaged with the intellectual disability community through her family and the Arc. Richard, whose career began with the history of disability civil rights, proposed that they write the book together.</p>
-      <blockquote class="inline-quote"><p>Parents discovered long ago that they could accomplish far more by working to benefit all children with disabilities rather than just their own child.</p><footer>— from the Conclusion</footer></blockquote>
     </section>
 
     ${mediaSection(b.slug, ['review'], 'Reviews', 'reviews-h')}
@@ -502,13 +398,6 @@ ${bookHead(b)}
   </div>
   ${bookSide(b)}
 </div>
-
-<section class="section section--tint" aria-labelledby="tl-h">
-  <div class="wrap">
-    ${sectionHead('When parents organized', { eyebrow: 'From Chapter 5', id: 'tl-h', lede: 'National parent-led organizations and the years they were founded.', action: `<a class="more-link" href="/timeline/">Full timeline ${icon('arrow')}</a>` })}
-    ${timelineList(timeline.filter((e) => e.kind === 'parent' && /^\d{4}$/.test(e.year)), { compact: true })}
-  </div>
-</section>
 
 <section class="section" aria-labelledby="other-h">
   <div class="wrap">
@@ -589,44 +478,7 @@ ${bookHead(b)}
   );
 }
 
-// ─── Timeline ────────────────────────────────────────────────────────────────
-
-function timelinePage() {
-  return page(
-    '/timeline/',
-    'Timeline',
-    'A timeline of parent-led and disabled-led disability activism in the United States, from the 1930s to today.',
-    `
-<header class="page-head">
-  <div class="wrap">
-    ${breadcrumbs([['Home', '/'], ['Timeline', '/timeline/']])}
-    <p class="eyebrow">From the pages of <cite>Allies and Obstacles</cite></p>
-    <h1>Seventy years of organizing</h1>
-    <p class="page-head__lede">Parent-led organizations, disabled-led movements, and the laws they fought for. Some communities organized in the 1950s, others not until the 2000s — Chapter 5 of <cite>Allies and Obstacles</cite> explains why.</p>
-  </div>
-</header>
-<section class="section section--flush-top">
-  <div class="wrap narrow">
-    <form class="filters" data-filters data-filter-list="[data-timeline] > li" hidden aria-label="Filter the timeline">
-      <fieldset>
-        <legend>Show</legend>
-        <div class="seg seg--wrap">
-          <label><input type="radio" name="kind" value="" checked><span>Everything</span></label>
-          ${join(Object.entries(timelineKinds), ([k, v]) => `<label><input type="radio" name="kind" value="${k}"><span><span class="dot dot--${k}" aria-hidden="true"></span>${v.label}</span></label>`)}
-        </div>
-      </fieldset>
-      <p class="filters__count" aria-live="polite" data-count></p>
-    </form>
-    <h2 class="visually-hidden">Events, from the 1930s to today</h2>
-    ${timelineList(timeline)}
-    <p class="muted small tl-source">Founding dates of parent-led organizations follow Table 5.1 of <cite>Allies and Obstacles</cite>.</p>
-  </div>
-</section>`,
-  );
-}
-
 // ─── Audiobook ───────────────────────────────────────────────────────────────
-
 const PLATFORMS = [
   {
     id: 'iphone',
@@ -796,7 +648,6 @@ function authorsIndex() {
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Authors', '/authors/']])}
     <h1>Authors &amp; editors</h1>
-    <p class="page-head__lede">An anthropologist and two sociologists, in Canada and the United States, who have spent their careers studying disability, activism, and family.</p>
   </div>
 </header>
 <section class="section section--flush-top">
@@ -808,8 +659,8 @@ function authorsIndex() {
         ${a.tribute ? `<p class="eyebrow">In memory · ${esc(a.lifespan)}</p>` : ''}
         <h2><a href="/authors/${a.slug}/">${esc(a.name)}</a></h2>
         <p class="author-card__role">${esc(a.role)}</p>
-        <p>${rich(firstSentence(a.bio[a.tribute ? 1 : 0]))}</p>
-        <span class="more-link" aria-hidden="true">${a.tribute ? 'Read the tribute' : 'Full profile'} ${icon('arrow')}</span>
+        <p>${rich(firstSentence(a.bio[0]))}</p>
+        <span class="more-link" aria-hidden="true">Full profile ${icon('arrow')}</span>
       </li>`,
     )}</ul>
   </div>
@@ -876,14 +727,14 @@ function authorPage(a) {
 <div class="wrap person-body">
   <div class="prose">
     <h2 class="visually-hidden">${tribute ? 'His life and work' : 'Biography'}</h2>
-    ${join(a.bio, (p, i) => `<p${tribute && i === a.bio.length - 1 ? ' class="tribute-close"' : i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
+    ${join(a.bio, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
 
 
     ${
       a.slug === 'pamela-block'
         ? `<h2>Research</h2><ul class="research-links" role="list">${join(
             researchPages,
-            (r) => `<li><a class="research-link research-link--${r.accent}" href="/authors/pamela-block/${r.slug}/"><span class="research-link__k">${esc(r.title)}</span><span class="research-link__t">${esc(r.lede.split(' — ')[0].split('. ')[0])}.</span>${icon('arrow')}</a></li>`,
+            (r) => `<li><a class="research-link research-link--${r.accent}" href="/authors/pamela-block/${r.slug}/"><span class="research-link__k">${esc(r.title)}</span><span class="research-link__t">${esc(r.descriptions.map((d) => d.title).join(' · '))}</span>${icon('arrow')}</a></li>`,
           )}</ul>`
         : ''
     }
@@ -919,14 +770,13 @@ function researchPage(r) {
   return page(
     `/authors/pamela-block/${r.slug}/`,
     `${r.title} · Pamela Block`,
-    `${r.lede}`,
+    `${r.title}: research by Pamela Block, in her own words.`,
     `
 <header class="page-head research-head research-head--${r.accent}">
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Authors', '/authors/'], ['Pamela Block', '/authors/pamela-block/'], [r.nav, `/authors/pamela-block/${r.slug}/`]])}
     <p class="eyebrow">${esc(r.eyebrow)}</p>
     <h1>${esc(r.title)}</h1>
-    <p class="page-head__lede">${rich(r.lede)}</p>
     <nav class="research-tabs" aria-label="Research areas"><ul role="list">${join(
       researchPages,
       (x) => `<li><a href="/authors/pamela-block/${x.slug}/"${x === r ? ' aria-current="page"' : ''}>${esc(x.nav)}</a></li>`,
@@ -936,18 +786,15 @@ function researchPage(r) {
 
 <div class="wrap person-body">
   <div>
-    <section class="block prose" aria-labelledby="overview-h">
-      <h2 id="overview-h" class="block__h">Overview</h2>
-      ${join(r.intro, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
-    </section>
-
-    <section class="block" aria-labelledby="themes-h">
-      <h2 id="themes-h" class="block__h">Themes</h2>
-      <ul class="ideas" role="list">${join(
-        r.themes,
-        (t, i) => `<li class="idea idea--${ACCENTS[i % 3]} reveal"><h3>${esc(t.k)}</h3><p>${rich(t.text)}</p></li>`,
-      )}</ul>
-    </section>
+${join(
+      r.descriptions,
+      (d, i) => `<section class="block prose" aria-labelledby="desc-${i}-h">
+      <h2 id="desc-${i}-h" class="block__h">${esc(d.title)}</h2>
+      ${join(d.paras, (p) => `<p>${esc(p)}</p>`)}
+      ${d.links?.length ? `<ul class="link-list" role="list">${join(d.links, (l) => `<li>${l.url.startsWith('/') ? `<a href="${l.url}">${esc(l.label)}</a>` : ext(l.url, l.label)}</li>`)}</ul>` : ''}
+    </section>`,
+    )}
+    <p class="muted small">Project descriptions written by Pamela Block.</p>
 
     <section class="block" aria-labelledby="projects-h">
       <h2 id="projects-h" class="block__h">Projects</h2>
@@ -958,7 +805,6 @@ function researchPage(r) {
           <div>
             <h3 class="project__title">${esc(p.title)}</h3>
             <p class="project__role">${esc(p.role)}</p>
-            <p>${rich(p.text)}</p>
             ${p.url ? `<p class="project__link">${ext(p.url, p.urlLabel || 'Learn more')}</p>` : ''}
           </div>
         </li>`,
@@ -1024,7 +870,7 @@ function contributorsPage() {
     ${breadcrumbs([['Home', '/'], ['Contributors', '/contributors/']])}
     <p class="eyebrow"><cite>${esc(FDA.title)}</cite></p>
     <h1>Chapter contributors</h1>
-    <p class="page-head__lede">The activists, parents, scholars, and self-advocates who wrote <cite>${esc(FDA.title)}</cite>. Follow their work, read what they’ve published since, and find out what they’re doing now.</p>
+    <p class="page-head__lede">The chapter authors of <cite>${esc(FDA.title)}</cite>, in their own words.</p>
   </div>
 </header>
 
@@ -1232,7 +1078,6 @@ function notFound() {
       <li><a href="/">Home</a></li>
       ${join(books, (b) => `<li><a href="/books/${b.slug}/">${esc(b.title)}</a></li>`)}
       <li><a href="/audiobook/">Free audiobook</a></li>
-      <li><a href="/timeline/">Timeline</a></li>
       <li><a href="/authors/">Authors</a></li>
     </ul>
   </div>
@@ -1246,7 +1091,6 @@ export function allPages() {
     booksIndex(),
     aoPage(AO),
     fdaPage(FDA),
-    timelinePage(),
     audiobookPage(),
     authorsIndex(),
     ...authors.map(authorPage),
