@@ -988,7 +988,7 @@ function mediaPage() {
 <section class="section section--tint" aria-labelledby="teach-h">
   <div class="wrap narrow">
     <h2 id="teach-h">For teachers and reading groups</h2>
-    <p>Both books have free study guides from Temple University Press. For <cite>Allies and Obstacles</cite>, our <a href="/books/allies-and-obstacles/#inside">chapter guide</a> adds a summary and discussion questions for every chapter.</p>
+    <p>Both books have free study guides from Temple University Press. For <cite>Allies and Obstacles</cite>, the <a href="/books/allies-and-obstacles/#inside">chapter list</a> on this site shows each chapter’s overview and discussion questions from that study guide.</p>
     <div class="btn-row">${join(books, (b) => button(b.studyGuideUrl, `Study guide: <cite>${esc(b.short)}</cite>`, { variant: 'ghost', ic: 'doc' }))}</div>
     <p class="help">Know of a review, interview, or syllabus we’ve missed? <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Media for the website')}">Let us know</a>.</p>
   </div>
