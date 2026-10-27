@@ -773,7 +773,7 @@ function researchPage(r) {
   return page(
     `/authors/pamela-block/${r.slug}/`,
     `${r.title} · Pamela Block`,
-    `${r.title}: research by Pamela Block, in her own words.`,
+    `${r.title}: research by Pamela Block.`,
     `
 <header class="page-head research-head research-head--${r.accent}">
   <div class="wrap">
@@ -797,7 +797,6 @@ ${join(
       ${d.links?.length ? `<ul class="link-list" role="list">${join(d.links, (l) => `<li>${l.url.startsWith('/') ? `<a href="${l.url}">${esc(l.label)}</a>` : ext(l.url, l.label)}</li>`)}</ul>` : ''}
     </section>`,
     )}
-    <p class="muted small">Project descriptions written by Pamela Block.</p>
 
     <section class="block" aria-labelledby="projects-h">
       <h2 id="projects-h" class="block__h">Projects</h2>

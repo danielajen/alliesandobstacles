@@ -159,7 +159,7 @@ ${body}
   </div>
   <div class="wrap site-footer__base">
     <p>© ${new Date().getFullYear()} Pamela Block, Allison C. Carey, and Richard K. Scotch.</p>
-    <p>Book descriptions, chapter summaries, and discussion questions are from Temple University Press and its study guides.</p>
+    <p>The book, chapter, research, and author text on this site was written by people: the authors, the contributors, and Temple University Press. We used AI in the early stages of designing the website.</p>
   </div>
 </footer>
 </body>
