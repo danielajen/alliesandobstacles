@@ -729,7 +729,7 @@ function authorPage(a) {
 <div class="wrap person-body">
   <div class="prose">
     <h2 class="visually-hidden">${tribute ? 'His life and work' : 'Biography'}</h2>
-    ${join(a.bio, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
+    ${join(a.bio, (p, i) => (Array.isArray(p) ? `<ul>${join(p[1], (x) => `<li>${rich(x)}</li>`)}</ul>` : `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`))}
 
 
     ${

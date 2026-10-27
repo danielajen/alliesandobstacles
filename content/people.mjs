@@ -13,9 +13,17 @@ export const authors = [
     role: 'Professor of Anthropology, Western University',
     photo: null, // e.g. 'assets/img/pamela-block.jpg'
     photoAlt: '',
-    // Temple University Press author note, word for word. Pam's own research descriptions are on her research pages.
+    // Pam's "Research Interests" from her Western faculty page, word for word (she asked for this, Oct 26 2026).
     bio: [
-      'Pamela Block is a Professor of Anthropology at Western University. She is coeditor of *Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability*.',
+      'I am a Disability Anthropologist and Professor at Western University. Broadly my research interests include disability culture and social movements, and sociocultural perceptions of disability. I study the intersection of gender, race, economic status, and sexuality in movements for disability liberation (justice and rights) and disability oppression (eugenics, sterilization, mass-incarceration and killing) in Brazil, the US, and Canada. I am also interested in the emergence of disability studies scholarship around the globe.',
+      'I have studied disability experience on individual, organizational and social movement levels, with past funded research involving socio-environmental barriers, empowerment/capacity-building, and health promotion. Current funded research and collaborative scholarship includes:',
+      ['list', [
+        'Social movement activism led by disabled people in relation to activism led by family members in the US',
+        'Sibling mutual care relationships and planning and facilitation experiences in Canada',
+        'Research creation of “disability portraits” by disabled people in Brazil',
+        'Experiences of disabled Afro-Brazilian women in university',
+      ]],
+      'My qualitative research methodologies combine historical and discourse analyses with community-based ethnographic, autoethnographic, and participatory approaches. I experience ADHD and anxiety and have an Autistic older sister named Hope who I have written about and co-authored about her experiences as a family member, activist, and service recipient in the US.',
     ],
     publications: [
       {
@@ -35,7 +43,7 @@ export const authors = [
       },
     ],
     links: [
-      { label: 'Western University', url: 'https://anthropology.uwo.ca/' }, // CONFIRM profile URL
+      { label: 'Western University faculty page', url: 'https://anthropology.uwo.ca/people/faculty/full-time-faculty/block-pamela.html' },
       { label: 'ResearchGate (articles and copies on request)', url: 'https://www.researchgate.net/profile/Pamela-Block-2' },
     ],
   },
