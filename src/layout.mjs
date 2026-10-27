@@ -159,7 +159,7 @@ ${body}
   </div>
   <div class="wrap site-footer__base">
     <p>© ${new Date().getFullYear()} Pamela Block, Allison C. Carey, and Richard K. Scotch.</p>
-    <p>All text was written by humans but we used AI for early stages of website design.</p>
+    <p>All text was written by humans, but we used AI for early stages of website design.</p>
   </div>
 </footer>
 </body>
