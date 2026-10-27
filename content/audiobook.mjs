@@ -19,12 +19,14 @@ export const audiobook = {
       url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism-mp3.zip',
       ext: 'ZIP',
       size: '333 MB',
+      note: 'Works with every player. Unzip it, or open it straight in BookPlayer / Smart AudioBook Player. Includes the references and image descriptions.',
     },
     {
       label: 'Whole book as a single audiobook file (M4B)',
       url: 'https://github.com/danielajen/alliesandobstacles/releases/download/audiobook-2026-10/family-and-disability-activism.m4b',
       ext: 'M4B',
       size: '220 MB',
+      note: 'Keeps your place and shows chapters in Apple Books, BookPlayer and most audiobook apps.',
     },
   ],
 
@@ -55,7 +57,8 @@ export const audiobook = {
 export const accessibleResources = [
   {
     title: 'References and image descriptions',
-    description: 'Prepared by Dina Dwairi.',
+    description:
+      'Every reference cited in Family and Disability Activism, chapter by chapter, together with full text descriptions of the cover and of the book’s figures and tables. Prepared by Dina Dwairi. Made to be read alongside the audiobook or with a screen reader.',
     files: [
       { label: 'Word document (.docx)', file: 'downloads/family-and-disability-activism-references-and-image-descriptions.docx' },
       { label: 'PDF', file: 'downloads/family-and-disability-activism-references-and-image-descriptions.pdf' },

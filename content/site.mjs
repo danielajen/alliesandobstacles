@@ -9,7 +9,7 @@ export const site = {
   name: 'Allies & Obstacles',
   url: 'https://alliesandobstacles.com',
   description:
-    'Allies and Obstacles · Family and Disability Activism · Allison C. Carey, Pamela Block, Richard K. Scotch · Temple University Press',
+    'Allies and Obstacles and Family and Disability Activism, by Allison C. Carey, Pamela Block, and Richard K. Scotch (Temple University Press): where to buy, reviews, study guides, the free audiobook, and contributors.',
   // Shown in the footer.
   contactEmail: 'pblock@uwo.ca', // CONFIRM: which address Pam wants public
   publisher: {
