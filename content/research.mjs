@@ -2,6 +2,7 @@
 //  PAMELA BLOCK — RESEARCH PAGES
 //  Descriptions are Pam's own (sent Oct 2026). Project, publication and
 //  recognition lists are from her CV (May 2026). No AI-written text.
+//  Publication links go to the article, or to Pam's ResearchGate page for it.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const research = [
@@ -26,16 +27,17 @@ export const research = [
         title: 'Filús',
         years: '2024',
         role: 'Co-creator',
-      },
-      {
-        title: 'Barriers to Supports and Services for Disabled Brazilians in Urban Quilombos and Urban Indigenous Communities',
-        years: '2026–2027',
-        role: 'Principal Investigator',
+        links: [
+          { label: 'Watch the film, Filus (YouTube)', url: 'https://www.youtube.com/watch?v=rIcdnkv-e2k' },
+          { label: 'Watch the introduction to the film (YouTube)', url: 'https://www.youtube.com/watch?v=aCiB5G6DDDQ' },
+        ],
       },
       {
         title: 'Brazil–Canada Disability Research Speaker Series',
         years: '2020–2023',
         role: 'Principal Investigator',
+        url: 'https://www.youtube.com/watch?v=On6UZH4nVic&list=PLjhege1OA_YgChudWVKatD3v5GhNKLP45',
+        urlLabel: 'Watch the speaker series (YouTube)',
       },
     ],
     recognition: [
@@ -44,19 +46,19 @@ export const research = [
       'Invited plenary, Occupational Therapy Research Conference, University of São Paulo (2025)',
     ],
     publications: [
-      { title: 'Ableism in the academic trajectories of Black disabled women: an intersectional analysis', detail: 'with M. Gesser, V. Aydos, and A. Escada · Canadian Journal of Disability Studies, 2025' },
-      { title: 'Ableism in educational trajectories and the production of access fatigue', detail: 'with M. Gesser, V. Aydos, and P. Xavier da Silva · Educação & Realidade, 2024' },
+      { title: 'Ableism in the academic trajectories of Black disabled women: an intersectional analysis', detail: 'with M. Gesser, V. Aydos, and A. Escada · Canadian Journal of Disability Studies, 2025', url: 'https://www.researchgate.net/publication/398842925_Ableism_in_the_academic_trajectories_of_Black_disabled_women_an_intersectional_analysis' },
+      { title: 'Ableism in educational trajectories and the production of access fatigue', detail: 'with M. Gesser, V. Aydos, and P. Xavier da Silva · Educação & Realidade, 2024', url: 'https://www.researchgate.net/publication/385340521_Ableism_in_educational_trajectories_and_the_production_of_access_fatigue' },
       { title: 'Defiça: Antropologia, Arte e Ativismo', detail: 'special issue, co-edited with N. Meinerz · Revista Mundaú 13, 2023' },
       { title: 'Disability and Covid', detail: 'special issue, co-edited with Pereira, Mello, and Sakellariou · Disability Studies Quarterly 41(3), 2021', url: 'https://dsq-sds.org/article/view/8440' },
-      { title: 'Participation, Agency and Disability in Brazil', detail: 'with M. Gesser and A. H. Nuernberg · Journal of Disability Studies in the Global South, 2019' },
+      { title: 'Participation, Agency and Disability in Brazil', detail: 'with M. Gesser and A. H. Nuernberg · Journal of Disability Studies in the Global South, 2019', url: 'https://www.researchgate.net/publication/334286070_Participation_agency_and_disability_in_Brazil_transforming_psychological_practices_into_public_policy_from_a_human_rights_perspective' },
       { title: '“With the knife and the cheese in hand!”: a virtual ethnography of the cyber-activist disabled movement in Brazil', detail: 'with M. A. Gaverio and A. G. Mello · Routledge Handbook of Disability Activism, 2019' },
-      { title: 'Autism Policy and Advocacy in Brazil and the United States', detail: 'with R. C. Lima, C. Evans, and C. Feldman · Autism in Translation, Palgrave, 2018' },
-      { title: 'People with Disabilities: Fighting for their Rights in the USA and Brazil', detail: 'with B. Angelucci and L. Costa · Revista de Educação PUC-Campinas, 2017' },
-      { title: 'Occupying Disability Studies in Brazil', detail: 'with A. G. Mello and A. H. Nuernberg · Occupying Disability, Springer, 2016' },
-      { title: 'Historical Perceptions of Autism in Brazil: Professional Treatment, Family Advocacy, and Autistic Pride, 1943–2010', detail: 'with F. Cavalcante · Disability Histories, University of Illinois Press, 2014' },
-      { title: 'Brazil and Disability Studies: On the Map', detail: 'with D. J. Conner, S. Calder, M. Rembis, and N. Watson · Disability Studies Quarterly 34(1), 2014' },
-      { title: 'Institutional Utopias, Eugenics, and Intellectual Disability in Brazil', detail: 'History and Anthropology 18(2), 2007' },
-      { title: 'Sexuality, Parenthood, and Cognitive Disability in Brazil', detail: 'Sexuality and Disability 20(1), 2002' },
+      { title: 'Autism Policy and Advocacy in Brazil and the United States', detail: 'with R. C. Lima, C. Evans, and C. Feldman · Autism in Translation, Palgrave, 2018', url: 'https://www.researchgate.net/publication/327298312_Autism_Policy_and_Advocacy_in_Brazil_and_the_USA_An_Intercultural_Conversation_on_Autism_Spectrum_Conditions' },
+      { title: 'People with Disabilities: Fighting for their Rights in the USA and Brazil', detail: 'with B. Angelucci and L. Costa · Revista de Educação PUC-Campinas, 2017', url: 'https://www.researchgate.net/publication/320592180_People_with_disabilities_Fighting_for_their_rights_in_the_USA_and_Brazil' },
+      { title: 'Occupying Disability Studies in Brazil', detail: 'with A. G. Mello and A. H. Nuernberg · Occupying Disability, Springer, 2016', url: 'https://www.researchgate.net/publication/283579536_Occupying_Disability_Studies_in_Brazil' },
+      { title: 'Historical Perceptions of Autism in Brazil: Professional Treatment, Family Advocacy, and Autistic Pride, 1943–2010', detail: 'with F. Cavalcante · Disability Histories, University of Illinois Press, 2014', url: 'https://www.researchgate.net/publication/292936943_Historical_perceptions_of_Autism_in_Brazil_Professional_treatment_family_advocacy_and_autistic_pride_1943-2010' },
+      { title: 'Brazil and Disability Studies: On the Map', detail: 'with D. J. Conner, S. Calder, M. Rembis, and N. Watson · Disability Studies Quarterly 34(1), 2014', url: 'https://www.researchgate.net/publication/297657175_Brazil_and_Disability_Studies_On_the_Map_Notes_from_The_First_International_Symposium_on_Disability_Studies_in_Sao_Paulo' },
+      { title: 'Institutional Utopias, Eugenics, and Intellectual Disability in Brazil', detail: 'History and Anthropology 18(2), 2007', url: 'https://www.researchgate.net/publication/233171983_Institutional_Utopias_Eugenics_and_Intellectual_Disability_in_Brazil' },
+      { title: 'Sexuality, Parenthood, and Cognitive Disability in Brazil', detail: 'Sexuality and Disability 20(1), 2002', url: 'https://www.researchgate.net/publication/226363434_Sexuality_Parenthood_and_Cognitive_Disability_in_Brazil' },
     ],
   },
   {
@@ -71,16 +73,16 @@ export const research = [
       {"title": "Disability Studies, Anthropology and the Global Health", "paras": ["In 2016, I co-edited a 26-chapter book with Devva Kasnitz, Nick Pollard, and Akemi Nishida on Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability that focuses on politically engaged critical approaches to disability that intersect the fields of anthropology. occupational studies and disability studies. International movements claim disability as a collective cultural identity rather than a medical category and recognize the political and economic dimensions of disability inequality as it intersects with other forms of inequality. Moving well beyond traditional clinical formulations of disability, the book engages social scientists, activists, clinicians, and artists in dialogues about disability as a theoretical construct and lived experience. The concept/definition of “occupation” in this context is intentionally a moving target. Some authors discuss occupying spaces as a form of protest or, alternatively, protesting territorial occupations. Others discuss occupations as engagement in meaningful activities, which are framed or problematized within the fields of anthropology, occupational therapy, and occupational science. Contributors are drawn from the US, Asia, South America, Europe, and Australia. Emerging scholars such as M. Remi Yergeau and Akemi Nishida developed chapters that grew into book projects. This project grew out of over a decade of discussions I facilitated among anthropologists, disability studies scholars, and occupational scientists in a series of meetings, hosted through the Society for Applied Anthropology and the Society for Disability Studies. My tenure as president of the Society of Disability Studies and as a Fellow of the Society for Applied Anthropology afforded me the opportunity to launch these collaborations, which were partially funded via NIH grants. Over the years, I organized independent symposia, conference strands, and topical interest groups. I chaired sessions, facilitated discussion and did what I could to ensure full access and participation of disabled activists and scholars. My leadership in this area has influenced a new generation of emerging translational disability studies researchers and practitioners who collaborate effectively between the social sciences and health fields."], "links": [{"label": "Contents and chapter authors of Occupying Disability", "url": "/authors/pamela-block/#od-h"}]}],
     projects: [
       {
+        title: 'Planning and Facilitation',
+        years: '2025–2026',
+        role: 'Principal Investigator, with Partners for Planning',
+      },
+      {
         title: 'Care Relationships of Adult Disabled and Nondisabled Siblings',
         years: '2022–2025',
         role: 'Principal Investigator',
         url: 'https://doi.org/10.1111/maq.70048',
         urlLabel: 'Read the article',
-      },
-      {
-        title: 'Planning and Facilitation',
-        years: '2025–2026',
-        role: 'Principal Investigator, with Partners for Planning',
       },
       {
         title: 'Beyond Allies and Obstacles',
@@ -90,18 +92,18 @@ export const research = [
         urlLabel: 'About the book',
       },
       {
-        title: 'Shake It Up!',
-        years: '2002–2005',
-        role: 'Principal Investigator',
-        url: 'https://shakeitup.uwo.ca/',
-        urlLabel: 'Project archive',
-      },
-      {
         title: 'Pediatric Multiple Sclerosis community building',
         years: '2006–2010',
         role: 'Principal Investigator and Rehabilitation Liaison',
         url: 'https://youtu.be/gKfUxxnEU4Y',
         urlLabel: 'Watch “Growing Up with MS”',
+      },
+      {
+        title: 'Shake It Up!',
+        years: '2002–2005',
+        role: 'Principal Investigator',
+        url: 'https://shakeitup.uwo.ca/',
+        urlLabel: 'Project archive',
       },
     ],
     recognition: [
@@ -110,13 +112,13 @@ export const research = [
       'Fellow, Society for Applied Anthropology (2009)',
     ],
     publications: [
-      { title: 'Extraordinary Measures of Sibling Care Relationships', detail: 'with H. Ries and D. Kassem · Medical Anthropology Quarterly, 2025', url: 'https://doi.org/10.1111/maq.70048' },
+      { title: 'Extraordinary measures of sibling worldmaking', detail: 'with H. Ries and D. Kassem · Medical Anthropology Quarterly, 2025', url: 'https://doi.org/10.1111/maq.70048' },
       { title: 'Aging Out of Children’s Hospitals', detail: 'Family and Disability Activism, Temple University Press, 2025', url: '/books/family-and-disability-activism/' },
-      { title: 'Social and health experiences of disabled people with complex medical conditions during the COVID-19 pandemic', detail: 'with J. M. Lorandi · Research in Social Science and Disability 13, 2023' },
+      { title: 'Social and health experiences of disabled people with complex medical conditions during the COVID-19 pandemic', detail: 'with J. M. Lorandi · Research in Social Science and Disability 13, 2023', url: 'https://www.researchgate.net/publication/367451170_Social_and_Health_Experiences_of_Disabled_People_with_Complex_Medical_Conditions_During_the_COVID-19_Pandemic' },
       { title: 'Allies and Obstacles: Disability Activism and Parents of Children with Disabilities', detail: 'with A. C. Carey and R. K. Scotch · Temple University Press, 2020', url: '/books/allies-and-obstacles/' },
       { title: 'Sometimes Allies: Parent-Led Disability Organizations and Social Movements', detail: 'with A. C. Carey and R. K. Scotch · Disability Studies Quarterly 39(1), 2019', url: 'https://dsq-sds.org/article/view/6281/5183' },
-      { title: 'Project Shake-It-Up!: A Disability Studies Framework of Empowerment for Capacity Building and Health Promotion', detail: 'with E. Vanner, C. B. Keys, J. Rimmer, and S. Skeels · Disability & Rehabilitation, 2010' },
-      { title: 'From Pathology to Power: Rethinking Race, Poverty and Disability', detail: 'with F. Balcazar and C. Keys · Journal of Disability Policy Studies, 2001' },
+      { title: 'Project Shake-It-Up!: A Disability Studies Framework of Empowerment for Capacity Building and Health Promotion', detail: 'with E. Vanner, C. B. Keys, J. Rimmer, and S. Skeels · Disability & Rehabilitation, 2010', url: 'https://www.researchgate.net/publication/42369405_Project_Shake-It-Up_Using_health_promotion_capacity_building_and_a_disability_studies_framework_to_increase_self_efficacy' },
+      { title: 'From Pathology to Power: Rethinking Race, Poverty and Disability', detail: 'with F. Balcazar and C. Keys · Journal of Disability Policy Studies, 2001', url: 'https://www.researchgate.net/publication/240731457_From_Pathology_to_Power_Rethinking_Race_Poverty_and_Disability' },
     ],
     media: [
       'Siblings are holding up a broken disability system — Montreal Gazette, April 2026 (with H. Ries)',

@@ -36,6 +36,7 @@ export const authors = [
     ],
     links: [
       { label: 'Western University', url: 'https://anthropology.uwo.ca/' }, // CONFIRM profile URL
+      { label: 'ResearchGate (articles and copies on request)', url: 'https://www.researchgate.net/profile/Pamela-Block-2' },
     ],
   },
   {

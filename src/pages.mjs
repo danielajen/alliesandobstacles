@@ -697,6 +697,8 @@ function odContents() {
   </section>`;
 }
 
+const PAM_RG = 'https://www.researchgate.net/profile/Pamela-Block-2';
+
 function pubList(pubs) {
   return `<ul class="pub-list" role="list">${join(
     pubs,
@@ -741,6 +743,7 @@ function authorPage(a) {
 
     <h2>${tribute ? 'His books' : 'Selected publications'}</h2>
     ${pubList(a.publications)}
+    ${a.slug === 'pamela-block' ? `<p class="help">Many of Pam’s articles are on ${link(PAM_RG, 'her ResearchGate page')}. If you need a copy of any of her articles, <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">contact Pam</a> or request it through ResearchGate.</p>` : ''}
 
     ${a.slug === 'pamela-block' ? odContents() : ''}
 
@@ -806,6 +809,7 @@ ${join(
             <h3 class="project__title">${esc(p.title)}</h3>
             <p class="project__role">${esc(p.role)}</p>
             ${p.url ? `<p class="project__link">${ext(p.url, p.urlLabel || 'Learn more')}</p>` : ''}
+            ${join(p.links || [], (l) => `<p class="project__link">${ext(l.url, l.label)}</p>`)}
           </div>
         </li>`,
       )}</ol>
@@ -817,6 +821,7 @@ ${join(
         r.publications,
         (p) => `<li><cite class="pub-list__title">${p.url ? ext(p.url, p.title) : esc(p.title)}</cite><span class="pub-list__detail">${esc(p.detail)}</span></li>`,
       )}</ul>
+      <p class="help">Many of these articles are on ${ext(PAM_RG, 'Pam’s ResearchGate page')}. If you need a copy of any of her articles, <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">contact Pam</a> or request it through ResearchGate.</p>
     </section>
 
     ${
@@ -839,6 +844,7 @@ ${join(
       <ul class="link-list" role="list">
         <li><a href="/authors/pamela-block/">Profile and books</a></li>
         <li><a href="/authors/pamela-block/${other.slug}/">${esc(other.title)}</a></li>
+        <li>${ext(PAM_RG, 'Pam on ResearchGate')}</li>
         <li><a href="http://pamelablock.blogspot.com/" rel="noopener">Pam’s blog${icon('external', 'icon icon--ext')}<span class="visually-hidden"> (external site)</span></a></li>
         <li><a href="mailto:${esc(site.contactEmail)}">${esc(site.contactEmail)}</a></li>
       </ul>
