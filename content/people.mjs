@@ -57,8 +57,10 @@ export const authors = [
     photoAlt: '',
     // Temple University Press author note, with her current department (from Allison, Oct 2026).
     bio: [
-      'Allison C. Carey is a Professor in the Department of Political and Social Inquiry at Shippensburg University. She is the author of *On the Margins of Citizenship: Intellectual Disability and Civil Rights in Twentieth-Century America* (Temple) and coeditor of *Disability Incarcerated: Disability and Imprisonment in the United States and Canada* and *Disability and Community*.',
-      'She received the 2021 Outstanding Career in the Sociology of Disability award from the Disability and Society section of the American Sociological Association.',
+      'Allison C. Carey is a Professor in the Department of Sociology and Anthropology at Shippensburg University. She is the author of *On the Margins of Citizenship: Intellectual Disability and Civil Rights in Twentieth-Century America* (Temple) and coeditor of *Disability Incarcerated: Disability and Imprisonment in the United States and Canada* and *Disability and Community*.',
+    ],
+    honors: [
+      { year: 2021, name: 'Outstanding Career in the Sociology of Disability, Section on Disability in Society, American Sociological Association' },
     ],
     publications: [
       {
@@ -99,8 +101,7 @@ export const authors = [
     // Main content to be Allison's co-authored in-memoriam essay (requested from Pam).
     // Until then: the Temple University Press author note and the dates from UT Dallas.
     bio: [
-      'Richard K. Scotch was Professor of Sociology and Public Policy at the University of Texas at Dallas. He is the author of *From Good Will to Civil Rights: Transforming Federal Disability Policy* (Temple), coauthor of *Disability Protests: Contentious Politics, 1970–1999*, and coeditor of *Disability and Community*.',
-      'He died in Dallas on June 2, 2026.',
+      'Richard K. Scotch is Professor of Sociology and Public Policy at the University of Texas, Dallas. He is the author of *From Good Will to Civil Rights: Transforming Federal Disability Policy* (Temple), coauthor of *Disability Protests: Contentious Politics, 1970–1999*, and coeditor of *Disability and Community*.',
     ],
     honors: [
       { year: 2014, name: 'Distinguished Contributions to the Sociology of Disability Award, American Sociological Association' },

@@ -140,7 +140,7 @@ function home() {
     <div class="hero__text">
       <p class="eyebrow eyebrow--rule">Pamela Block · Allison C. Carey · Richard K. Scotch</p>
       <h1 class="hero__title"><cite>Allies and Obstacles</cite> and <cite>Family and Disability Activism</cite></h1>
-      <p class="hero__lede">Books by Allison C. Carey, Pamela Block, and Richard K. Scotch, published by ${esc(site.publisher.name)}.</p>
+      <p class="hero__lede">Allison C. Carey · Pamela Block · Richard K. Scotch · ${esc(site.publisher.name)}</p>
       <div class="btn-row">
         ${button('/books/', 'Explore the books', { ic: 'book' })}
         ${button('/audiobook/', 'Free audiobook', { variant: 'ghost', ic: 'headphones' })}
@@ -166,7 +166,6 @@ function home() {
     <div class="band__icon" aria-hidden="true">${icon('headphones')}</div>
     <div>
       <h2 id="audio-h">Listen to <cite>${esc(FDA.title)}</cite> for free</h2>
-      <p>The full audiobook is free to download and keep. No account, no subscription. We walk you through adding it to your phone, computer, or favorite audiobook app.</p>
     </div>
     <div>${button('/audiobook/', 'Get the audiobook', { variant: 'dark', ic: 'arrow', iconEnd: true })}</div>
   </div>
@@ -226,7 +225,6 @@ function home() {
     <div class="reveal">
       <p class="eyebrow"><cite>${esc(FDA.title)}</cite></p>
       <h2 id="contrib-h">Meet the chapter contributors</h2>
-      <p>The chapter authors of <cite>${esc(FDA.title)}</cite>, in their own words.</p>
       <a class="more-link" href="/contributors/">See all ${contributors.length} contributors ${icon('arrow')}</a>
     </div>
     <ul class="name-cloud" role="list">${join(contributors, (c, i) => `<li><a href="/contributors/#${slugify(c.name)}">${avatar(c, ACCENTS[i % 3])}<span>${esc(c.name)}</span></a></li>`)}</ul>
@@ -243,7 +241,7 @@ function booksIndex() {
   return page(
     '/books/',
     'The Books',
-    'Allies and Obstacles (2020) and Family and Disability Activism (2025), from Temple University Press.',
+    'Allies and Obstacles (2020) · Family and Disability Activism (2025) · Temple University Press',
     `
 <header class="page-head">
   <div class="wrap">
@@ -309,7 +307,6 @@ function bookSide(b) {
           (f) => `<tr><th scope="row">${f.href ? `<a href="${f.href}">${esc(f.format)}</a>` : esc(f.format)}</th><td>${f.isbn ? `<span class="isbn">${esc(f.isbn)}</span>` : '—'}</td><td>${esc(f.price)}</td></tr>`,
         )}</tbody>
       </table>
-      <p class="side-card__note">Publisher prices in US dollars. Also available from booksellers and libraries — ask for it by ISBN.</p>
       ${button(b.buyUrl, `Order from ${esc(site.publisher.name)}`, { variant: 'primary' })}
     </section>
     ${citeBox(b.slug)}
@@ -333,7 +330,7 @@ function chapterItem(c) {
         <span class="ch__chev" aria-hidden="true">${icon('chevron')}</span>
       </summary>
       <div class="ch__body">
-        ${c.summary.length ? `<div class="ch__summary">${join(c.summary, (blk) => (Array.isArray(blk) ? `<ul>${join(blk[1], (li) => `<li>${esc(li)}</li>`)}</ul>` : `<p>${esc(blk)}</p>`))}<p class="ch__source">From the <a href="${studyGuidePdf['allies-and-obstacles']}">Temple University Press study guide</a>, which has the full summary, timelines, and resources.</p></div>` : ''}
+        ${c.summary.length ? `<div class="ch__summary">${join(c.summary, (blk) => (Array.isArray(blk) ? `<ul>${join(blk[1], (li) => `<li>${esc(li)}</li>`)}</ul>` : `<p>${esc(blk)}</p>`))}<p class="ch__source">Source: <a href="${studyGuidePdf['allies-and-obstacles']}">Temple University Press study guide</a></p></div>` : ''}
         <div class="ch__cols">
           ${c.sections.length ? `<div><p class="mini-h">In this chapter</p><ul class="ch__sections">${join(c.sections, (s) => `<li>${esc(s)}</li>`)}</ul></div>` : ''}
           ${c.questions.length ? `<div><p class="mini-h">Discussion questions (from the study guide)</p><ol class="ch__qs">${join(c.questions, (q) => `<li>${esc(q)}</li>`)}</ol></div>` : ''}
@@ -382,7 +379,7 @@ ${bookHead(b)}
         <h2 id="inside-h" class="block__h">Inside the book</h2>
         <button type="button" class="text-btn" data-expand-all hidden aria-controls="chapter-guide">Expand all</button>
       </div>
-      <p class="muted">An introduction, nine chapters in two parts, and a conclusion. Chapter summaries and discussion questions are from the <a href="${b.studyGuideUrl}">Temple University Press study guide</a>.</p>
+      <p class="muted">Source: <a href="${b.studyGuideUrl}">Temple University Press study guide</a></p>
       <div id="chapter-guide">
       ${join(
         parts,
@@ -456,7 +453,7 @@ ${bookHead(b)}
       <h2 id="audio-h" class="block__h">Free audiobook &amp; accessible resources</h2>
       <div class="audio-teaser">
         <span class="audio-teaser__icon" aria-hidden="true">${icon('headphones')}</span>
-        <div><p><strong>The whole book, read aloud, free to download and keep.</strong> Step-by-step help for iPhone, Android, Mac, Windows, and screen readers.</p>
+        <div>
         ${button('/audiobook/', 'Go to the audiobook', { variant: 'dark', ic: 'arrow', iconEnd: true })}</div>
       </div>
       ${join(accessibleResources, (r) => `<p>${esc(r.description)}</p><div class="download-list">${join(r.files, (f) => download(f.file, `${r.title} — ${f.label}`))}</div>`)}
@@ -479,73 +476,13 @@ ${bookHead(b)}
 }
 
 // ─── Audiobook ───────────────────────────────────────────────────────────────
-const PLATFORMS = [
-  {
-    id: 'iphone',
-    label: 'iPhone & iPad',
-    intro: 'The simplest way is the free BookPlayer app, which remembers your place and lets you change the reading speed.',
-    steps: [
-      'Install <strong>BookPlayer</strong> (free) from the App Store.',
-      'On this page, tap <strong>Whole book, chapter by chapter</strong> (the ZIP file) and choose <strong>Download</strong>. Safari saves it in the <strong>Files</strong> app, in <strong>Downloads</strong>.',
-      'Open the <strong>Files</strong> app, find the file in Downloads, then tap and hold it. Choose <strong>Share</strong>, then <strong>BookPlayer</strong>.',
-      'BookPlayer adds every chapter, in order. Tap the book to start listening.',
-    ],
-    tip: 'Prefer Apple Books? Download the M4B file on a Mac and add it there (see the Mac tab) — it will then appear in Apple Books on your iPhone.',
-  },
-  {
-    id: 'android',
-    label: 'Android',
-    intro: 'Android phones can play the files straight away. For bookmarks and chapter lists, use a free audiobook player.',
-    steps: [
-      'Install <strong>Smart AudioBook Player</strong> or <strong>Voice</strong> (both free) from the Google Play Store.',
-      'On this page, tap <strong>Whole book, chapter by chapter</strong> (the ZIP file). It is saved to your <strong>Downloads</strong> folder.',
-      'Open the <strong>Files</strong> app, tap the ZIP file, and choose <strong>Extract</strong>. Move the extracted folder into a folder called <strong>Audiobooks</strong> (create it if needed).',
-      'Open your audiobook app and point it to the <strong>Audiobooks</strong> folder. The book appears with all its chapters.',
-    ],
-    tip: 'Just want to listen now? Tap any chapter in the list above to play it in your browser.',
-  },
-  {
-    id: 'mac',
-    label: 'Mac',
-    intro: 'Adding the book to your Mac puts it in Apple Books, and it can sync to your iPhone or iPad from there.',
-    steps: [
-      'Download the <strong>single audiobook file (M4B)</strong>.',
-      'Double-click the file. It opens in <strong>Apple Books</strong> and is added to <strong>Audiobooks</strong> in your library.',
-      'To copy it to your iPhone or iPad, connect the device, open <strong>Finder</strong>, select the device in the sidebar, choose the <strong>Audiobooks</strong> tab, tick the book, and click <strong>Sync</strong>.',
-    ],
-    tip: 'If you downloaded the MP3 chapters instead, drag them into the Music app, select them all, choose Song › Get Info › Options, and set the media kind to Audiobook.',
-  },
-  {
-    id: 'windows',
-    label: 'Windows PC',
-    intro: 'Windows plays the files with its built-in Media Player — nothing to install.',
-    steps: [
-      'Download <strong>Whole book, chapter by chapter</strong> (the ZIP file).',
-      'Open your <strong>Downloads</strong> folder, right-click the file and choose <strong>Extract All</strong>.',
-      'Open the new folder and double-click the first chapter. It plays in <strong>Media Player</strong>, and the other chapters follow in order.',
-    ],
-    tip: 'VLC media player (free) is a good alternative and lets you change the playback speed. To put the book on a phone, copy the folder over with a USB cable and follow the iPhone or Android steps.',
-  },
-  {
-    id: 'screen-reader',
-    label: 'Screen readers',
-    intro: 'Every control on this page works with a keyboard and screen reader.',
-    steps: [
-      'Use your screen reader’s heading navigation to jump to <strong>Download the book</strong>, then to <strong>Chapters</strong>.',
-      'Each chapter has its own play button and its own download link, labelled with the chapter title.',
-      'The <strong>references and image descriptions</strong> document at the bottom of this page comes as a Word file and a PDF, so you can follow citations and figures while you listen.',
-    ],
-    tip: 'BookPlayer (iOS) and Voice (Android) both work well with VoiceOver and TalkBack.',
-  },
-];
-
 function audiobookPage() {
   const b = bookBySlug[audiobook.book];
   const tracksReady = audiobook.tracks.filter((t) => has(t.file));
   return page(
     '/audiobook/',
     'Free Audiobook',
-    `Download the audiobook of ${b.title} for free, with step-by-step help for iPhone, Android, Mac, Windows and screen readers.`,
+    `Free audiobook: ${b.title}.`,
     `
 <header class="page-head page-head--audio">
   <div class="wrap page-head__grid">
@@ -553,11 +490,9 @@ function audiobookPage() {
       ${breadcrumbs([['Home', '/'], ['Free Audiobook', '/audiobook/']])}
       <p class="eyebrow">Free to download and keep</p>
       <h1>Listen to <cite>${esc(b.title)}</cite></h1>
-      <p class="page-head__lede">The complete audiobook, free for everyone. No account, no subscription, no app you have to use. Download it once and listen however suits you.</p>
       <ol class="steps-mini">
         <li><a href="#download-h"><span>1</span>Download the book</a></li>
-        <li><a href="#devices-h"><span>2</span>Add it to your device</a></li>
-        <li><a href="#resources-h"><span>3</span>References &amp; image descriptions</a></li>
+        <li><a href="#resources-h"><span>2</span>References &amp; image descriptions</a></li>
       </ol>
     </div>
     <div class="page-head__cover">${cover(b)}</div>
@@ -568,14 +503,12 @@ function audiobookPage() {
   <div class="wrap narrow">
     <h2 id="download-h" class="step-h"><span class="step-h__n" aria-hidden="true">1</span>Download the book</h2>
     ${audiobook.narration || audiobook.runtime ? `<p class="meta-line">${[audiobook.narration, audiobook.runtime].filter(Boolean).map(esc).join(' · ')}</p>` : ''}
-    <p>Not sure which to pick? Choose the <strong>ZIP</strong> — it works everywhere.</p>
     <div class="download-list">${join(audiobook.fullDownloads, (d) => download(d.file, d.label, d.note, d))}</div>
 
     <h3 id="chapters-h" class="sub-h">Chapters</h3>
     ${
       tracksReady.length
-        ? `<p>Play a chapter here in your browser, or download chapters one at a time.</p>
-    <ol class="tracks">${join(
+        ? `<ol class="tracks">${join(
       tracksReady,
       (t) => `<li class="track">
         <span class="track__title">${esc(t.title)}${t.reader ? `<span class="track__reader">Read by ${esc(t.reader)}</span>` : ''}</span>
@@ -583,7 +516,7 @@ function audiobookPage() {
         <a class="track__dl" href="/assets/${esc(t.file)}" download>${icon('download')}<span>Download<span class="visually-hidden"> ${esc(t.title)}</span></span></a>
       </li>`,
     )}</ol>`
-        : `<p class="notice">${icon('headphones')}<span>Individual chapters will appear here, ready to play in your browser, as soon as the recordings are published.</span></p>`
+        : ''
     }
   </div>
 </section>
@@ -600,36 +533,11 @@ ${
     : ''
 }
 
-<section class="section section--tint" aria-labelledby="devices-h">
-  <div class="wrap narrow">
-    <h2 id="devices-h" class="step-h"><span class="step-h__n" aria-hidden="true">2</span>Add it to your device</h2>
-    <p>Pick the device you use. Menu names can differ slightly between versions.</p>
-    <div class="tabs" data-tabs data-tabs-hash data-tabs-guess>
-      <div class="tabs__list" role="tablist" aria-label="Choose your device" hidden>
-        ${join(PLATFORMS, (p, i) => `<button type="button" role="tab" id="tab-${p.id}" aria-controls="panel-${p.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(p.label)}</button>`)}
-      </div>
-      ${join(
-        PLATFORMS,
-        (p) => `<section class="tabs__panel" id="panel-${p.id}" role="tabpanel" aria-labelledby="tab-${p.id}" tabindex="0">
-        <h3 class="tabs__heading">${esc(p.label)}</h3>
-        <p>${p.intro}</p>
-        <ol class="howto">${join(p.steps, (s) => `<li>${s}</li>`)}</ol>
-        <p class="tip"><strong>Tip:</strong> ${p.tip}</p>
-      </section>`,
-      )}
-    </div>
-    <div class="callout">
-      <h3>What about Audible, Spotify, or Libby?</h3>
-      <p>Those services only play audiobooks bought or borrowed through them, so they can’t open these files. Any of the free players above will work instead — or simply play the chapters on this page.</p>
-    </div>
-  </div>
-</section>
-
 <section class="section" aria-labelledby="resources-h">
   <div class="wrap narrow">
-    <h2 id="resources-h" class="step-h"><span class="step-h__n" aria-hidden="true">3</span>References &amp; image descriptions</h2>
+    <h2 id="resources-h" class="step-h"><span class="step-h__n" aria-hidden="true">2</span>References &amp; image descriptions</h2>
     ${join(accessibleResources, (r) => `<p>${esc(r.description)}</p><div class="download-list">${join(r.files, (f) => download(f.file, `${r.title} — ${f.label}`))}</div>`)}
-    <p class="help">Having trouble? <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Audiobook help')}">Email us</a> and tell us what device you’re using — we’re happy to help.</p>
+    <p class="help"><a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Audiobook help')}">Email for audiobook help</a></p>
   </div>
 </section>`,
     'audio-page',
@@ -642,7 +550,7 @@ function authorsIndex() {
   return page(
     '/authors/',
     'Authors',
-    'Pamela Block, Allison C. Carey, and Richard K. Scotch — authors of Allies and Obstacles and editors of Family and Disability Activism.',
+    'Pamela Block · Allison C. Carey · Richard K. Scotch',
     `
 <header class="page-head">
   <div class="wrap">
@@ -683,7 +591,7 @@ function odContents() {
   let n = 0;
   return `<section class="od" aria-labelledby="od-h">
     <h2 id="od-h">Inside <cite>Occupying Disability</cite></h2>
-    <p>${esc(OD.publisher)}, edited by ${esc(OD.editors)}. Every chapter and its authors, grouped by the book’s three parts. Chapter titles link to the chapter on ${link(OD.url, 'Springer')}.</p>
+    <p>${esc(OD.publisher)} · edited by ${esc(OD.editors)} · ${link(OD.url, 'Springer')}</p>
     ${join(
       OD.parts,
       (p, i) => `<details class="od__part"${i === 0 ? ' open' : ''}>
@@ -711,7 +619,7 @@ function authorPage(a) {
   return page(
     `/authors/${a.slug}/`,
     tribute ? `Remembering ${a.name}` : a.name,
-    tribute ? `A tribute to our co-author ${a.name} (${a.lifespan}).` : `${a.name}, ${a.role}.`,
+    tribute ? `${a.name} (${a.lifespan}).` : `${a.name}, ${a.role}.`,
     `
 <header class="page-head${tribute ? ' page-head--tribute' : ''}">
   <div class="wrap person-head">
@@ -743,7 +651,7 @@ function authorPage(a) {
 
     <h2>${tribute ? 'His books' : 'Selected publications'}</h2>
     ${pubList(a.publications)}
-    ${a.slug === 'pamela-block' ? `<p class="help">Many of Pam’s articles are on ${link(PAM_RG, 'her ResearchGate page')}. If you need a copy of any of her articles, <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">contact Pam</a> or request it through ResearchGate.</p>` : ''}
+    ${a.slug === 'pamela-block' ? `<p class="help">Many of my publications are available via ${link(PAM_RG, 'ResearchGate')}. <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">Contact me</a> if you need a copy of any of my articles. — Pamela Block</p>` : ''}
 
     ${a.slug === 'pamela-block' ? odContents() : ''}
 
@@ -820,7 +728,7 @@ ${join(
         r.publications,
         (p) => `<li><cite class="pub-list__title">${p.url ? ext(p.url, p.title) : esc(p.title)}</cite><span class="pub-list__detail">${esc(p.detail)}</span></li>`,
       )}</ul>
-      <p class="help">Many of these articles are on ${ext(PAM_RG, 'Pam’s ResearchGate page')}. If you need a copy of any of her articles, <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">contact Pam</a> or request it through ResearchGate.</p>
+      <p class="help">Many of my publications are available via ${ext(PAM_RG, 'ResearchGate')}. <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Article request')}">Contact me</a> if you need a copy of any of my articles. — Pamela Block</p>
     </section>
 
     ${
@@ -868,14 +776,13 @@ function contributorsPage() {
   return page(
     '/contributors/',
     'Contributors',
-    `The chapter authors of ${FDA.title}, with links to their work and their latest news.`,
+    `Contributors: ${FDA.title}.`,
     `
 <header class="page-head">
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Contributors', '/contributors/']])}
     <p class="eyebrow"><cite>${esc(FDA.title)}</cite></p>
     <h1>Chapter contributors</h1>
-    <p class="page-head__lede">The chapter authors of <cite>${esc(FDA.title)}</cite>, in their own words.</p>
   </div>
 </header>
 
@@ -901,7 +808,6 @@ ${
       pending.length
         ? `<div class="contrib-more">
       <h2 id="more-h">Also in this volume</h2>
-      <p>Profiles are added as contributors send them in.</p>
       <ul class="contrib-names" role="list" aria-labelledby="more-h">${join(pending, (c) => `<li id="${slugify(c.name)}"><strong>${esc(c.name)}</strong>${c.chapter ? chapterLine(c.chapter) : ''}</li>`)}</ul>
     </div>`
         : ''
@@ -913,7 +819,6 @@ ${
   <div class="wrap narrow">
     <div class="callout callout--flat">
       <h2 id="yours-h">Are you a contributor?</h2>
-      <p>We’d love to share your work. Send us a short bio, a photo if you’d like one, links to your publications or website, and any news — a new article, a talk, an award — and we’ll add it here. You can send updates any time.</p>
       <p>${button(`mailto:${site.contactEmail}?subject=${encodeURIComponent('Contributor page: my information')}`, 'Send your information', { ic: 'mail' })}</p>
     </div>
   </div>
@@ -957,13 +862,12 @@ function mediaPage() {
   return page(
     '/media/',
     'Media & Resources',
-    'Reviews, podcasts, talks, articles, and study guides for Allies and Obstacles and Family and Disability Activism.',
+    'Reviews, podcasts, talks, articles, study guides.',
     `
 <header class="page-head">
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Media & Resources', '/media/']])}
     <h1>Media &amp; resources</h1>
-    <p class="page-head__lede">Reviews, podcast conversations, talks, articles, and teaching materials for both books.</p>
   </div>
 </header>
 <section class="section section--flush-top" aria-labelledby="list-h">
@@ -993,9 +897,8 @@ function mediaPage() {
 <section class="section section--tint" aria-labelledby="teach-h">
   <div class="wrap narrow">
     <h2 id="teach-h">For teachers and reading groups</h2>
-    <p>Both books have free study guides from Temple University Press. For <cite>Allies and Obstacles</cite>, the <a href="/books/allies-and-obstacles/#inside">chapter list</a> on this site shows each chapter’s overview and discussion questions from that study guide.</p>
     <div class="btn-row">${join(books, (b) => button(b.studyGuideUrl, `Study guide: <cite>${esc(b.short)}</cite>`, { variant: 'ghost', ic: 'doc' }))}</div>
-    <p class="help">Know of a review, interview, or syllabus we’ve missed? <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Media for the website')}">Let us know</a>.</p>
+    <p class="help"><a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Media for the website')}">Suggest a review, interview, or syllabus</a></p>
   </div>
 </section>`,
   );
@@ -1007,14 +910,13 @@ function teamPage() {
   return page(
     '/team/',
     'Project Team',
-    'The student team at Western University who built this website and produced the free audiobook.',
+    'Project team.',
     `
 <header class="page-head">
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Project team', '/team/']])}
     <p class="eyebrow">Western University</p>
     <h1>Project team</h1>
-    <p class="page-head__lede">The students working with Dr. Pamela Block who built this website and produced the free audiobook of <cite>${esc(FDA.title)}</cite>.</p>
   </div>
 </header>
 <section class="section section--flush-top" aria-labelledby="team-h">
@@ -1042,28 +944,16 @@ function accessibilityPage() {
   return page(
     '/accessibility/',
     'Accessibility',
-    'How this website is built to be accessible, and how to tell us about a barrier.',
+    'Accessibility.',
     `
 <header class="page-head">
   <div class="wrap">
     ${breadcrumbs([['Home', '/'], ['Accessibility', '/accessibility/']])}
     <h1>Accessibility</h1>
-    <p class="page-head__lede">These are books about disability. This website should work for everyone who wants to read about them.</p>
   </div>
 </header>
 <div class="wrap narrow prose section section--flush-top">
-  <h2>What we’ve done</h2>
-  <ul>
-    <li>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA.</li>
-    <li>Every page can be used with a keyboard alone, and works with screen readers such as VoiceOver, NVDA, JAWS, and TalkBack.</li>
-    <li>Body text is set in Atkinson Hyperlegible, a typeface designed by the Braille Institute for readers with low vision.</li>
-    <li>The <strong>Display</strong> button at the top of every page lets you enlarge text, switch to high contrast, choose a light or dark theme, and turn off animation. Your choices are remembered on your device.</li>
-    <li>Animation is switched off automatically if your device asks for reduced motion.</li>
-    <li>The free audiobook of <cite>Family and Disability Activism</cite> comes with a separate document of references and image descriptions.</li>
-    <li>Every page works without JavaScript.</li>
-  </ul>
-  <h2>Tell us about a barrier</h2>
-  <p>If something on this site doesn’t work for you, we want to know. <a href="mailto:${esc(site.contactEmail)}?subject=${encodeURIComponent('Accessibility problem on the website')}">Email us</a> with the page and what happened, and we’ll fix it — or get you the information another way.</p>
+  <p>${button(`mailto:${site.contactEmail}?subject=${encodeURIComponent('Accessibility problem on the website')}`, 'Report an accessibility problem', { ic: 'mail' })}</p>
 </div>`,
   );
 }
@@ -1078,7 +968,6 @@ function notFound() {
   <div class="wrap narrow">
     <p class="eyebrow">Error 404</p>
     <h1>We couldn’t find that page</h1>
-    <p class="page-head__lede">It may have moved. Try one of these instead:</p>
     <ul class="link-list link-list--big" role="list">
       <li><a href="/">Home</a></li>
       ${join(books, (b) => `<li><a href="/books/${b.slug}/">${esc(b.title)}</a></li>`)}

@@ -129,7 +129,7 @@ ${body}
         <span class="brand__mark" aria-hidden="true"><span></span><span></span><span></span></span>
         <span class="brand__name">Allies <span class="amp">&amp;</span> Obstacles</span>
       </a>
-      <p>Books by Allison C. Carey, Pamela Block, and Richard K. Scotch, published by ${esc(site.publisher.name)}.</p>
+      <p>Allison C. Carey · Pamela Block · Richard K. Scotch · ${esc(site.publisher.name)}</p>
     </div>
     <nav aria-label="Books">
       <p class="footer-heading">Books</p>
@@ -159,7 +159,7 @@ ${body}
   </div>
   <div class="wrap site-footer__base">
     <p>© ${new Date().getFullYear()} Pamela Block, Allison C. Carey, and Richard K. Scotch.</p>
-    <p>The book, chapter, research, and author text on this site was written by people: the authors, the contributors, and Temple University Press. We used AI in the early stages of designing the website.</p>
+    <p>All text was written by humans. We used AI for early stages of website design.</p>
   </div>
 </footer>
 </body>
