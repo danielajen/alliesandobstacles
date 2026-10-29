@@ -97,9 +97,8 @@ export const research = [
         urlLabel: 'Read the article',
       },
       {
-        title: 'Beyond Allies and Obstacles',
+        title: 'Family and Disability Activism book project',
         years: '2021–2023',
-        role: 'Co-Director, Ford Foundation',
         url: '/books/family-and-disability-activism/',
         urlLabel: 'About the book',
       },

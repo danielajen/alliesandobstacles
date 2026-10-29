@@ -830,7 +830,7 @@ ${join(
           <p class="project__years">${esc(p.years)}</p>
           <div>
             <h3 class="project__title">${esc(p.title)}</h3>
-            <p class="project__role">${esc(p.role)}</p>
+            ${p.role ? `<p class="project__role">${esc(p.role)}</p>` : ''}
             ${p.url ? `<p class="project__link">${ext(p.url, p.urlLabel || 'Learn more')}</p>` : ''}
             ${join(p.links || [], (l) => `<p class="project__link">${ext(l.url, l.label)}</p>`)}
           </div>
