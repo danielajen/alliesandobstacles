@@ -19,7 +19,7 @@ const richard = authors.find((a) => a.tribute);
 const ACCENTS = ['red', 'blue', 'yellow'];
 
 export const slugify = (s) =>
-  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  s.toLowerCase().normalize('NFD').replace(/æ/g, 'ae').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 function page(path, title, description, body, bodyClass = '') {
   return { path, title, description, body, bodyClass };

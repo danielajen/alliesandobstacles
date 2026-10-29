@@ -419,7 +419,7 @@ export const fdaContents = [
   { n: null, title: 'Introduction', page: 1, authors: ['Pamela Block', 'Allison C. Carey', 'Richard K. Scotch'] },
   { n: 1, title: 'Familial Relationships in Asian American Disability Advocacy and Activism', page: 11, authors: ['Grace Tsao'] },
   { n: 2, title: 'Learnings from My Mother’s Couch Corner: Becoming a Latina Disability Activist', page: 28, authors: ['Lisette E. Torres'] },
-  { n: 3, title: 'Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs', page: 39, authors: ['Jaclyn Ellis'] },
+  { n: 3, title: 'Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs', page: 39, authors: ["Ǽdán Lyn (Manidoomakwakwe) Ma'iingan-MacDonnachaidh"] },
   { n: 4, title: 'Empathy Deficits among Neurotypicals', page: 53, authors: ['Bridget Liang'] },
   { n: 5, title: 'Black Deaf Ordinary Who Deliberately Signs', page: 75, authors: ['Jenelle Rouse'] },
   { n: 6, title: 'Intersections of Deafness, Blindness, Deafblindness, and Gender: The Deaf Community, Blindness, and Deafblind Activism in Families', page: 87, authors: ['Cheryl Najarian Souza'] },

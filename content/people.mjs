@@ -145,7 +145,6 @@ export const authors = [
 export const contributors = [
   { name: 'Diane Compton', chapter: '9. How to Do Limitless Lifelong Self-Determination' },
   { name: 'Erin Compton', chapter: '9. How to Do Limitless Lifelong Self-Determination' },
-  { name: 'Jaclyn Ellis', chapter: '3. Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs' },
   { name: 'Laura LeBrun Hatcher', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   { name: 'Elena Hung', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   {
@@ -162,6 +161,16 @@ export const contributors = [
       { label: 'Goodreads author page', url: 'https://www.goodreads.com/author/show/17203855.Bridget_Liang' },
       { label: 'Academia.edu (York University)', url: 'https://yorku.academia.edu/BridgetLiang' },
     ],
+  },
+  {
+    // Sent Oct 29, 2026. Recent name change; the chapter is printed under their former name.
+    // They asked whether a note was needed for clarity, so the note uses the former name they gave.
+    name: "Ǽdán Lyn (Manidoomakwakwe) Ma'iingan-MacDonnachaidh",
+    chapter: '3. Tàcharan: An “Autie”-Ethnographic Examination of the Biopolitics of Changelings and Cyborgs',
+    pronouns: 'he/they',
+    note: 'Formerly Jacky Ellis.',
+    bio: 'I am a PhD student in sociocultural anthropology living in London Ontario. I am also a visual artist, drawing inspiration from my love of gardening and hiking in the parklands near my home.',
+    links: [{ label: 'Website', url: 'https://maiinganmacdonnachaidh.art/' }],
   },
   { name: 'Jenelle Rouse', chapter: '5. Black Deaf Ordinary Who Deliberately Signs' },
   { name: 'Cheryl Najarian Souza', chapter: '6. Intersections of Deafness, Blindness, Deafblindness, and Gender: The Deaf Community, Blindness, and Deafblind Activism in Families' },
