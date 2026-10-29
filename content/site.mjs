@@ -174,9 +174,9 @@ export const media = [
   {
     type: 'talk',
     book: 'allies-and-obstacles',
-    title: 'Disability Activism book talk',
+    title: 'Book talk and panel discussion',
     source: 'Institute on Disabilities, Temple University',
-    year: null,
+    year: 2021,
     url: 'https://disabilities.temple.edu/miniseries/book-talk',
   },
   {
@@ -231,3 +231,26 @@ export const mediaTypes = {
   'study-guide': { label: 'Study guide', plural: 'Study guides' },
   article: { label: 'Article', plural: 'Articles' },
 };
+
+// Book talk and panel discussion, Institute on Disabilities, Temple University (recorded February 2021).
+// Pam asked for it to be shared on the site (Oct 27 2026). Recordings are Temple's Panopto embeds.
+export const bookTalk = {
+  book: 'allies-and-obstacles',
+  page: 'https://disabilities.temple.edu/miniseries/book-talk',
+  transcript: 'https://disabilities.temple.edu/sites/disabilities/files/book-talk-2021-02.txt',
+  recorded: 'February 2021',
+  videos: [
+    { title: 'Author’s Panel', embed: 'https://temple.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=f3502437-f322-4678-86b9-aeae0169a842&autoplay=false&offerviewer=false&showtitle=false&showbrand=false&captions=true&start=104&interactivity=all' },
+    { title: 'Disability Activism Panel', embed: 'https://temple.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=9bd68b80-5f52-45d9-a506-aeae0169a7e5&autoplay=false&offerviewer=false&showtitle=false&showbrand=false&captions=true&interactivity=search' },
+  ],
+  // Stills from the Author's Panel recording (at 19:50 and 25:40).
+  stills: [
+    { file: 'assets/img/book-talk/authors-panel-2021-a.jpg', alt: 'Allison C. Carey (top left), Pamela Block (top right), and Richard K. Scotch (bottom) on Zoom during the Author’s Panel, February 2021.' },
+    { file: 'assets/img/book-talk/authors-panel-2021-b.jpg', alt: 'Allison C. Carey, Pamela Block, and Richard K. Scotch on Zoom during the Author’s Panel, February 2021.' },
+  ],
+};
+
+// Translations in progress. Pam asked to let people know (Oct 27 2026).
+export const translations = [
+  { book: 'allies-and-obstacles', language: 'Chinese', publisher: 'China Renmin University Press', status: 'Coming soon' },
+];

@@ -11,8 +11,8 @@ export const authors = [
     initials: 'PB',
     accent: 'yellow',
     role: 'Professor of Anthropology, Western University',
-    photo: null, // e.g. 'assets/img/pamela-block.jpg'
-    photoAlt: '',
+    photo: 'assets/img/people/pamela-block.jpg', // from Pam, Oct 27 2026, // e.g. 'assets/img/pamela-block.jpg'
+    photoAlt: 'Woman with chin length brown and grey hair and glasses smiles', // Pam's own alt text,
     // Pam's "Research Interests" from her Western faculty page, word for word (she asked for this, Oct 26 2026).
     bio: [
       'I am a Disability Anthropologist and Professor at Western University. Broadly my research interests include disability culture and social movements, and sociocultural perceptions of disability. I study the intersection of gender, race, economic status, and sexuality in movements for disability liberation (justice and rights) and disability oppression (eugenics, sterilization, mass-incarceration and killing) in Brazil, the US, and Canada. I am also interested in the emergence of disability studies scholarship around the globe.',
@@ -53,8 +53,8 @@ export const authors = [
     initials: 'AC',
     accent: 'blue',
     role: 'Professor, Department of Political and Social Inquiry, Shippensburg University',
-    photo: null,
-    photoAlt: '',
+    photo: 'assets/img/people/allison-carey.jpg', // from Pam, Oct 27 2026,
+    photoAlt: 'woman, Allison Carey with necklace glasses and curly brown and white hair below the shoulders smiles in front of a book shelf', // Pam's own alt text,
     // Temple University Press author note, with her current department (from Allison, Oct 2026).
     bio: [
       'Allison C. Carey is a Professor in the Department of Political and Social Inquiry at Shippensburg University. She is the author of *On the Margins of Citizenship: Intellectual Disability and Civil Rights in Twentieth-Century America* (Temple) and coeditor of *Disability Incarcerated: Disability and Imprisonment in the United States and Canada* and *Disability and Community*.',
@@ -94,8 +94,8 @@ export const authors = [
     role: 'Professor Emeritus of Sociology, Public Policy and Political Economy, The University of Texas at Dallas',
     lifespan: '1951 – 2026',
     tribute: true,
-    photo: null,
-    photoAlt: '',
+    photo: 'assets/img/people/richard-scotch.jpg', // from Pam, Oct 27 2026,
+    photoAlt: 'grey and white-haired balding man with a beard and glasses, suit and tie smiles at the camera', // Pam's own alt text,
     // Main content to be Allison's co-authored in-memoriam essay (requested from Pam).
     // Until then: the Temple University Press author note and the dates from UT Dallas.
     bio: [

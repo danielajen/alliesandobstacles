@@ -1,6 +1,6 @@
 import { statSync } from 'node:fs';
 import { join as join_ } from 'node:path';
-import { site, books, media, mediaTypes } from '../content/site.mjs';
+import { site, books, media, mediaTypes, bookTalk, translations } from '../content/site.mjs';
 import { authors, contributors, team } from '../content/people.mjs';
 import { audiobook, accessibleResources } from '../content/audiobook.mjs';
 import { research as researchPages } from '../content/research.mjs';
@@ -277,6 +277,7 @@ function bookHead(b) {
           <div><dt>Published</dt><dd>${esc(b.published)}</dd></div>
           <div><dt>Length</dt><dd>${b.pages} pages</dd></div>
           ${b.awards.length ? `<div><dt>Awards</dt><dd>${b.awards.length} national</dd></div>` : ''}
+          ${join(translations.filter((t) => t.book === b.slug), (t) => `<div><dt>${esc(t.language)} translation</dt><dd>${esc(t.status)} · ${esc(t.publisher)}</dd></div>`)}
         </dl>
         <div class="btn-row">
           ${button(b.buyUrl, 'Buy paperback or e-book', { ic: 'book' })}
@@ -316,6 +317,20 @@ function bookSide(b) {
   </aside>`;
 }
 
+function bookTalkSection() {
+  const t = bookTalk;
+  return `<section class="block" id="book-talk" aria-labelledby="talk-h">
+      <h2 id="talk-h" class="block__h">Book talk and panel discussion</h2>
+      <p class="muted">${link(t.page, 'Institute on Disabilities, Temple University')} · ${esc(t.recorded)} · ${link(t.transcript, 'Transcript (plain text)')}</p>
+      <div class="talk-stills">${join(t.stills, (p) => `<img src="/${esc(p.file)}" alt="${esc(p.alt)}" width="1280" height="720" loading="lazy">`)}</div>
+      ${join(
+        t.videos,
+        (v) => `<h3 class="sub-h">${esc(v.title)}</h3>
+      <div class="video"><iframe src="${esc(v.embed)}" title="${esc(v.title)}, book talk, ${esc(t.recorded)}" loading="lazy" allowfullscreen allow="autoplay; fullscreen"></iframe></div>`,
+      )}
+    </section>`;
+}
+
 function chapterItem(c) {
   const isApp = c.title.startsWith('Appendix');
   const label = c.n ? `Chapter ${c.n}` : isApp ? 'Appendix' : '';
@@ -346,6 +361,7 @@ function chapterItem(c) {
 function aoPage(b) {
   const toc = [
     ['overview', 'Overview'],
+    ['book-talk', 'Book talk'],
     ['inside', 'Inside the book'],
     ['reviews-h', 'Reviews'],
     ['pods-h', 'Podcasts & talks'],
@@ -376,6 +392,8 @@ ${bookHead(b)}
     </section>`
         : ''
     }
+
+    ${bookTalkSection()}
 
     <section class="block" id="inside" aria-labelledby="inside-h">
       <div class="block__top">
@@ -797,6 +815,12 @@ ${join(
       ${d.links?.length ? `<ul class="link-list" role="list">${join(d.links, (l) => `<li>${l.url.startsWith('/') ? `<a href="${l.url}">${esc(l.label)}</a>` : ext(l.url, l.label)}</li>`)}</ul>` : ''}
     </section>`,
     )}
+
+    ${
+      r.photos?.length
+        ? `<section class="block" aria-labelledby="photos-h"><h2 id="photos-h" class="block__h">Photos</h2><ul class="photo-grid" role="list">${join(r.photos, (p) => `<li><img src="/${esc(p.file)}" alt="${esc(p.alt)}" loading="lazy"></li>`)}</ul></section>`
+        : ''
+    }
 
     <section class="block" aria-labelledby="projects-h">
       <h2 id="projects-h" class="block__h">Projects</h2>
