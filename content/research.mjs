@@ -99,6 +99,8 @@ export const research = [
       {
         title: 'Family and Disability Activism book project',
         years: '2021–2023',
+        // From the book's Acknowledgments (p. vii), word for word
+        note: 'From the book’s acknowledgments: “We are immensely grateful to the Ford Foundation U.S. Disability Rights Program for providing a grant that allowed us to pay chapter authors from outside tenured academia and increase access to this volume by lowering the price.”',
         url: '/books/family-and-disability-activism/',
         urlLabel: 'About the book',
       },

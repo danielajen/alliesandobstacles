@@ -440,6 +440,7 @@ ${bookHead(b)}
     <section class="block prose" aria-labelledby="about-h">
       <h2 id="about-h" class="block__h">About the book</h2>
       ${join(b.summary, (p, i) => `<p${i === 0 ? ' class="lead"' : ''}>${rich(p)}</p>`)}
+      ${b.fordThanks ? `<p>From the book’s acknowledgments: “${esc(b.fordThanks)}”</p>` : ''}
     </section>
 
     <section class="block" aria-labelledby="praise-h">
@@ -831,6 +832,7 @@ ${join(
           <div>
             <h3 class="project__title">${esc(p.title)}</h3>
             ${p.role ? `<p class="project__role">${esc(p.role)}</p>` : ''}
+            ${p.note ? `<p class="project__role">${esc(p.note)}</p>` : ''}
             ${p.url ? `<p class="project__link">${ext(p.url, p.urlLabel || 'Learn more')}</p>` : ''}
             ${join(p.links || [], (l) => `<p class="project__link">${ext(l.url, l.label)}</p>`)}
           </div>

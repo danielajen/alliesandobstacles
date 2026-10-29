@@ -95,6 +95,8 @@ export const books = [
       { format: 'Hardcover', isbn: '9781439923887', price: '$99.50' },
       { format: 'Audiobook', isbn: null, price: 'Free', href: '/audiobook/' },
     ],
+    // From the book's Acknowledgments (p. vii), word for word
+    fordThanks: 'We are immensely grateful to the Ford Foundation U.S. Disability Rights Program for providing a grant that allowed us to pay chapter authors from outside tenured academia and increase access to this volume by lowering the price.',
     buyUrl: 'https://tupress.temple.edu/books/family-and-disability-activism',
     studyGuideUrl: 'https://tupress.temple.edu/study-guides/family-and-disability-activism',
     awards: [],
