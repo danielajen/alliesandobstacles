@@ -11,8 +11,8 @@ export const authors = [
     initials: 'PB',
     accent: 'yellow',
     role: 'Professor of Anthropology, Western University',
-    photo: 'assets/img/people/pamela-block.jpg', // from Pam, Oct 27 2026, // e.g. 'assets/img/pamela-block.jpg'
-    photoAlt: 'Woman with chin length brown and grey hair and glasses smiles', // Pam's own alt text,
+    photo: 'assets/img/people/pamela-block.jpg', // Pam's photo (Oct 27 2026), 512px version from her ResearchGate profile, // e.g. 'assets/img/pamela-block.jpg'
+    photoAlt: 'woman with short brown and grey hair in a hat and flowered blouse smiles in front of a lake and cliff.', // Pam's own alt text,
     // Pam's "Research Interests" from her Western faculty page, word for word (she asked for this, Oct 26 2026).
     bio: [
       'I am a Disability Anthropologist and Professor at Western University. Broadly my research interests include disability culture and social movements, and sociocultural perceptions of disability. I study the intersection of gender, race, economic status, and sexuality in movements for disability liberation (justice and rights) and disability oppression (eugenics, sterilization, mass-incarceration and killing) in Brazil, the US, and Canada. I am also interested in the emergence of disability studies scholarship around the globe.',
