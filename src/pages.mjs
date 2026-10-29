@@ -853,7 +853,7 @@ ${join(
       r.media?.length
         ? `<section class="block" aria-labelledby="media-h"><h2 id="media-h" class="block__h">In the news</h2><ul class="pub-list" role="list">${join(
             r.media,
-            (m) => `<li><span class="pub-list__title">${esc(m.split(' — ')[0])}</span><span class="pub-list__detail">${esc(m.split(' — ').slice(1).join(' — '))}</span></li>`,
+            (m) => `<li><cite class="pub-list__title">${ext(m.url, m.title)}</cite><span class="pub-list__detail">${esc(m.detail)}${m.copy ? ` · ${ext(m.copy.url, m.copy.label)}` : ''}</span></li>`,
           )}</ul></section>`
         : ''
     }

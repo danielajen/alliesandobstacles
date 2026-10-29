@@ -133,10 +133,24 @@ export const research = [
       { title: 'Project Shake-It-Up!: A Disability Studies Framework of Empowerment for Capacity Building and Health Promotion', detail: 'with E. Vanner, C. B. Keys, J. Rimmer, and S. Skeels · Disability & Rehabilitation, 2010', url: 'https://www.researchgate.net/publication/42369405_Project_Shake-It-Up_Using_health_promotion_capacity_building_and_a_disability_studies_framework_to_increase_self_efficacy' },
       { title: 'From Pathology to Power: Rethinking Race, Poverty and Disability', detail: 'with F. Balcazar and C. Keys · Journal of Disability Policy Studies, 2001', url: 'https://www.researchgate.net/publication/240731457_From_Pathology_to_Power_Rethinking_Race_Poverty_and_Disability' },
     ],
+    // Headlines as published. The Star is paywalled, so it also links to the copy on Helen Ries's website.
     media: [
-      'Siblings are holding up a broken disability system — Montreal Gazette, April 2026 (with H. Ries)',
-      'A multistate lawsuit threatens disabled rights — The Hill, May 2026 (with A. C. Carey and R. K. Scotch)',
-      'As disabled people increasingly outlive their parents, many siblings struggle to take on new care responsibilities — Toronto Star, January 2026 (with H. Ries and D. Kassem)',
+      {
+        title: 'A multistate lawsuit threatens disabled rights. Trump’s remarks don’t help',
+        detail: 'The Hill, May 2026 (with A. C. Carey and R. K. Scotch)',
+        url: 'https://thehill.com/opinion/civil-rights/5858288-disability-rights-under-threat/',
+      },
+      {
+        title: 'Canada’s quiet crisis in sibling caregiving',
+        detail: 'Montreal Gazette, April 2026 (with H. Ries)',
+        url: 'https://montrealgazette.com/opinion/op-eds/opinion-canadas-quiet-crisis-in-sibling-caregiving/',
+      },
+      {
+        title: 'As disabled people increasingly outlive their parents, many siblings struggle to take on new care responsibilities',
+        detail: 'Toronto Star, January 2026 (with H. Ries and D. Kassem)',
+        url: 'https://www.thestar.com/opinion/contributors/as-disabled-people-increasingly-outlive-their-parents-many-siblings-struggle-to-take-on-new-care/article_34ce8d74-3d64-402e-ac82-add0211d87a9.html',
+        copy: { label: 'Read it on Helen Ries’s website', url: 'https://www.helenries.ca/lifespalette/2n1k7qyftiwo13dau6ini6g42qy0zr' },
+      },
     ],
   },
 ];
