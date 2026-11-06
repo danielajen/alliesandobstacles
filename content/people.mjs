@@ -173,7 +173,12 @@ export const contributors = [
     links: [{ label: 'Website', url: 'https://maiinganmacdonnachaidh.art/' }],
   },
   { name: 'Jenelle Rouse', chapter: '5. Black Deaf Ordinary Who Deliberately Signs' },
-  { name: 'Cheryl Najarian Souza', chapter: '6. Intersections of Deafness, Blindness, Deafblindness, and Gender: The Deaf Community, Blindness, and Deafblind Activism in Families' },
+  {
+    // Sent Nov 2026. Bio is hers, with the book and volume titles set in italics.
+    name: 'Cheryl Najarian Souza',
+    chapter: '6. Intersections of Deafness, Blindness, Deafblindness, and Gender: The Deaf Community, Blindness, and Deafblind Activism in Families',
+    bio: 'Dr. Najarian Souza is an Associate Professor of Sociology at the University of Massachusetts, Lowell. Her research and teaching interests include looking at the concepts of disability and ability from intersectional, interdisciplinary, and feminist perspectives. She has written extensively about the Deaf community and the challenges Deaf women, in particular, face in their paid work, mothering, and educational experiences. She has also explored cultural representations of Helen Keller. In addition to several articles, she is the author of the book, *“Between Worlds”: Deaf Women, Work, and Intersections of Gender and Ability* (Routledge, 2006). She is co-editor, along with Allison C. Carey and Sara E. Green, of *Research in Social Science and Disability: Constructing Disability, Identities, and Communities through Media*, Volume 18, which is forthcoming in 2027 by Emerald Publishing.',
+  },
   { name: 'Jeneva Stone', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   { name: 'Roger A. Stone', chapter: '8. Survive and Thrive: How Little Lobbyists Empowers Families to Fight for Disability Justice' },
   {
