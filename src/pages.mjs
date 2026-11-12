@@ -753,7 +753,11 @@ function authorPage(a) {
 
     ${
       a.slug === 'pamela-block'
-        ? `<h2>Research</h2><ul class="research-links" role="list">${join(
+        ? `<h2>Research</h2>${
+            a.introVideo
+              ? `<h3 class="sub-h">${esc(a.introVideo.title)}</h3><div class="video"><iframe src="${esc(a.introVideo.embed)}" title="${esc(a.introVideo.title)} (video)" loading="lazy" allowfullscreen allow="fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`
+              : ''
+          }<ul class="research-links" role="list">${join(
             researchPages,
             (r) => `<li><a class="research-link research-link--${r.accent}" href="/authors/pamela-block/${r.slug}/"><span class="research-link__k">${esc(r.title)}</span><span class="research-link__t">${esc(r.descriptions.map((d) => d.title).join(' · '))}</span>${icon('arrow')}</a></li>`,
           )}</ul>`

@@ -42,6 +42,8 @@ export const authors = [
         url: 'https://link.springer.com/book/10.1007/978-94-017-9984-3',
       },
     ],
+    // From Pam (Nov 11 2026): introductory video to her research, shown above her research areas
+    introVideo: { title: 'Introduction to Dr. Block', embed: 'https://www.youtube-nocookie.com/embed/YnmFsF515tg' },
     links: [
       { label: 'Western University faculty page', url: 'https://anthropology.uwo.ca/people/faculty/full-time-faculty/block-pamela.html' },
       { label: 'ResearchGate (articles and copies on request)', url: 'https://www.researchgate.net/profile/Pamela-Block-2' },

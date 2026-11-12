@@ -88,6 +88,9 @@ export const research = [
         title: 'Planning and Facilitation',
         years: '2025–2026',
         role: 'Principal Investigator, with Partners for Planning',
+        // From Pam (Nov 11 2026): her DDP Research Day talk, posted by the UWO Developmental Disabilities Program
+        url: 'https://youtu.be/ea5MjjVSi-E',
+        urlLabel: 'Watch “Expanding the Capacity of Planning and Facilitation Supports in Canada”',
       },
       {
         title: 'Care Relationships of Adult Disabled and Nondisabled Siblings',
