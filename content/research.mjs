@@ -153,10 +153,10 @@ export const research = [
       writing: [
         { cite: 'Block, P. (2026) “Closed Borders, Open Borders.” (curated by Al Etmanski) Courage To Care. Planned Lifetime Advocacy Network.', links: [{ label: 'Pre-print (PDF)', url: '/assets/downloads/autoethnography/block-2026-closed-borders-open-borders-preprint.pdf' }] },
         { cite: 'Marcus N, Kasnitz D, Block, P. (2016) Chapter 24: If Disability is a Dance, who is the Choreographer? A Conversation about Life Occupations, Art, Movement. Occupying Disability: Critical Approaches to Community, Justice and Decolonizing Disability. New York: Springer, Ltd.', links: [{ label: 'Pre-print (PDF)', url: '/assets/downloads/autoethnography/marcus-kasnitz-block-2016-if-disability-is-a-dance-preprint.pdf' }] },
-        // enactingautisminclusion.ca was not reachable on Nov 23 2026, so no link for now
+        // Pam is getting the video from Patty Douglas to post on her YouTube (Nov 23 2026); link it here when it's up
         { cite: 'Block, P. (2016) “Home: A Story of Hope Block” Produced by Patty Douglas – Enacting Critical Disability Communities in Education. Toronto, Ontario, Canada.' },
-        { cite: 'Block, P., Shuttleworth, R. Pratt, J., Block, H., Rammler, L. (2012) Disability, Sexuality and Intimacy. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.', links: [{ label: 'Read the talk it grew from, on Pam’s blog', url: 'https://pamelablock.blogspot.com/2015/10/hope-and-jacob-on-autism-dating-and.html' }] },
-        { cite: 'Kasnitz, D. & Block, P. (2012) Participation, Time, Effort, and Speech Disability Justice. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.' },
+        { cite: 'Block, P., Shuttleworth, R. Pratt, J., Block, H., Rammler, L. (2012) Disability, Sexuality and Intimacy. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.', links: [{ label: 'Full text on ResearchGate', url: 'https://www.researchgate.net/publication/289666458_Disability_Sexuality_and_Intimacy' }, { label: 'Read the talk it grew from, on Pam’s blog', url: 'https://pamelablock.blogspot.com/2015/10/hope-and-jacob-on-autism-dating-and.html' }] },
+        { cite: 'Kasnitz, D. & Block, P. (2012) Participation, Time, Effort, and Speech Disability Justice. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.', links: [{ label: 'Full text on ResearchGate', url: 'https://www.researchgate.net/publication/288741857_Participation_Time_Effort_and_Speech_Disability_Justice' }] },
         { cite: 'Block, P. (2010) Participant: Neurodiversity and Caregiving: A Roundtable with Parents and Siblings of Children with Autism (moderator, Ralph James Savarese). Disability Studies Quarterly 30(1).', links: [{ label: 'Read it in Disability Studies Quarterly', url: 'https://dsq-sds.org/article/id/1166/' }] },
       ],
       blog: [
@@ -175,9 +175,17 @@ export const research = [
           ],
         },
         {
-          heading: 'Facilitated communication and the press',
+          heading: 'Family, institutions, and care',
+          posts: [
+            { title: 'Michael Matusow June 22, 1949 – March 31, 2020', detail: 'April 2020', url: 'https://pamelablock.blogspot.com/2020/04/michael-matusow-june-22-1949-march-31.html' },
+            { title: 'People in Nursing homes, COVID-19 and Access to Intensive Care', detail: 'April 2020', url: 'https://pamelablock.blogspot.com/2020/04/as-disability-studies-scholar-i-am.html' },
+          ],
+        },
+        {
+          heading: 'The Stubblefield trial, facilitated communication, and the press',
           posts: [
             { title: 'Disability, Sexuality, and Defect in New Jersey', detail: 'October 2015, with an update from July 2024', url: 'https://pamelablock.blogspot.com/2015/10/disability-sexuality-and-defect-in-new.html' },
+            { title: 'More info on New Jersey Eugenics-Era Law', detail: 'October 2015', url: 'https://pamelablock.blogspot.com/2015/10/more-info-on-new-jersey-eugenics-era-law.html' },
             { title: 'My response to the Slate Article', detail: 'November 2015', url: 'https://pamelablock.blogspot.com/2015/11/my-response-to-slate-article.html' },
             { title: 'My letter to Slate about the Auerbach article', detail: 'January 2016', url: 'https://pamelablock.blogspot.com/2016/01/my-letter-to-slate-about-auerbach.html' },
           ],
