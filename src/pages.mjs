@@ -812,8 +812,23 @@ function researchPage(r) {
 
 <div class="wrap person-body">
   <div>
+${
+      r.collapseDescriptions
+        ? `<section class="block" aria-labelledby="areas-h">
+      <h2 id="areas-h" class="block__h">Research areas</h2>
+      ${join(
+        r.descriptions,
+        (d) => `<details class="desc-toggle">
+        <summary><span class="desc-toggle__t">${esc(d.title)}</span><span class="desc-toggle__hint">Read more</span></summary>
+        <div class="prose">${join(d.paras, (p) => `<p>${esc(p)}</p>`)}
+        ${d.links?.length ? `<ul class="link-list" role="list">${join(d.links, (l) => `<li>${l.url.startsWith('/') ? `<a href="${l.url}">${esc(l.label)}</a>` : ext(l.url, l.label)}</li>`)}</ul>` : ''}</div>
+      </details>`,
+      )}
+    </section>`
+        : ''
+    }
 ${join(
-      r.descriptions,
+      r.collapseDescriptions ? [] : r.descriptions,
       (d, i) => `<section class="block prose" aria-labelledby="desc-${i}-h">
       <h2 id="desc-${i}-h" class="block__h">${esc(d.title)}</h2>
       ${join(d.paras, (p) => `<p>${esc(p)}</p>`)}
@@ -843,6 +858,25 @@ ${join(
         </li>`,
       )}</ol>
     </section>
+
+    ${
+      r.autoethnography
+        ? `<section class="block" id="autoethnography" aria-labelledby="auto-h">
+      <h2 id="auto-h" class="block__h">Autoethnography</h2>
+      <h3 class="sub-h">Writing</h3>
+      <ul class="pub-list" role="list">${join(
+        r.autoethnography.writing,
+        (w) => `<li><span class="pub-list__title">${esc(w.cite)}</span>${w.links?.length ? `<span class="pub-list__detail">${w.links.map((l) => link(l.url, esc(l.label))).join(' · ')}</span>` : ''}</li>`,
+      )}</ul>
+      <h3 class="sub-h">Stories from Pam’s blog</h3>
+      ${join(
+        r.autoethnography.blog,
+        (g) => `<h4 class="auto-group">${esc(g.heading)}</h4>
+      <ul class="pub-list" role="list">${join(g.posts, (p) => `<li><cite class="pub-list__title">${ext(p.url, p.title)}</cite><span class="pub-list__detail">${esc(p.detail)}</span></li>`)}</ul>`,
+      )}
+    </section>`
+        : ''
+    }
 
     <section class="block" aria-labelledby="pubs-h">
       <h2 id="pubs-h" class="block__h">Selected publications</h2>

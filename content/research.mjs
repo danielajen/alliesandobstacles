@@ -69,6 +69,8 @@ export const research = [
   },
   {
     slug: 'north-america',
+    // Pam (Nov 21 2026): show only the headings; readers open one to see the text.
+    collapseDescriptions: true,
     nav: 'North America',
     title: 'Research in North America',
     eyebrow: 'Pamela Block · Canada and the United States',
@@ -76,7 +78,7 @@ export const research = [
     // Pam's own project descriptions (2024), word for word. She notes they need updating.
     descriptions: [{"title": "Aging Out of Children’s Hospitals and VENTure Think Tank", "paras": ["This strand of scholarship focuses on the historical and current experiences of children with medical conditions that require 24-hour skilled nursing and complex technologies for survival (Lorandi and Block 2023). Currently these children survive much longer than ever before, due to technological innovation, but risk losing crucial supports once they become adults – sometimes moving directly from paediatric hospitals to geriatric nursing homes due to lack of alternatives. A series of publications, some under review, includes a comparison of experiences with assistive technologies of elderly adults with post-polio syndrome and diabetics with recent amputations (Almukhtar et al 2022) and a historical study of people with complex medical conditions (Block under review). Collectively young disabled polio-survivors shared information and strategized to create new technological and policy pathways to access education, personal care, transportation, and other resources and in the chapter for our edited volume Family and Disability Activism, “Aging Out of Children’s Hospitals: 20th and 21st century experiences of children with complex medical conditions and their parents” (under review), I compare the historical experiences of polio-survivors to the transformative justice struggles of contemporary young people with complex medical conditions, including those who use mechanical ventilation. While at Stony Brook University I co-founded the VENTure Think Tank (Block et al. 2017) with Brooke Ellison and Nick Dupree to consider technology and policy as well as disaster preparedness. Following Super Storm Sandy I worked with the US Federal Emergency Management Agency (FEMA) to form a local Core Advisory Group which included local emergency responders, disability activists and service provides to create accessible mechanisms for communication, technology distribution and mobility plans during times of crisis. This group continued after I left Stony Brook and was instrumental to supporting the safety and wellbeing of local and regional disabled residents during the Covid-2019 epidemic, which was particularly dangerous in this region of Long Island New York, one of the early epicenters of the epidemic."]},
       {"title": "Universal Design for Learning and Collective Access in the Classroom", "paras": ["An aspect of educational research that has interested me for many years is how to ensure the classroom experience is accessible for students on many levels including disability, language, and economic access. I have been experimenting with blended and online learning for disability and communication access for over twenty years and in recent years a vocabulary to describe my interest in accessible design has been formulated by emerging scholars such as Aimi Hamraie, Cassandra Hartblay, Arseli Dokumaci and from disability justice activists such as Mia Mingus, Alice Wong, and Sandra Ho. I am currently collaborating with colleagues to study the experiences of disabled students with access practices at Western University (with Kim Clark) and the experiences black disabled Brazilian women in higher academia (with Marivete Gesser and Valeria Aydos)."]},
-      {"title": "Disability Studies, Anthropology and the Global Health", "paras": ["In 2016, I co-edited a 26-chapter book with Devva Kasnitz, Nick Pollard, and Akemi Nishida on Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability that focuses on politically engaged critical approaches to disability that intersect the fields of anthropology. occupational studies and disability studies. International movements claim disability as a collective cultural identity rather than a medical category and recognize the political and economic dimensions of disability inequality as it intersects with other forms of inequality. Moving well beyond traditional clinical formulations of disability, the book engages social scientists, activists, clinicians, and artists in dialogues about disability as a theoretical construct and lived experience. The concept/definition of “occupation” in this context is intentionally a moving target. Some authors discuss occupying spaces as a form of protest or, alternatively, protesting territorial occupations. Others discuss occupations as engagement in meaningful activities, which are framed or problematized within the fields of anthropology, occupational therapy, and occupational science. Contributors are drawn from the US, Asia, South America, Europe, and Australia. Emerging scholars such as M. Remi Yergeau and Akemi Nishida developed chapters that grew into book projects. This project grew out of over a decade of discussions I facilitated among anthropologists, disability studies scholars, and occupational scientists in a series of meetings, hosted through the Society for Applied Anthropology and the Society for Disability Studies. My tenure as president of the Society of Disability Studies and as a Fellow of the Society for Applied Anthropology afforded me the opportunity to launch these collaborations, which were partially funded via NIH grants. Over the years, I organized independent symposia, conference strands, and topical interest groups. I chaired sessions, facilitated discussion and did what I could to ensure full access and participation of disabled activists and scholars. My leadership in this area has influenced a new generation of emerging translational disability studies researchers and practitioners who collaborate effectively between the social sciences and health fields."], "links": [{"label": "Contents and chapter authors of Occupying Disability", "url": "/authors/pamela-block/#od-h"}]}],
+      {"title": "Disability Studies, Anthropology and the Global Health", "paras": ["In 2016, I co-edited a 26-chapter book with Devva Kasnitz, Nick Pollard, and Akemi Nishida on Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability that focuses on politically engaged critical approaches to disability that intersect the fields of anthropology. occupational studies and disability studies. International movements claim disability as a collective cultural identity rather than a medical category and recognize the political and economic dimensions of disability inequality as it intersects with other forms of inequality. Moving well beyond traditional clinical formulations of disability, the book engages social scientists, activists, clinicians, and artists in dialogues about disability as a theoretical construct and lived experience. The concept/definition of “occupation” in this context is intentionally a moving target. Some authors discuss occupying spaces as a form of protest or, alternatively, protesting territorial occupations. Others discuss occupations as engagement in meaningful activities, which are framed or problematized within the fields of anthropology, occupational therapy, and occupational science. Contributors are drawn from the US, Asia, South America, Europe, and Australia. Emerging scholars such as M. Remi Yergeau and Akemi Nishida developed chapters that grew into book projects. This project grew out of over a decade of discussions I facilitated among anthropologists, disability studies scholars, and occupational scientists in a series of meetings, hosted through the Society for Applied Anthropology and the Society for Disability Studies. My tenure as president of the Society of Disability Studies and as a Fellow of the Society for Applied Anthropology afforded me the opportunity to launch these collaborations, which were partially funded via NIH grants. Over the years, I organized independent symposia, conference strands, and topical interest groups. I chaired sessions, facilitated discussion and did what I could to ensure full access and participation of disabled activists and scholars. My leadership in this area has influenced a new generation of emerging translational disability studies researchers and practitioners who collaborate effectively between the social sciences and health fields."]}],
     // Photos and alt text from Pam (Oct 27 2026); alt text is hers, word for word.
     photos: [
       { file: 'assets/img/research/pam-and-hope-2018.jpg', alt: 'Pam (dark brown hair) and Hope Block (light brown hair) both with glasses smiling at the camera in 2018. Hope has a Special Olympics medal around her neck.' },
@@ -108,6 +110,14 @@ export const research = [
         urlLabel: 'About the book',
       },
       {
+        // Pam (Nov 21 2026): moved here from the Global Health description, under 2012–2016
+        title: 'Occupying Disability: Critical Approaches to Community, Justice, and Decolonizing Disability',
+        years: '2012–2016',
+        role: 'Co-editor, with Devva Kasnitz, Akemi Nishida, and Nick Pollard',
+        url: '/authors/pamela-block/#od-h',
+        urlLabel: 'Contents and chapter authors of Occupying Disability',
+      },
+      {
         title: 'Pediatric Multiple Sclerosis community building',
         years: '2006–2010',
         role: 'Principal Investigator and Rehabilitation Liaison',
@@ -136,6 +146,44 @@ export const research = [
       { title: 'Project Shake-It-Up!: A Disability Studies Framework of Empowerment for Capacity Building and Health Promotion', detail: 'with E. Vanner, C. B. Keys, J. Rimmer, and S. Skeels · Disability & Rehabilitation, 2010', url: 'https://www.researchgate.net/publication/42369405_Project_Shake-It-Up_Using_health_promotion_capacity_building_and_a_disability_studies_framework_to_increase_self_efficacy' },
       { title: 'From Pathology to Power: Rethinking Race, Poverty and Disability', detail: 'with F. Balcazar and C. Keys · Journal of Disability Policy Studies, 2001', url: 'https://www.researchgate.net/publication/240731457_From_Pathology_to_Power_Rethinking_Race_Poverty_and_Disability' },
     ],
+    // Pam (Nov 21 2026): autoethnographic writing about and with her sister Hope and their mother,
+    // Barbara Kilcup. Citations are Pam's own list. Blog posts are the ones on pamelablock.blogspot.com
+    // that tell those stories, with their titles and dates as posted.
+    autoethnography: {
+      writing: [
+        { cite: 'Block, P. (2026) “Closed Borders, Open Borders.” (curated by Al Etmanski) Courage To Care. Planned Lifetime Advocacy Network.', links: [{ label: 'Pre-print (PDF)', url: '/assets/downloads/autoethnography/block-2026-closed-borders-open-borders-preprint.pdf' }] },
+        { cite: 'Marcus N, Kasnitz D, Block, P. (2016) Chapter 24: If Disability is a Dance, who is the Choreographer? A Conversation about Life Occupations, Art, Movement. Occupying Disability: Critical Approaches to Community, Justice and Decolonizing Disability. New York: Springer, Ltd.', links: [{ label: 'Pre-print (PDF)', url: '/assets/downloads/autoethnography/marcus-kasnitz-block-2016-if-disability-is-a-dance-preprint.pdf' }] },
+        // enactingautisminclusion.ca was not reachable on Nov 23 2026, so no link for now
+        { cite: 'Block, P. (2016) “Home: A Story of Hope Block” Produced by Patty Douglas – Enacting Critical Disability Communities in Education. Toronto, Ontario, Canada.' },
+        { cite: 'Block, P., Shuttleworth, R. Pratt, J., Block, H., Rammler, L. (2012) Disability, Sexuality and Intimacy. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.', links: [{ label: 'Read the talk it grew from, on Pam’s blog', url: 'https://pamelablock.blogspot.com/2015/10/hope-and-jacob-on-autism-dating-and.html' }] },
+        { cite: 'Kasnitz, D. & Block, P. (2012) Participation, Time, Effort, and Speech Disability Justice. IN Politics of Occupation-Centered Practice: Reflections on Occupational Engagement Across Cultures. (Eds. Pollard, N., Sakellariou, D.). Oxford, England: Elsevier Churchill Livingstone.' },
+        { cite: 'Block, P. (2010) Participant: Neurodiversity and Caregiving: A Roundtable with Parents and Siblings of Children with Autism (moderator, Ralph James Savarese). Disability Studies Quarterly 30(1).', links: [{ label: 'Read it in Disability Studies Quarterly', url: 'https://dsq-sds.org/article/id/1166/' }] },
+      ],
+      blog: [
+        {
+          heading: 'Talks with Hope and our mother, Barbara Kilcup',
+          posts: [
+            { title: 'Autism, Communication, Family & Community', detail: 'Pamela Block, Hope Block, and Barbara Kilcup · American Anthropological Association, 2008', url: 'https://pamelablock.blogspot.com/2015/10/autism-communication-and-family.html' },
+            { title: 'Bus Rides and Back Rooms: Autism, Family, Meaningful Occupation & Life Transition', detail: 'Pamela Block, Hope Block, and Barbara Kilcup · Society for Applied Anthropology, 2009', url: 'https://pamelablock.blogspot.com/2015/10/bus-rides-and-back-rooms-autism-family.html' },
+            { title: 'Hope and Jacob on Autism, Dating and Intimacy', detail: 'Pamela Block, Russell Shuttleworth, Hope Block, Jacob Pratt, and Linda Rammler · Disability Studies Symposium, Rio de Janeiro, 2011', url: 'https://pamelablock.blogspot.com/2015/10/hope-and-jacob-on-autism-dating-and.html' },
+          ],
+        },
+        {
+          heading: 'Sisters and care',
+          posts: [
+            { title: 'Aging Sisters: Health, Communication, and Care', detail: 'March 2023', url: 'https://pamelablock.blogspot.com/2023/03/aging-sisters-health-communication-and.html' },
+          ],
+        },
+        {
+          heading: 'Facilitated communication and the press',
+          posts: [
+            { title: 'Disability, Sexuality, and Defect in New Jersey', detail: 'October 2015, with an update from July 2024', url: 'https://pamelablock.blogspot.com/2015/10/disability-sexuality-and-defect-in-new.html' },
+            { title: 'My response to the Slate Article', detail: 'November 2015', url: 'https://pamelablock.blogspot.com/2015/11/my-response-to-slate-article.html' },
+            { title: 'My letter to Slate about the Auerbach article', detail: 'January 2016', url: 'https://pamelablock.blogspot.com/2016/01/my-letter-to-slate-about-auerbach.html' },
+          ],
+        },
+      ],
+    },
     // Headlines as published. The Star is paywalled, so it also links to the copy on Helen Ries's website.
     media: [
       {
